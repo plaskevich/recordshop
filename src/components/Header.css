@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  background-image: linear-gradient(180deg, #131313 68%, #191919 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 130px;
+  padding: 0 80px;
+}
+
+.brand {
+  font-family: GrandStylus;
+  font-size: 80px;
+  color: #f05454;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.link {
+  font-family: Helvetica-Bold;
+  font-size: 32px;
+  color: #dddddd;
+  transition: all 0.2s ease-out;
+}
+
+.link:hover {
+  color: #f05454;
+}

@@ -1,10 +1,13 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Landing from "./components/Landing";
 
 function App() {
   return (
-    <div className="App">
-      <header>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Landing />
+      </Router>
+    </>
   );
 }
 
