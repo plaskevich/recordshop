@@ -1,0 +1,54 @@
+@import "../../styles/global.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1520px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  background-image: linear-gradient(180deg, #131313 68%, #191919 100%);
+}
+
+.brand {
+  font-family: $brand;
+  font-size: scale(100px);
+  color: $pink;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+}
+
+.link {
+  font-family: Helvetica-Bold;
+  font-size: scale(36px);
+  color: $light;
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  color: $pink;
+}
+
+.link:active {
+  font-size: scale(34px);
+}

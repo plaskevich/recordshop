@@ -1,5 +1,6 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Landing from "./components/Landing";
+import { BrowserRouter as Router } from "react-router-dom";
+import Landing from "./components/Landing/Landing";
+import "./App.scss";
 
 function App() {
   return (

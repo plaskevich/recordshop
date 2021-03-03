@@ -1,0 +1,124 @@
+@import "../../styles/global.scss";
+
+.main {
+  background-color: $dark;
+  height: 100vh;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.content {
+  display: flex;
+}
+
+.block {
+  height: 49%;
+  min-width: 50%;
+  height: 600px;
+  display: flex;
+}
+
+.block span {
+  color: $light;
+  font-family: $bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.manage-your {
+  font-size: scale(54px);
+  position: absolute;
+  left: 70%;
+  top: 220px;
+}
+
+.record-store {
+  font-size: scale(80px);
+  position: absolute;
+  left: 64%;
+  top: 260px;
+}
+
+.inventory {
+  font-size: scale(44px);
+  position: absolute;
+  left: 62%;
+  top: 320px;
+}
+
+.import-directly {
+  font-size: scale(65px);
+  position: absolute;
+  left: 12%;
+  top: 350px;
+}
+.from {
+  font-size: scale(48px);
+  position: absolute;
+  left: 16.5%;
+  top: 420px;
+}
+.discogs {
+  font-size: scale(80px);
+  position: absolute;
+  left: 22%;
+  top: 410px;
+}
+
+.spray {
+  max-width: 450px;
+  max-height: 398px;
+  opacity: 0.5;
+  position: absolute;
+  left: 10%;
+  top: 270px;
+}
+.spray2 {
+  max-width: 450px;
+  max-height: 398px;
+  opacity: 0.5;
+  position: absolute;
+  left: 63%;
+  top: 130px;
+}
+
+.register-wrap span {
+  color: $light;
+  font-family: $bold;
+  font-size: scale(100px);
+}
+
+.rac {
+  position: absolute;
+  top: 600px;
+  left: 20%;
+}
+
+.ysff {
+  position: absolute;
+  top: 660px;
+  left: 39.5%;
+}
+
+.sign-up {
+  margin-top: 620px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.sign-up a {
+  color: $pink;
+  font-family: $bold;
+  font-size: scale(48px);
+  transition: all 0.2s ease;
+}
+
+.sign-up a:hover {
+  font-size: 43px;
+}
+.sign-up a:active {
+  font-size: 40px;
+}

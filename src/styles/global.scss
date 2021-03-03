@@ -1,0 +1,19 @@
+// COLORS
+$pink: #f05454;
+$light: #dddddd;
+$dark: #191919;
+$darker: #131313;
+$grey: #303030;
+$blue: #568aff;
+
+// FONTS
+$regular: Helvetica;
+$bold: Helvetica-Bold;
+$brand: GrandStylus;
+
+// FUNCTIONS
+
+@function scale($size) {
+  $result: $size - ($size / 5);
+  @return $result;
+}
