@@ -7,25 +7,31 @@
 }
 
 .container {
-  max-width: 1520px;
+  max-width: 1300px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 0;
+  height: 150px;
 }
 
 a {
   text-decoration: none;
 }
 
+.header-landing {
+  background: linear-gradient(180deg, $darker 66%, rgba(19, 19, 19, 0) 100%);
+}
+
 .header {
-  background-image: linear-gradient(180deg, #131313 68%, #191919 100%);
+  background-image: linear-gradient(180deg, #131313 66%, #191919 100%);
 }
 
 .brand {
   font-family: $brand;
-  font-size: scale(100px);
-  color: $pink;
+  font-size: scale(60px);
+  color: $light;
+  text-transform: uppercase;
 }
 
 .nav-links {

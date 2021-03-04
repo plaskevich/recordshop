@@ -1,12 +1,20 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Landing from "./components/Landing/Landing";
+import Login from "./components/Login/Login";
 import "./App.scss";
 
 function App() {
   return (
     <>
       <Router>
-        <Landing />
+        <Switch>
+          <Route exact path="/">
+            <Landing />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+        </Switch>
       </Router>
     </>
   );

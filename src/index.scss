@@ -1,5 +1,22 @@
+@import "./styles/global.scss";
+
 @font-face {
   font-family: "GrandStylus";
   src: local("GrandStylus"), url("./fonts/GrandStylus.ttf") format("truetype");
   font-weight: normal;
+}
+
+@font-face {
+  font-family: "AMVINYL";
+  src: local("AMVINYL"), url("./fonts/AMVINYL.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "GrandStylus";
+  src: local("GrandStylus"), url("./fonts/GrandStylus.ttf") format("truetype");
+  font-weight: normal;
+}
+
+body {
+  background-color: $darker !important;
 }

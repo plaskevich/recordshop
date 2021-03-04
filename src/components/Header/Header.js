@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.scss";
 
 export default function Header() {
   return (
-    <header className="header">
+    <header
+      className={useLocation().pathname === "/" ? "header-landing" : "header"}
+    >
       <div className="container">
         <Link to="/" className="brand">
           Record Shop

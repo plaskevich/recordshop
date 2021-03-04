@@ -1,124 +1,74 @@
 @import "../../styles/global.scss";
 
 .main {
-  background-color: $dark;
+  background-color: rgba($color: $dark, $alpha: 0.6);
   height: 100vh;
 }
 
-.container {
+.landing-content {
+  width: 100%;
   max-width: 1300px;
   margin: 0 auto;
 }
-.content {
-  display: flex;
-}
 
-.block {
-  height: 49%;
-  min-width: 50%;
-  height: 600px;
-  display: flex;
-}
-
-.block span {
-  color: $light;
+.main-text {
+  padding: 40px 20px;
   font-family: $bold;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  background: linear-gradient(-51deg, $blue 0%, $pink 87%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-align: right;
+}
+.first-line {
+  font-size: scale(150px);
+  letter-spacing: -12px;
+}
+.second-line {
+  font-size: scale(150px);
+  letter-spacing: -12px;
+  margin-top: -20px;
 }
 
-.manage-your {
-  font-size: scale(54px);
-  position: absolute;
-  left: 70%;
-  top: 220px;
+.third-line {
+  font-size: scale(200px);
+  letter-spacing: -16px;
+  margin-top: -60px;
 }
 
-.record-store {
-  font-size: scale(80px);
-  position: absolute;
-  left: 64%;
-  top: 260px;
-}
-
-.inventory {
-  font-size: scale(44px);
-  position: absolute;
-  left: 62%;
-  top: 320px;
-}
-
-.import-directly {
-  font-size: scale(65px);
-  position: absolute;
-  left: 12%;
-  top: 350px;
-}
-.from {
-  font-size: scale(48px);
-  position: absolute;
-  left: 16.5%;
-  top: 420px;
-}
-.discogs {
-  font-size: scale(80px);
-  position: absolute;
-  left: 22%;
-  top: 410px;
-}
-
-.spray {
-  max-width: 450px;
-  max-height: 398px;
-  opacity: 0.5;
-  position: absolute;
-  left: 10%;
-  top: 270px;
-}
-.spray2 {
-  max-width: 450px;
-  max-height: 398px;
-  opacity: 0.5;
-  position: absolute;
-  left: 63%;
-  top: 130px;
-}
-
-.register-wrap span {
-  color: $light;
-  font-family: $bold;
-  font-size: scale(100px);
-}
-
-.rac {
-  position: absolute;
-  top: 600px;
-  left: 20%;
-}
-
-.ysff {
-  position: absolute;
-  top: 660px;
-  left: 39.5%;
-}
-
-.sign-up {
-  margin-top: 620px;
+.lets-start {
+  margin-top: 120px;
   width: 100%;
   display: flex;
   justify-content: center;
+  z-index: 1;
 }
 
-.sign-up a {
-  color: $pink;
+.start-btn {
+  opacity: 1;
+  border-radius: 100rem;
+  border: 2px solid $blue;
+  padding: 20px 40px;
   font-family: $bold;
-  font-size: scale(48px);
-  transition: all 0.2s ease;
+  font-size: 20px;
+  color: $light;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  transition: font-size 0.1s, background-color 0.2s ease-in;
+  cursor: pointer;
 }
 
-.sign-up a:hover {
-  font-size: 43px;
+.start-btn:hover {
+  background-color: $blue;
 }
-.sign-up a:active {
-  font-size: 40px;
+
+.start-btn:active {
+  outline: none;
+  font-size: 19px;
+}
+
+.start-btn:focus {
+  outline: none;
 }

@@ -1,0 +1,69 @@
+@import "../../styles/global.scss";
+
+.content {
+  background-color: $dark;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-wrap {
+  padding: 80px 0;
+}
+
+.title {
+  font-size: scale(36px);
+  font-family: $bold;
+  color: $light;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.form-group {
+  width: 650px;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+.label-wrap {
+  width: 200px;
+  text-align: right;
+}
+label {
+  color: $light;
+  font-family: $bold;
+  font-size: scale(48px);
+  text-align: right;
+}
+
+input {
+  width: 400px;
+  font-size: scale(48px);
+  color: $light;
+  font-family: $bold;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 3px $light;
+  transition: all 0.2s ease;
+}
+
+input:focus {
+  border-bottom: solid 3px $pink;
+  outline: none;
+}
+
+.btn-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 80px;
+}
+
+.enter-btn {
+  color: $pink;
+  font-family: $bold;
+  font-size: scale(60px);
+}

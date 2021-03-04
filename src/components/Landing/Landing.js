@@ -1,35 +1,23 @@
 import Header from "../Header/Header";
+import BackgroundVideo from "../BackgroundVideo/BackgroundVideo";
 import "./Landing.scss";
-import spray from "./assets/spray.png";
-import spray2 from "./assets/spray2.png";
 import { Link } from "react-router-dom";
 
 export default function Landing() {
   return (
     <div className="main">
+      <BackgroundVideo />
       <Header />
-      <div className="container">
-        <div className="content">
-          <div className="block">
-            <span className="import-directly">import directly</span>
-            <span className="from">from</span>
-            <span className="discogs">Discogs</span>
-            <img src={spray} alt="spray-background" className="spray" />
-          </div>
-
-          <div className="block">
-            <span className="manage-your">manage your</span>
-            <span className="record-store">record store</span>
-            <span className="inventory">inventory</span>
-            <img src={spray2} alt="spray-background" className="spray2" />
-          </div>
+      <div className="landing-content">
+        <div className="main-text">
+          <p className="first-line">Start managing your</p>
+          <p className="second-line">record store inventory</p>
+          <p className="third-line">now</p>
         </div>
-        <div className="register-wrap">
-          <span className="rac">Register and create</span>
-          <span className="ysff">your store for free</span>
-        </div>
-        <div className="sign-up">
-          <Link to="/signup">sign up now</Link>
+        <div className="lets-start">
+          <Link to="/signup">
+            <button className="start-btn">LET'S GET STARTED</button>
+          </Link>
         </div>
       </div>
     </div>
