@@ -1,5 +1,5 @@
 import Header from "../Header/Header";
-import "./Login.scss";
+import "./Login.scoped.scss";
 import { Link } from "react-router-dom";
 
 export default function Login() {
