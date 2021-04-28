@@ -1,4 +1,4 @@
-@import "../../styles/global.scss";
+@import '../../styles/global.scss';
 
 .content {
   background-color: $dark;
@@ -66,4 +66,6 @@ input:focus {
   color: $pink;
   font-family: $bold;
   font-size: scale(60px);
+  background: transparent;
+  border: none;
 }

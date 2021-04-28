@@ -1,21 +1,21 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Landing from "./components/Landing/Landing";
-import Login from "./components/Login/Login";
-import SignUp from "./components/SignUp/SignUp";
-import "./App.scss";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Landing from './components/Landing/Landing';
+import Login from './components/Login/Login';
+import SignUp from './components/SignUp/SignUp';
+import './App.scss';
 
 function App() {
   return (
     <>
       <Router>
         <Switch>
-          <Route exact path="/">
+          <Route exact path='/'>
             <Landing />
           </Route>
-          <Route path="/login">
+          <Route path='/login'>
             <Login />
           </Route>
-          <Route path="/signup">
+          <Route path='/signup'>
             <SignUp />
           </Route>
         </Switch>

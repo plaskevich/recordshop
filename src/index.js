@@ -1,8 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.scss";
-import App from "./App";
-import "./fonts/GrandStylus.ttf";
-import "./fonts/AMVINYL.ttf";
+import ApolloProvider from './ApolloProvider';
+import ReactDOM from 'react-dom';
+import './index.scss';
+import './fonts/GrandStylus.ttf';
+import './fonts/AMVINYL.ttf';
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(ApolloProvider, document.getElementById('root'));

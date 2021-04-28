@@ -1,8 +1,9 @@
-@import "../../styles/global.scss";
+@import '../../styles/global.scss';
 
 .main {
   background-color: rgba($color: $dark, $alpha: 0.6);
-  height: 100vh;
+  // height: 100vh;
+  height: 100%;
 }
 
 .landing-content {
@@ -25,6 +26,7 @@
 .first-line {
   font-size: scale(150px);
   letter-spacing: -12px;
+  margin: 0;
 }
 .second-line {
   font-size: scale(150px);

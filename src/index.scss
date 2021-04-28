@@ -1,22 +1,41 @@
-@import "./styles/global.scss";
+@import './styles/global.scss';
 
-@font-face {
-  font-family: "GrandStylus";
-  src: local("GrandStylus"), url("./fonts/GrandStylus.ttf") format("truetype");
-  font-weight: normal;
+html {
+  height: 100%;
 }
-
-@font-face {
-  font-family: "AMVINYL";
-  src: local("AMVINYL"), url("./fonts/AMVINYL.ttf") format("truetype");
-  font-weight: normal;
-}
-@font-face {
-  font-family: "GrandStylus";
-  src: local("GrandStylus"), url("./fonts/GrandStylus.ttf") format("truetype");
-  font-weight: normal;
-}
-
 body {
-  background-color: $darker !important;
+  background-color: $dark;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: 'GrandStylus';
+  src: local('GrandStylus'), url('./fonts/GrandStylus.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'AMVINYL';
+  src: local('AMVINYL'), url('./fonts/AMVINYL.ttf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'GrandStylus';
+  src: local('GrandStylus'), url('./fonts/GrandStylus.ttf') format('truetype');
+  font-weight: normal;
 }

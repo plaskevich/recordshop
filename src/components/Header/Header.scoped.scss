@@ -1,4 +1,4 @@
-@import "../../styles/global.scss";
+@import '../../styles/global.scss';
 
 * {
   box-sizing: border-box;
@@ -29,7 +29,7 @@ a {
 
 .brand {
   font-family: $brand;
-  font-size: scale(60px);
+  font-size: 3em;
   color: $light;
   text-transform: uppercase;
 }
