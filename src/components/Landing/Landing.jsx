@@ -1,13 +1,13 @@
-import Header from '../Header/Header';
 import BackgroundVideo from '../BackgroundVideo/BackgroundVideo';
+import Header from '../Header/Header';
 import './Landing.scoped.scss';
 import { Link } from 'react-router-dom';
 
 export default function Landing() {
   return (
     <div className='main'>
-      <BackgroundVideo />
       <Header />
+      <BackgroundVideo />
       <div className='landing-content'>
         <div className='main-text'>
           <p className='first-line'>Start managing your</p>

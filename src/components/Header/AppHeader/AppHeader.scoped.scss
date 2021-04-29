@@ -1,0 +1,33 @@
+@import '../../../styles/global.scss';
+
+header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.shop-name {
+  color: $pink;
+  font-family: Helvetica-Bold;
+  font-size: scale(24px);
+}
+
+.page-title {
+  color: $light;
+  font-family: Helvetica-Bold;
+  font-size: scale(48px);
+}
+
+.actions {
+  display: flex;
+  width: 60px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-button {
+  color: $light;
+  font-size: 24px;
+}

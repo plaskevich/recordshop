@@ -1,4 +1,4 @@
-@import '../../styles/global.scss';
+@import '../../../styles/global.scss';
 
 * {
   box-sizing: border-box;
@@ -20,11 +20,15 @@ a {
 }
 
 .header-landing {
-  background: linear-gradient(180deg, $darker 66%, rgba(19, 19, 19, 0) 100%);
+  background: linear-gradient(
+    180deg,
+    $black 66%,
+    rgba($color: $dark, $alpha: 0) 100%
+  );
 }
 
 .header {
-  background-image: linear-gradient(180deg, #131313 66%, #191919 100%);
+  background-image: linear-gradient(180deg, $black 66%, $dark 100%);
 }
 
 .brand {

@@ -52,7 +52,7 @@ input {
 }
 
 input:focus {
-  border-bottom: solid 3px $pink;
+  border-bottom: solid 3px $blue;
   outline: none;
 }
 
@@ -63,7 +63,7 @@ input:focus {
 }
 
 .btn {
-  color: $pink;
+  color: $blue;
   font-family: $bold;
   font-size: scale(60px);
   background-color: transparent;

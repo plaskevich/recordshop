@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import './SignUp.scoped.scss';
-import { useState } from 'react';
 import Header from '../Header/Header';
+import { useState } from 'react';
 import { SIGN_UP } from '../../graphql/mutations/auth';
 import { useMutation } from '@apollo/client';
 

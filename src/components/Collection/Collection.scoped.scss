@@ -1,0 +1,8 @@
+@import '../../styles/global.scss';
+
+hr {
+  margin: 30px 50px;
+  height: 1px;
+  border: 0;
+  background-image: linear-gradient(to right, $dark, $light, $dark);
+}

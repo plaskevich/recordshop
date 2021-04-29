@@ -1,5 +1,5 @@
-import Header from '../Header/Header';
 import './Login.scoped.scss';
+import Header from '../Header/Header';
 import { SIGN_IN } from '../../graphql/mutations/auth';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
@@ -30,7 +30,7 @@ export default function Login() {
 
   return (
     <div>
-      <Header current='login' />
+      <Header />
       <div className='content'>
         <div className='title-wrap'>
           <h3 className='title'>Login with existing account</h3>
