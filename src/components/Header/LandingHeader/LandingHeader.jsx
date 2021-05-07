@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import './LandingHeader.scss';
+import './LandingHeader.scoped.scss';
 
 export default function LandingHeader() {
   return (

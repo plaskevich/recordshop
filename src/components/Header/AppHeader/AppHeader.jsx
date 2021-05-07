@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import './AppHeader.scoped.scss';
 import { IoPerson, IoCog } from 'react-icons/io5';
 

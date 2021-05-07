@@ -6,3 +6,7 @@ hr {
   border: 0;
   background-image: linear-gradient(to right, $dark, $light, $dark);
 }
+
+.table-content {
+  background-color: $dark;
+}

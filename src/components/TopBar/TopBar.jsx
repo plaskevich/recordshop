@@ -1,4 +1,5 @@
 import './TopBar.scoped.scss';
+import { Link } from 'react-router-dom';
 import { IoCheckmarkDone, IoFilter, IoSearch } from 'react-icons/io5';
 
 export default function Collection() {
@@ -7,11 +8,11 @@ export default function Collection() {
       <div className='left'>
         <button className='left-item'>
           <IoCheckmarkDone />
-          Select
+          <p>Select</p>
         </button>
         <button className='left-item'>
           <IoFilter />
-          Filter
+          <p>Filter</p>
         </button>
       </div>
 
@@ -20,7 +21,9 @@ export default function Collection() {
         <input type='text' placeholder='Search...' />
       </div>
       <div className='right'>
-        <button className='add-btn'>Add</button>
+        <Link to='/add' className='add-btn'>
+          Add
+        </Link>
       </div>
     </div>
   );

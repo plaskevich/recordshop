@@ -10,7 +10,7 @@
 .left {
   width: 20%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .right {
   width: 20%;
@@ -26,7 +26,10 @@
   color: $light;
   font-family: Helvetica-Bold;
   font-size: scale(22px);
-  width: 50%;
+}
+
+p {
+  margin: 0 0.3em;
 }
 
 .search {
