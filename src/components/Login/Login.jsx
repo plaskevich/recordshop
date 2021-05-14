@@ -5,6 +5,8 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 
+import { IoWarning } from 'react-icons/io5';
+
 export default function Login() {
   const {
     handleSubmit,
@@ -13,19 +15,28 @@ export default function Login() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showError, setShowError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const [signIn, { data }] = useMutation(SIGN_IN);
+  const [signIn] = useMutation(SIGN_IN, {
+    onCompleted(data) {
+      localStorage.setItem('token', data.signIn.token);
+      window.location.reload();
+    },
+    onError(error) {
+      setShowError(true);
+      setErrorMessage(error.message);
+    },
+  });
 
   const submitForm = () => {
+    setShowError(false);
     signIn({
       variables: {
         email: email,
         password: password,
       },
     });
-    if (data) {
-      localStorage.setItem('token', data.signIn.token);
-    }
   };
 
   return (
@@ -34,6 +45,12 @@ export default function Login() {
       <div className='content'>
         <div className='title-wrap'>
           <h3 className='title'>Login with existing account</h3>
+        </div>
+        <div className={showError ? 'error-msg' : 'error-msg invisible'}>
+          <div className='error-txt'>
+            <IoWarning size='20px' />
+            {errorMessage}
+          </div>
         </div>
         <form onSubmit={handleSubmit(submitForm)}>
           <div className='form-group'>
@@ -62,6 +79,7 @@ export default function Login() {
               }}
             />
           </div>
+
           <div className='btn-wrap'>
             <button type='submit' className='enter-btn'>
               enter

@@ -1,18 +1,45 @@
 import './AppHeader.scoped.scss';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { IoPerson, IoCog } from 'react-icons/io5';
 
 export default function AppHeader() {
+  const logout = () => {
+    localStorage.removeItem('token');
+    window.location.reload();
+  };
+  const [openDropdown, setOpenDropdown] = useState(false);
   return (
     <header>
       <div className='shop-name'>MyShop</div>
       <div className='page-title'>Collection</div>
       <div className='actions'>
-        <div className='action-button'>
-          <IoPerson />
+        <div className='account-dropdown'>
+          <button
+            className={
+              openDropdown ? 'action-button focus-btn' : 'action-button'
+            }
+            onClick={() => setOpenDropdown(!openDropdown)}
+          >
+            <IoPerson />
+          </button>
+          <div
+            className={
+              openDropdown ? 'dropdown-list' : 'dropdown-list invisible'
+            }
+          >
+            <Link className='dropdown-item' to='/account'>
+              My Account
+            </Link>
+            <button onClick={logout} className='dropdown-item'>
+              Logout
+            </button>
+          </div>
         </div>
-        <div className='action-button'>
+
+        <button className='action-button'>
           <IoCog />
-        </div>
+        </button>
       </div>
     </header>
   );

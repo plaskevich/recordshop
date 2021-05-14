@@ -21,10 +21,17 @@ p {
 
 a {
   text-decoration: none;
+  color: $light;
 }
 
 button {
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.invisible {
+  visibility: hidden;
 }
 
 @font-face {

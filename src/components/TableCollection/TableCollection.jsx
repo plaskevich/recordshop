@@ -6,27 +6,27 @@ import { IoEllipsisVertical } from 'react-icons/io5';
 export default function TableCollection() {
   const { data } = useQuery(GET_COLLECTION);
   const allRecords = data?.getAllRecords;
-  console.log(allRecords);
   return (
     <div className='table-wrap'>
-      {allRecords && (
-        <table>
-          <thead>
-            <tr>
-              <th />
-              <th>Title</th>
-              <th>Artist</th>
-              <th>Label</th>
-              <th>Year</th>
-              <th>Genre</th>
-              <th>Condition</th>
-              <th>Date</th>
-              <th>Price</th>
-              <th />
-            </tr>
-          </thead>
-          <tbody>
-            {allRecords.map((item) => (
+      <table>
+        <thead>
+          <tr>
+            <th />
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Label</th>
+            <th>Year</th>
+            <th>Genre</th>
+            <th>Condition</th>
+            <th>Date</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th />
+          </tr>
+        </thead>
+        <tbody>
+          {allRecords &&
+            allRecords.map((item) => (
               <tr key={item.id} className='table-item'>
                 <td>
                   <img className='artwork' src={item.img_uri} alt='artwork' />
@@ -38,15 +38,26 @@ export default function TableCollection() {
                 <td>{item.genre}</td>
                 <td>{item.condition}</td>
                 <td>{new Date(item.date_added).toLocaleDateString()}</td>
-                <td>{item.price}</td>
+                <td>${item.price}</td>
+                {item.status === 'sold' && (
+                  <td>
+                    <div className='sold label'> SOLD</div>
+                  </td>
+                )}
+                {item.status === 'inStock' && (
+                  <td>
+                    <div className='instock label'>IN STOCK</div>
+                  </td>
+                )}
                 <td>
-                  <IoEllipsisVertical />
+                  <div className='dots'>
+                    <IoEllipsisVertical />
+                  </div>
                 </td>
               </tr>
             ))}
-          </tbody>
-        </table>
-      )}
+        </tbody>
+      </table>
     </div>
   );
 }
