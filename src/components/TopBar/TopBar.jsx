@@ -2,7 +2,7 @@ import './TopBar.scoped.scss';
 import { Link } from 'react-router-dom';
 import { IoCheckmarkDone, IoFilter, IoSearch } from 'react-icons/io5';
 
-export default function Collection() {
+export default function TopBar() {
   return (
     <div className='top-bar'>
       <div className='left'>

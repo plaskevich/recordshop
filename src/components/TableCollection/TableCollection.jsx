@@ -2,6 +2,7 @@ import './TableCollection.scoped.scss';
 import { GET_COLLECTION } from '../../graphql/queries';
 import { useQuery } from '@apollo/client';
 import { IoEllipsisVertical } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 
 export default function TableCollection() {
   const { data } = useQuery(GET_COLLECTION);
@@ -50,6 +51,13 @@ export default function TableCollection() {
                   </td>
                 )}
                 <td>
+                  {/* <div className='dots-menu'>
+                    <Link className='dots-item' to='/'>
+                      Edit
+                    </Link>
+                    <button className='dots-item'>Set Sold</button>
+                    <button className='dots-item'>Remove</button>
+                  </div> */}
                   <div className='dots'>
                     <IoEllipsisVertical />
                   </div>

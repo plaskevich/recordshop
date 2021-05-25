@@ -77,3 +77,19 @@ th:last-child {
     background-color: $btn-hover;
   }
 }
+
+.dots-menu {
+  position: absolute;
+  background-color: $row;
+  display: flex;
+  flex-direction: column;
+  right: 90px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.dots-item {
+  color: $light;
+  font-size: 14px;
+  padding: 1px;
+}
