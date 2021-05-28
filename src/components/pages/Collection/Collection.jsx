@@ -1,12 +1,12 @@
 import './Collection.scoped.scss';
-import Header from '../Header/Header';
-import TopBar from '../TopBar/TopBar';
-import TableCollection from '../TableCollection/TableCollection';
+import Header from '../../Header/Header';
+import TopBar from '../../TopBar/TopBar';
+import TableCollection from '../../TableCollection/TableCollection';
 
 export default function Collection() {
   return (
     <div>
-      <Header />
+      <Header title='Collection' />
       <TopBar />
       <hr />
       <div className='table-content'>

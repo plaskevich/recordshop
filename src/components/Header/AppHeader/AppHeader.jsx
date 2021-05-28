@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { IoPerson, IoCog } from 'react-icons/io5';
 
-export default function AppHeader() {
+export default function AppHeader({ title }) {
   const logout = () => {
     localStorage.removeItem('token');
     window.location.reload();
@@ -11,8 +11,11 @@ export default function AppHeader() {
   const [openDropdown, setOpenDropdown] = useState(false);
   return (
     <header>
-      <div className='shop-name'>MyShop</div>
-      <div className='page-title'>Collection</div>
+      {/* <div className='shop-name'>MyShop</div> */}
+      <Link className='shop-name' to='/collection'>
+        MyShop
+      </Link>
+      <div className='page-title'>{title}</div>
       <div className='actions'>
         <div className='account-dropdown'>
           <button

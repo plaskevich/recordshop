@@ -1,10 +1,11 @@
 import './Login.scoped.scss';
-import Header from '../Header/Header';
-import { SIGN_IN } from '../../graphql/mutations/auth';
+import Header from '../../Header/Header';
+import { SIGN_IN } from '../../../graphql/mutations/auth';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-
+import { useDispatch } from 'react-redux';
+import setUser from '../../../redux/userSlice';
 import { IoWarning } from 'react-icons/io5';
 
 export default function Login() {
@@ -12,6 +13,7 @@ export default function Login() {
     handleSubmit,
     // formState: { errors },
   } = useForm();
+  const dispatch = useDispatch();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,11 +23,13 @@ export default function Login() {
   const [signIn] = useMutation(SIGN_IN, {
     onCompleted(data) {
       localStorage.setItem('token', data.signIn.token);
+      // dispatch(setUser({ id: '1234' }));
       window.location.reload();
     },
     onError(error) {
       setShowError(true);
       setErrorMessage(error.message);
+      console.error(error);
     },
   });
 

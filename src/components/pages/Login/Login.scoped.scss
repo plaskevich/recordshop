@@ -1,13 +1,14 @@
-@import '../../styles/global.scss';
+@import '../../../styles/global.scss';
 
 .content {
+  background-color: $dark;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .title-wrap {
-  padding-top: 20px;
+  padding: 40px 0;
 }
 
 .title {
@@ -17,32 +18,30 @@
 }
 
 form {
-  padding-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .form-group {
-  width: 850px;
+  width: 650px;
   display: flex;
   justify-content: space-between;
-  padding: 30px 0;
-  padding-right: 50px;
+  padding: 40px 0;
 }
 .label-wrap {
-  width: 350px;
+  width: 200px;
   text-align: right;
 }
 label {
   color: $light;
   font-family: $bold;
-  font-size: scale(40px);
+  font-size: scale(48px);
   text-align: right;
 }
 
 input {
   width: 400px;
-  font-size: scale(40px);
+  font-size: scale(48px);
   color: $light;
   font-family: $bold;
   background-color: transparent;
@@ -59,29 +58,31 @@ input:focus {
 .btn-wrap {
   display: flex;
   justify-content: center;
-  padding: 30px;
+  padding: 50px;
 }
 
-.btn {
-  color: $blue;
+.enter-btn {
+  color: $pink;
   font-family: $bold;
   font-size: scale(60px);
-  background-color: transparent;
+  background: transparent;
   border: none;
 }
 
-.btn:active {
-  outline: none;
-}
-
-.error-wrap {
+.error-msg {
+  text-align: center;
+  color: $yellow;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.hide {
-  visibility: hidden;
-}
-.error-text {
-  color: $yellow;
+.error-txt {
+  width: 173px;
+  padding: 10px;
+  background-color: $yellow-lighter;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

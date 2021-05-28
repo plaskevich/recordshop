@@ -2,7 +2,7 @@ import './TableCollection.scoped.scss';
 import { GET_COLLECTION } from '../../graphql/queries';
 import { useQuery } from '@apollo/client';
 import { IoEllipsisVertical } from 'react-icons/io5';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 export default function TableCollection() {
   const { data } = useQuery(GET_COLLECTION);
@@ -39,7 +39,7 @@ export default function TableCollection() {
                 <td>{item.genre}</td>
                 <td>{item.condition}</td>
                 <td>{new Date(item.date_added).toLocaleDateString()}</td>
-                <td>${item.price}</td>
+                {item.price ? <td>${item.price}</td> : <td>-</td>}
                 {item.status === 'sold' && (
                   <td>
                     <div className='sold label'> SOLD</div>

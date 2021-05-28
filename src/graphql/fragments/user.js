@@ -7,7 +7,9 @@ export const AUTH_DATA_FRAGMENT = gql`
       id
       email
       name
-      shop
+      shop {
+        name
+      }
       role
     }
   }

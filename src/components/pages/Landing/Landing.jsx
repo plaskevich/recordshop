@@ -1,5 +1,5 @@
-import BackgroundVideo from '../BackgroundVideo/BackgroundVideo';
-import Header from '../Header/Header';
+import BackgroundVideo from '../../BackgroundVideo/BackgroundVideo';
+import Header from '../../Header/Header';
 import './Landing.scoped.scss';
 import { Link } from 'react-router-dom';
 

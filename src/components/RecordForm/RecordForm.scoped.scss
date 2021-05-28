@@ -1,0 +1,98 @@
+@import '../../styles/global.scss';
+
+.discogs-import {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $light;
+}
+
+.discogs-import .title {
+  font-size: 17px;
+}
+
+.import-field {
+  width: 400px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.import-field label {
+  font-family: $bold;
+  font-size: 22px;
+}
+
+.import-field input {
+  width: 150px;
+  font-size: 22px;
+  color: $light;
+  font-family: $bold;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px $light;
+  transition: all 0.2s ease;
+}
+
+.import-field input:focus {
+  border-bottom: solid 1px $blue;
+  outline: none;
+}
+
+.import-btn {
+  color: $pink;
+  font-family: $bold;
+  font-size: 18px;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+.form-column {
+  //   width: 100%;
+}
+
+.form-group {
+  color: $light;
+  padding: 20px;
+  width: 650px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-group label {
+  font-family: $bold;
+  font-size: 25px;
+}
+
+.label-wrap {
+  width: 70px;
+}
+
+.form-group input {
+  width: 350px;
+  font-size: 25px;
+  color: $light;
+  font-family: $bold;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 2px $light;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  border-bottom: solid 2px $blue;
+  outline: none;
+}
+
+.save-btn {
+  margin-top: 70px;
+  color: $pink;
+  font-family: $bold;
+  font-size: 45px;
+}
