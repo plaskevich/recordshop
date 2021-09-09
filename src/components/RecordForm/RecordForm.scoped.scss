@@ -1,20 +1,26 @@
 @import '../../styles/global.scss';
 
 .discogs-import {
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: $light;
+  margin: 30px auto;
+  padding: 30px;
 }
 
 .discogs-import .title {
-  font-size: 17px;
+  font-size: 15px;
+}
+
+.discogs-error {
+  padding-top: 15px;
+  color: $pink;
 }
 
 .import-field {
-  width: 400px;
+  width: 350px;
   margin-top: 20px;
   display: flex;
   align-items: center;
@@ -23,76 +29,104 @@
 
 .import-field label {
   font-family: $bold;
-  font-size: 22px;
+  font-size: 16px;
+  color: $light;
+}
+.error-input {
+  border: 1px solid $pink !important;
 }
 
 .import-field input {
-  width: 150px;
-  font-size: 22px;
+  width: 100px;
+  font-size: 14px;
+  padding: 10px;
   color: $light;
   font-family: $bold;
-  background-color: transparent;
-  border: none;
-  border-bottom: solid 1px $light;
-  transition: all 0.2s ease;
+  background-color: $row-hover;
+  border: 1px solid $dark;
+  border-radius: 5px;
 }
 
 .import-field input:focus {
-  border-bottom: solid 1px $blue;
   outline: none;
 }
 
 .import-btn {
-  color: $pink;
+  background-color: $blue-dark;
+  color: $light;
+  padding: 8px 15px;
+  border-radius: 5px;
   font-family: $bold;
-  font-size: 18px;
+  font-size: 13px;
+  transition: all 0.1s ease;
 }
 
-form {
+.import-btn:active {
+  background-color: $blue;
+}
+
+.form {
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .form-column {
-  //   width: 100%;
+  margin: 0 20px;
 }
 
 .form-group {
   color: $light;
-  padding: 20px;
-  width: 650px;
+  padding: 10px;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 65px;
 }
 
 .form-group label {
   font-family: $bold;
-  font-size: 25px;
-}
-
-.label-wrap {
-  width: 70px;
+  font-size: 15px;
+  color: $light;
 }
 
 .form-group input {
+  padding: 10px;
   width: 350px;
-  font-size: 25px;
+  font-size: 16px;
   color: $light;
   font-family: $bold;
-  background-color: transparent;
+  background-color: $row-hover;
   border: none;
-  border-bottom: solid 2px $light;
-  transition: all 0.2s ease;
+  border-radius: 5px;
+}
+.form-group select {
+  padding: 10px;
+  font-size: 16px;
+  color: $light;
+  font-family: $bold;
+  background-color: $row-hover;
+  border: none;
+  border-radius: 5px;
 }
 
 .form-group input:focus {
-  border-bottom: solid 2px $blue;
   outline: none;
 }
 
 .save-btn {
-  margin-top: 70px;
-  color: $pink;
+  margin-top: 30px;
+  color: $blue;
   font-family: $bold;
-  font-size: 45px;
+  font-size: 35px;
+  transition: all 0.1s ease-in;
+}
+
+.save-btn:hover {
+  color: $blue-dark;
+}
+
+.save-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }

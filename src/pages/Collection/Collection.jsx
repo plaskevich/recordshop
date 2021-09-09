@@ -1,7 +1,7 @@
 import './Collection.scoped.scss';
-import Header from '../../Header/Header';
-import TopBar from '../../TopBar/TopBar';
-import TableCollection from '../../TableCollection/TableCollection';
+import Header from '../../components/Header/Header';
+import TopBar from '../../components/TopBar/TopBar';
+import TableCollection from '../../components/TableCollection/TableCollection';
 
 export default function Collection() {
   return (

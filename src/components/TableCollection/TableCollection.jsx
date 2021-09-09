@@ -1,7 +1,7 @@
 import './TableCollection.scoped.scss';
 import { GET_COLLECTION } from '../../graphql/queries';
 import { useQuery } from '@apollo/client';
-import { IoEllipsisVertical } from 'react-icons/io5';
+import { IoEllipsisVertical, IoDisc } from 'react-icons/io5';
 // import { Link } from 'react-router-dom';
 
 export default function TableCollection() {
@@ -30,7 +30,11 @@ export default function TableCollection() {
             allRecords.map((item) => (
               <tr key={item.id} className='table-item'>
                 <td>
-                  <img className='artwork' src={item.img_uri} alt='artwork' />
+                  {item.img_uri ? (
+                    <img className='artwork' src={item.img_uri} alt='artwork' />
+                  ) : (
+                    <IoDisc size='2.5em' />
+                  )}
                 </td>
                 <td>{item.title}</td>
                 <td>{item.artist}</td>

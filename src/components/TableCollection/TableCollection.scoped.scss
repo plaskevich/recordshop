@@ -1,7 +1,7 @@
 @import '../../styles/global.scss';
 
 .table-wrap {
-  padding: 10px 50px;
+  padding: 10px 50px 50px 50px;
 }
 
 table {
@@ -15,7 +15,7 @@ tbody {
 }
 
 .table-item {
-  border: 0.3em solid $dark;
+  border: 5px solid $dark;
   cursor: pointer;
   transition: all 0.1s ease;
   &:hover {

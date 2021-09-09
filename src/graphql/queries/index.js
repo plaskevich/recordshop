@@ -1,20 +1,20 @@
 import { gql } from '@apollo/client';
+import { RECORD_DATA_FRAGMENT } from '../fragments';
 
 export const GET_COLLECTION = gql`
   query getAllRecords {
     getAllRecords {
-      id
-      artist
-      title
-      status
-      label
-      date_added
-      condition
-      genre
-      price
-      year
-      notes
-      img_uri
+      ...RecordDetails
     }
   }
+  ${RECORD_DATA_FRAGMENT}
+`;
+
+export const GET_RECORD = gql`
+  query getRecord($id: String!) {
+    getRecord(id: $id) {
+      ...RecordDetails
+    }
+  }
+  ${RECORD_DATA_FRAGMENT}
 `;

@@ -5,12 +5,13 @@ import {
   Redirect,
 } from 'react-router-dom';
 import './App.scss';
-import Landing from './components/pages/Landing/Landing';
-import Login from './components/pages/Login/Login';
-import SignUp from './components/pages/SignUp/SignUp';
-import Collection from './components/pages/Collection/Collection';
+import Landing from './pages/Landing/Landing';
+import Login from './pages/Login/Login';
+import SignUp from './pages/SignUp/SignUp';
+import Collection from './pages/Collection/Collection';
 import { isAuthenticated } from './service';
-import AddRecord from './components/pages/AddRecord/AddRecord';
+import AddRecord from './pages/AddRecord/AddRecord';
+import EditRecord from './pages/EditRecord/EditRecord';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
         </Route>
         <Route path='/add'>
           {isAuthenticated() ? <AddRecord /> : <Redirect to='/' />}
+        </Route>
+        <Route path='/edit/:id'>
+          {isAuthenticated() ? <EditRecord /> : <Redirect to='/' />}
         </Route>
       </Switch>
     </Router>

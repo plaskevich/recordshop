@@ -14,3 +14,18 @@ export const AUTH_DATA_FRAGMENT = gql`
     }
   }
 `;
+
+export const RECORD_DATA_FRAGMENT = gql`
+  fragment RecordDetails on Record {
+    artist
+    title
+    status
+    label
+    condition
+    genre
+    price
+    year
+    notes
+    img_uri
+  }
+`;

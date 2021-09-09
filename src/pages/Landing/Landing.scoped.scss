@@ -1,4 +1,4 @@
-@import '../../../styles/global.scss';
+@import '../../styles/global.scss';
 
 .main {
   background-color: rgba($color: $dark, $alpha: 0.6);
@@ -13,7 +13,8 @@
 
 .main-text {
   padding: 40px 20px;
-  font-family: $bold;
+  font-family: $regular;
+  font-weight: thin;
   background: linear-gradient(-51deg, $blue 0%, #82498c 87%);
   background-clip: text;
   -webkit-background-clip: text;
