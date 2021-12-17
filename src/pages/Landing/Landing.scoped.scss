@@ -1,76 +1,149 @@
 @import '../../styles/global.scss';
 
-.main {
-  background-color: rgba($color: $dark, $alpha: 0.6);
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 100px;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  background-color: $red;
+  border-radius: 1px;
+  font-weight: 900;
+  font-size: 30px;
+  color: #fff;
+  padding: 5px 18px;
+}
+
+.nav-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  font-weight: 700;
+  font-size: 18px;
+  a {
+    color: #fff;
+    transition: ease-out 0.3s;
+    &:hover {
+      color: $pink;
+    }
+  }
+}
+
+.signup {
+  border: 3px solid $pink;
+  border-radius: 25px;
+  padding: 9px 25px;
+  position: relative;
+  overflow: hidden;
+  span {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.signup:after {
+  border-radius: 25px;
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
   height: 100%;
+  background-color: $pink;
+  transition: ease-out 0.3s;
+}
+
+.signup:hover {
+  color: #fff !important;
+}
+
+.signup:hover::after {
+  width: 100%;
 }
 
 .landing-content {
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
+  padding-top: 70px;
+  height: 300vh;
 }
 
 .main-text {
-  padding: 40px 20px;
-  font-family: $regular;
-  font-weight: thin;
-  background: linear-gradient(-51deg, $blue 0%, #82498c 87%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+  padding-right: 120px;
+  font-size: 90px;
+  font-weight: 900;
   text-align: right;
-}
-.first-line {
-  font-size: scale(150px);
-  letter-spacing: -12px;
-  margin: 0;
-}
-.second-line {
-  font-size: scale(150px);
-  letter-spacing: -12px;
-  margin-top: -20px;
+  color: #fff;
+  filter: blur(10px);
 }
 
-.third-line {
-  font-size: scale(200px);
-  letter-spacing: -16px;
-  margin-top: -60px;
+.last-line {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.lets-start {
-  margin-top: 120px;
-  width: 100%;
+@keyframes color_change {
+  0% {
+    background-color: $blue;
+  }
+  33% {
+    background-color: $pink;
+  }
+  66% {
+    background-color: $red;
+  }
+  100% {
+    background-color: $blue;
+  }
+}
+
+.record-shop {
+  animation: color_change 3s step-end infinite;
+  display: flex;
+  align-items: center;
+  color: $yellow;
+  background-color: $blue;
+  border-radius: 1px;
+  height: 100px;
+  padding: 0 5px;
+  margin-left: 15px;
+}
+
+.try-now {
+  font-size: 40px;
+  font-weight: 700;
+  color: $pink;
   display: flex;
   justify-content: center;
-  z-index: 1;
+  margin-top: 100px;
+  span {
+    transform: perspective(1px) translateZ(0);
+    transition: transform 0.3s ease-out, color 0.1s ease-in;
+  }
 }
 
-.start-btn {
-  opacity: 1;
-  border-radius: 100rem;
-  border: 2px solid $blue;
-  padding: 20px 40px;
-  font-family: $bold;
-  font-size: 20px;
-  color: $light;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  background-color: transparent;
-  transition: font-size 0.1s, background-color 0.2s ease-in;
-  cursor: pointer;
+.try-now span:hover {
+  transform: scale(1.1);
 }
 
-.start-btn:hover {
-  background-color: $blue;
+.try-now span:active {
+  transform: scale(0.9);
+  color: $yellow;
 }
 
-.start-btn:active {
-  outline: none;
-  font-size: 19px;
-}
-
-.start-btn:focus {
-  outline: none;
+.more-info {
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  margin-top: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    margin-left: 5px;
+  }
 }

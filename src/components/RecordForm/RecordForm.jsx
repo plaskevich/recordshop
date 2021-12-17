@@ -3,7 +3,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { from, useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import { ADD_RECORD } from '../../graphql/mutations/record';
 
 export default function RecordForm() {
