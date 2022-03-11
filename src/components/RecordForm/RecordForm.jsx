@@ -1,7 +1,7 @@
 import './RecordForm.scoped.scss';
 import { useState } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useMutation } from '@apollo/client';
 import { ADD_RECORD } from '../../graphql/mutations/record';
@@ -21,7 +21,7 @@ export default function RecordForm() {
   const [discogsError, setDiscogsError] = useState('');
   const [error, setError] = useState('');
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const importFromDiscogs = (id) => {
     setDiscogsError('');
@@ -52,7 +52,7 @@ export default function RecordForm() {
 
   const [addRecord] = useMutation(ADD_RECORD, {
     onCompleted() {
-      history.push('/collection');
+      navigate('/collection');
       window.location.reload();
     },
     onError(err) {

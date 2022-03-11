@@ -1,8 +1,8 @@
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
-  Redirect,
+  Navigate,
 } from 'react-router-dom';
 import './App.scss';
 import Landing from './pages/Landing/Landing';
@@ -16,26 +16,14 @@ import EditRecord from './pages/EditRecord/EditRecord';
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route exact path='/'>
-          {!isAuthenticated() ? <Landing /> : <Redirect to='/collection' />}
-        </Route>
-        <Route path='/login'>
-          {!isAuthenticated() ? <Login /> : <Redirect to='/collection' />}
-        </Route>
-        <Route path='/signup'>
-          {!isAuthenticated() ? <SignUp /> : <Redirect to='/collection' />}
-        </Route>
-        <Route path='/collection'>
-          {isAuthenticated() ? <Collection /> : <Redirect to='/' />}
-        </Route>
-        <Route path='/add'>
-          {isAuthenticated() ? <AddRecord /> : <Redirect to='/' />}
-        </Route>
-        <Route path='/edit/:id'>
-          {isAuthenticated() ? <EditRecord /> : <Redirect to='/' />}
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path='/' element= {!isAuthenticated() ? <Landing /> : <Navigate replace to='/collection' />} />
+        <Route path='/login' element= {!isAuthenticated() ? <Login /> : <Navigate replace to='/collection' />} />
+        <Route path='/signup' element= {!isAuthenticated() ? <SignUp /> : <Navigate replace to='/collection' />} />
+        <Route path='/collection' element= {!isAuthenticated() ? <Collection /> : <Navigate replace to='/' />} />
+        <Route path='/add' element= {!isAuthenticated() ? <AddRecord /> : <Navigate replace to='/' />} />
+        <Route path='/edit/:id' element= {!isAuthenticated() ? <EditRecord /> : <Navigate replace to='/' />} />
+      </Routes>
     </Router>
   );
 }
