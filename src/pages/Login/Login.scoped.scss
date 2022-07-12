@@ -1,72 +1,117 @@
 @import '../../styles/global.scss';
 
 .content {
-  background-color: $dark;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .title-wrap {
-  padding: 40px 0;
+  padding-bottom: 20px;
 }
 
 .title {
-  font-size: scale(36px);
-  font-family: $bold;
-  color: $light;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  width: 340px;
 }
 .form-group {
-  width: 650px;
   display: flex;
-  justify-content: space-between;
-  padding: 40px 0;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px 0;
+  width: 100%;
 }
-.label-wrap {
-  width: 200px;
-  text-align: right;
-}
+
 label {
   color: $light;
-  font-family: $bold;
-  font-size: scale(48px);
-  text-align: right;
+  font-size: 14px;
+  font-weight: 500;
+  float: right;
+  padding-left: 12px;
+  padding-bottom: 8px;
 }
 
 input {
-  width: 400px;
-  font-size: scale(48px);
-  color: $light;
-  font-family: $bold;
+  font-family: $regular;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
   background-color: transparent;
-  border: none;
-  border-bottom: solid 3px $light;
+  border: solid 3px $grey;
+  border-radius: 15px;
   transition: all 0.2s ease;
+  padding: 14px 12px;
+  caret-color: $yellow;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 input:focus {
-  border-bottom: solid 3px $blue;
+  border-color: $pink;
   outline: none;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #141415 inset !important;
+  -webkit-text-fill-color: #F5F5F5 !important;
+}
+
+.create-account-wrap {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  font-size: 11px;
+  * {
+    padding: 0 2px;
+  }
+  span {
+    color: #fff;
+  }
+  a {
+    color: $yellow;
+    font-weight: 700;
+  }
 }
 
 .btn-wrap {
   display: flex;
   justify-content: center;
-  padding: 50px;
 }
 
-.enter-btn {
-  color: $pink;
-  font-family: $bold;
-  font-size: scale(60px);
-  background: transparent;
-  border: none;
+.login-btn {
+  font-family: $regular;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  background: $blue;
+  padding: 14px 12px;
+  border-radius: 15px;
+  border: solid 3px $blue;
+  width: 100%;
+}
+
+.back-wrap {
+  margin-top: 80px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  * {
+    padding: 0 5px;
+  }
 }
 
 .error-msg {

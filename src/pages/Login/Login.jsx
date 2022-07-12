@@ -1,12 +1,12 @@
 import './Login.scoped.scss';
-import Header from '../../components/Header/Header';
 import { SIGN_IN } from '../../graphql/mutations/auth';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
 // import { useDispatch } from 'react-redux';
 // import setUser from '../../../redux/userSlice';
-import { IoWarning } from 'react-icons/io5';
+import { IoWarning, IoCaretBackCircleOutline } from 'react-icons/io5';
 
 export default function Login() {
   const {
@@ -45,10 +45,9 @@ export default function Login() {
 
   return (
     <div>
-      <Header />
       <div className='content'>
         <div className='title-wrap'>
-          <h3 className='title'>Login with existing account</h3>
+          <h3 className='title'>Login to your account</h3>
         </div>
         <div className={showError ? 'error-msg' : 'error-msg invisible'}>
           <div className='error-txt'>
@@ -58,9 +57,7 @@ export default function Login() {
         </div>
         <form onSubmit={handleSubmit(submitForm)}>
           <div className='form-group'>
-            <span className='label-wrap'>
-              <label htmlFor='email'>email</label>
-            </span>
+            <label htmlFor='email'>Email</label>
             <input
               name='email'
               type='email'
@@ -71,9 +68,7 @@ export default function Login() {
             />
           </div>
           <div className='form-group'>
-            <span className='label-wrap'>
-              <label htmlFor='password'>password</label>
-            </span>
+            <label htmlFor='password'>Password</label>
             <input
               name='password'
               type='password'
@@ -83,12 +78,16 @@ export default function Login() {
               }}
             />
           </div>
+          <div className='create-account-wrap'>
+            <span>Don't have an account yet? </span><Link to='/signup'>Create account</Link>
+          </div>
 
           <div className='btn-wrap'>
-            <button type='submit' className='enter-btn'>
-              enter
+            <button type='submit' className='login-btn'>
+              Login
             </button>
           </div>
+          <Link className='back-wrap' to='/'><IoCaretBackCircleOutline size='29' />back to homepage</Link> 
         </form>
       </div>
     </div>
