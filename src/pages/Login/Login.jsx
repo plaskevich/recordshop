@@ -44,52 +44,54 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <div className='content'>
-        <div className='title-wrap'>
-          <h3 className='title'>Login to your account</h3>
-        </div>
-        <div className={showError ? 'error-msg' : 'error-msg invisible'}>
-          <div className='error-txt'>
-            <IoWarning size='20px' />
-            {errorMessage}
-          </div>
-        </div>
-        <form onSubmit={handleSubmit(submitForm)}>
-          <div className='form-group'>
-            <label htmlFor='email'>Email</label>
-            <input
-              name='email'
-              type='email'
-              className='input'
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            />
-          </div>
-          <div className='form-group'>
-            <label htmlFor='password'>Password</label>
-            <input
-              name='password'
-              type='password'
-              className='input'
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-            />
-          </div>
-          <div className='create-account-wrap'>
-            <span>Don't have an account yet? </span><Link to='/signup'>Create account</Link>
-          </div>
-
-          <div className='btn-wrap'>
-            <button type='submit' className='login-btn'>
-              Login
-            </button>
-          </div>
-          <Link className='back-wrap' to='/'><IoCaretBackCircleOutline size='29' />back to homepage</Link> 
-        </form>
+    <div className='content'>
+      <div className='title-wrap'>
+        <h3 className='title'>Login to your account</h3>
       </div>
+      <div className={showError ? 'error-msg' : 'error-msg invisible'}>
+        <div className='error-txt'>
+          <IoWarning size='20px' />
+          {errorMessage}
+        </div>
+      </div>
+      <form onSubmit={handleSubmit(submitForm)}>
+        <div className='form-group'>
+          <label htmlFor='email'>Email</label>
+          <input
+            name='email'
+            type='email'
+            className='input'
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='password'>Password</label>
+          <input
+            name='password'
+            type='password'
+            className='input'
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+        </div>
+        <div className='create-account-wrap'>
+          <span>Don't have an account yet? </span>
+          <Link to='/signup'>Create account</Link>
+        </div>
+
+        <div className='btn-wrap'>
+          <button type='submit' className='login-btn'>
+            Login
+          </button>
+        </div>
+        <Link className='back-wrap' to='/'>
+          <IoCaretBackCircleOutline size='29' />
+          back to homepage
+        </Link>
+      </form>
     </div>
   );
 }

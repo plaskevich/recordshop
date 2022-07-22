@@ -4,84 +4,219 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .title-wrap {
-  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .title {
-  font-size: scale(36px);
-  font-family: $bold;
-  color: $light;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
 }
 
 form {
-  padding-top: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  width: 360px;
 }
 .form-group {
-  width: 850px;
   display: flex;
-  justify-content: space-between;
-  padding: 30px 0;
-  padding-right: 50px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px 0;
+  width: 100%;
 }
-.label-wrap {
-  width: 350px;
-  text-align: right;
-}
+
 label {
   color: $light;
-  font-family: $bold;
-  font-size: scale(40px);
-  text-align: right;
+  font-size: 14px;
+  font-weight: 500;
+  float: right;
+  padding-left: 12px;
+  padding-bottom: 8px;
 }
 
 input {
-  width: 400px;
-  font-size: scale(40px);
-  color: $light;
-  font-family: $bold;
+  font-family: $regular;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
   background-color: transparent;
-  border: none;
-  border-bottom: solid 3px $light;
+  border: solid 3px $grey;
+  border-radius: 15px;
   transition: all 0.2s ease;
+  padding: 14px 12px;
+  caret-color: $yellow;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 input:focus {
-  border-bottom: solid 3px $blue;
+  border-color: $pink;
   outline: none;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #141415 inset !important;
+  -webkit-text-fill-color: #F5F5F5 !important;
+}
+
+.create-account-wrap {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  font-size: 11px;
+  * {
+    padding: 0 2px;
+  }
+  span {
+    color: #fff;
+  }
+  a {
+    color: $yellow;
+    font-weight: 700;
+  }
 }
 
 .btn-wrap {
   display: flex;
   justify-content: center;
-  padding: 30px;
 }
 
-.btn {
-  color: $blue;
-  font-family: $bold;
-  font-size: scale(60px);
-  background-color: transparent;
-  border: none;
+.create-btn {
+  font-family: $regular;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  background: $blue;
+  padding: 14px 12px;
+  border-radius: 15px;
+  border: solid 3px $blue;
+  width: 100%;
 }
 
-.btn:active {
-  outline: none;
+.back-wrap {
+  margin-top: 80px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  * {
+    padding: 0 5px;
+  }
 }
 
-.error-wrap {
+.error-msg {
+  text-align: center;
+  color: $yellow;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.hide {
-  visibility: hidden;
+.error-txt {
+  width: 173px;
+  padding: 10px;
+  background-color: $yellow-lighter;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.error-text {
-  color: $yellow;
-}
+
+
+// @import '../../styles/global.scss';
+
+// .content {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+// .title-wrap {
+//   padding-top: 20px;
+// }
+
+// .title {
+//   font-size: scale(36px);
+//   font-family: $bold;
+//   color: $light;
+// }
+
+// form {
+//   padding-top: 40px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+// }
+// .form-group {
+//   width: 850px;
+//   display: flex;
+//   justify-content: space-between;
+//   padding: 30px 0;
+//   padding-right: 50px;
+// }
+// .label-wrap {
+//   width: 350px;
+//   text-align: right;
+// }
+// label {
+//   color: $light;
+//   font-family: $bold;
+//   font-size: scale(40px);
+//   text-align: right;
+// }
+
+// input {
+//   width: 400px;
+//   font-size: scale(40px);
+//   color: $light;
+//   font-family: $bold;
+//   background-color: transparent;
+//   border: none;
+//   border-bottom: solid 3px $light;
+//   transition: all 0.2s ease;
+// }
+
+// input:focus {
+//   border-bottom: solid 3px $blue;
+//   outline: none;
+// }
+
+// .btn-wrap {
+//   display: flex;
+//   justify-content: center;
+//   padding: 30px;
+// }
+
+// .btn {
+//   color: $blue;
+//   font-family: $bold;
+//   font-size: scale(60px);
+//   background-color: transparent;
+//   border: none;
+// }
+
+// .btn:active {
+//   outline: none;
+// }
+
+// .error-wrap {
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .hide {
+//   visibility: hidden;
+// }
+// .error-text {
+//   color: $yellow;
+// }
