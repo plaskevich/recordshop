@@ -1,4 +1,3 @@
-import './Collection.scoped.scss';
 import Header from '../../components/Header/Header';
 import TopBar from '../../components/TopBar/TopBar';
 import TableCollection from '../../components/TableCollection/TableCollection';

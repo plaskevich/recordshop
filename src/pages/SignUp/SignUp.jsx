@@ -1,10 +1,24 @@
 import { useForm } from 'react-hook-form';
-import './SignUp.scoped.scss';
 import { useState } from 'react';
 import { SIGN_UP } from '../../graphql/mutations/auth';
 import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { IoCaretBackCircleOutline } from 'react-icons/io5';
+import {
+  Content,
+  TitleWrap,
+  Title,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  LoginWrap,
+  ButtonWrap,
+  CreateButton,
+  BackWrap,
+  ErrorMessage,
+  ErrorText,
+} from './SignUpStyles';
 
 export default function SignUp() {
   const {
@@ -36,20 +50,20 @@ export default function SignUp() {
     }
   };
   return (
-    <div className='content'>
-      <div className='title-wrap'>
-        <h3 className='title'>Create new account</h3>
-      </div>
+    <Content>
+      <TitleWrap>
+        <Title>Create new account</Title>
+      </TitleWrap>
       {/* <div className={showError ? 'error-msg' : 'error-msg invisible'}>
           <div className='error-txt'>
             <IoWarning size='20px' />
             {errorMessage}
           </div>
         </div> */}
-      <form onSubmit={handleSubmit(submitForm)}>
-        <div className='form-group'>
-          <label htmlFor='email'>Email</label>
-          <input
+      <Form onSubmit={handleSubmit(submitForm)}>
+        <FormGroup>
+          <Label htmlFor='email'>Email</Label>
+          <Input
             name='email'
             type='email'
             className='input'
@@ -57,10 +71,10 @@ export default function SignUp() {
               setEmail(e.target.value);
             }}
           />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='password'>Password</label>
-          <input
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor='password'>Password</Label>
+          <Input
             name='password'
             type='password'
             className='input'
@@ -68,12 +82,10 @@ export default function SignUp() {
               setPassword(e.target.value);
             }}
           />
-        </div>
-        <div className='form-group'>
-          <span className='label-wrap'>
-            <label htmlFor='confirm-password'>Confirm password</label>
-          </span>
-          <input
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor='confirm-password'>Confirm password</Label>
+          <Input
             name='confirm-password'
             type='password'
             className='input'
@@ -81,23 +93,21 @@ export default function SignUp() {
               setConfirmPassword(e.target.value);
             }}
           />
-        </div>
-        <div className='create-account-wrap'>
+        </FormGroup>
+        <LoginWrap>
           <span>Already have an acoount? </span>
           <Link to='/login'>Login</Link>
-        </div>
+        </LoginWrap>
 
-        <div className='btn-wrap'>
-          <button type='submit' className='create-btn'>
-            Create
-          </button>
-        </div>
-        <Link className='back-wrap' to='/'>
+        <ButtonWrap>
+          <CreateButton type='submit'>Create</CreateButton>
+        </ButtonWrap>
+        <BackWrap to='/'>
           <IoCaretBackCircleOutline size='29' />
           back to homepage
-        </Link>
-      </form>
-    </div>
+        </BackWrap>
+      </Form>
+    </Content>
     // <>
     //   <div className='content'>
     //     <div className='title-wrap'>

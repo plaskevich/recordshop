@@ -1,4 +1,3 @@
-import './TableCollection.scoped.scss';
 import { GET_COLLECTION } from '../../graphql/queries';
 import { useQuery } from '@apollo/client';
 import { IoEllipsisVertical, IoDisc } from 'react-icons/io5';

@@ -4,7 +4,6 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
-import './App.scss';
 import Landing from './pages/Landing/Landing';
 import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
@@ -17,12 +16,54 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element= {!isAuthenticated() ? <Landing /> : <Navigate replace to='/collection' />} />
-        <Route path='/login' element= {!isAuthenticated() ? <Login /> : <Navigate replace to='/collection' />} />
-        <Route path='/signup' element= {!isAuthenticated() ? <SignUp /> : <Navigate replace to='/collection' />} />
-        <Route path='/collection' element= {!isAuthenticated() ? <Collection /> : <Navigate replace to='/' />} />
-        <Route path='/add' element= {!isAuthenticated() ? <AddRecord /> : <Navigate replace to='/' />} />
-        <Route path='/edit/:id' element= {!isAuthenticated() ? <EditRecord /> : <Navigate replace to='/' />} />
+        <Route
+          path='/'
+          element={
+            !isAuthenticated() ? (
+              <Landing />
+            ) : (
+              <Navigate replace to='/collection' />
+            )
+          }
+        />
+        <Route
+          path='/login'
+          element={
+            !isAuthenticated() ? (
+              <Login />
+            ) : (
+              <Navigate replace to='/collection' />
+            )
+          }
+        />
+        <Route
+          path='/signup'
+          element={
+            !isAuthenticated() ? (
+              <SignUp />
+            ) : (
+              <Navigate replace to='/collection' />
+            )
+          }
+        />
+        <Route
+          path='/collection'
+          element={
+            !isAuthenticated() ? <Collection /> : <Navigate replace to='/' />
+          }
+        />
+        <Route
+          path='/add'
+          element={
+            !isAuthenticated() ? <AddRecord /> : <Navigate replace to='/' />
+          }
+        />
+        <Route
+          path='/edit/:id'
+          element={
+            !isAuthenticated() ? <EditRecord /> : <Navigate replace to='/' />
+          }
+        />
       </Routes>
     </Router>
   );

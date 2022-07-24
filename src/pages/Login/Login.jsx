@@ -1,4 +1,3 @@
-import './Login.scoped.scss';
 import { SIGN_IN } from '../../graphql/mutations/auth';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
@@ -7,6 +6,21 @@ import { Link } from 'react-router-dom';
 // import { useDispatch } from 'react-redux';
 // import setUser from '../../../redux/userSlice';
 import { IoWarning, IoCaretBackCircleOutline } from 'react-icons/io5';
+import {
+  Content,
+  Title,
+  TitleWrap,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  CreateAccountWrap,
+  ButtonWrap,
+  LoginButton,
+  BackWrap,
+  ErrorMessage,
+  ErrorText,
+} from './LoginStyles';
 
 export default function Login() {
   const {
@@ -44,20 +58,22 @@ export default function Login() {
   };
 
   return (
-    <div className='content'>
-      <div className='title-wrap'>
-        <h3 className='title'>Login to your account</h3>
-      </div>
-      <div className={showError ? 'error-msg' : 'error-msg invisible'}>
-        <div className='error-txt'>
-          <IoWarning size='20px' />
-          {errorMessage}
-        </div>
-      </div>
-      <form onSubmit={handleSubmit(submitForm)}>
-        <div className='form-group'>
-          <label htmlFor='email'>Email</label>
-          <input
+    <Content>
+      <TitleWrap>
+        <Title>Login to your account</Title>
+      </TitleWrap>
+      {showError && (
+        <ErrorMessage>
+          <ErrorText>
+            <IoWarning size='20px' />
+            {errorMessage}
+          </ErrorText>
+        </ErrorMessage>
+      )}
+      <Form onSubmit={handleSubmit(submitForm)}>
+        <FormGroup>
+          <Label htmlFor='email'>Email</Label>
+          <Input
             name='email'
             type='email'
             className='input'
@@ -65,10 +81,10 @@ export default function Login() {
               setEmail(e.target.value);
             }}
           />
-        </div>
-        <div className='form-group'>
-          <label htmlFor='password'>Password</label>
-          <input
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor='password'>Password</Label>
+          <Input
             name='password'
             type='password'
             className='input'
@@ -76,22 +92,20 @@ export default function Login() {
               setPassword(e.target.value);
             }}
           />
-        </div>
-        <div className='create-account-wrap'>
+        </FormGroup>
+        <CreateAccountWrap>
           <span>Don't have an account yet? </span>
           <Link to='/signup'>Create account</Link>
-        </div>
+        </CreateAccountWrap>
 
-        <div className='btn-wrap'>
-          <button type='submit' className='login-btn'>
-            Login
-          </button>
-        </div>
-        <Link className='back-wrap' to='/'>
+        <ButtonWrap>
+          <LoginButton type='submit'>Login</LoginButton>
+        </ButtonWrap>
+        <BackWrap to='/'>
           <IoCaretBackCircleOutline size='29' />
           back to homepage
-        </Link>
-      </form>
-    </div>
+        </BackWrap>
+      </Form>
+    </Content>
   );
 }

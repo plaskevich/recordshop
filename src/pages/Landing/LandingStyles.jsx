@@ -1,0 +1,106 @@
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+export const Main = styled.div`
+  max-width: 1240px;
+  margin: 0 auto;
+`;
+
+export const Nav = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px;
+  position: sticky;
+  top: 0;
+  background-color: #000;
+`;
+
+export const BrandLogoWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 13px;
+`;
+
+export const LogoText = styled.div`
+  color: #fff;
+  font-size: 40px;
+  font-weight: 600;
+`;
+
+export const BrandLogo = styled.img`
+  width: 50px;
+  height: 50px;
+`;
+
+export const NavButtons = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  font-weight: 700;
+  font-size: 18px;
+`;
+
+export const LoginButton = styled(Link)`
+  transition: ease-out 0.3s;
+  color: #fff;
+  &:hover {
+    color: #ee67d8;
+  }
+`;
+
+export const SignUpButton = styled(Link)`
+  transition: ease-out 0.3s;
+  color: #fff;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  border: solid 3px transparent;
+  padding: 12px 25px;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(101deg, #ed63d9 0%, #0282ff 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px #000 inset;
+  border-radius: 25px;
+
+  &:hover {
+    box-shadow: none;
+  }
+`;
+
+export const LandingContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 200px 0;
+  gap: 20px;
+`;
+
+export const FirstLine = styled.h1`
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+`;
+export const TryText = styled(Link)`
+  h1 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 800;
+  }
+
+  transition: all 0.5s ease-out;
+
+  background-image: url('textfill.png');
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  &:hover {
+    background-image: url('textfil.png');
+  }
+`;
