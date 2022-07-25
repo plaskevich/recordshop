@@ -7,10 +7,23 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    box-shadow: 0 0 0 1000px #070707 inset !important;
+    -webkit-text-fill-color: #f5f5f5 !important;
+  }
+`;
+
+export const Card = styled.div`
+  padding: 40px 60px;
+  background-color: #070707;
+  border-radius: 25px;
 `;
 
 export const TitleWrap = styled.div`
   padding-bottom: 20px;
+  text-align: center;
 `;
 
 export const Title = styled.h3`
@@ -60,12 +73,6 @@ export const Input = styled.input`
     outline: none;
   }
 `;
-/* input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-  box-shadow: 0 0 0 1000px #141415 inset !important;
-  -webkit-text-fill-color: #F5F5F5 !important;
-} */
 
 export const CreateAccountWrap = styled.div`
   padding: 20px 0;
@@ -94,15 +101,15 @@ export const LoginButton = styled.button`
   color: #fff;
   font-size: 16px;
   font-weight: 500;
-  background: #0000ff;
+  background: #0282ff;
   padding: 14px 12px;
   border-radius: 15px;
-  border: solid 3px #0000ff;
+  border: solid 3px #0282ff;
   width: 100%;
 `;
 
 export const BackWrap = styled(Link)`
-  margin-top: 80px;
+  margin-top: 50px;
   color: #fff;
   font-weight: 500;
   font-size: 18px;
@@ -115,8 +122,10 @@ export const BackWrap = styled(Link)`
 `;
 
 export const ErrorMessage = styled.div`
+  padding: 5px 0;
   text-align: center;
-  color: #ffe607;
+  color: #e9301c;
+  font-size: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,8 +134,6 @@ export const ErrorMessage = styled.div`
 export const ErrorText = styled.div`
   width: fit-content;
   padding: 7px;
-  background-color: #ffd23f20;
-  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;

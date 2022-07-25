@@ -5,9 +5,8 @@ import TableCollection from '../../components/TableCollection/TableCollection';
 export default function Collection() {
   return (
     <div>
-      <Header title='Collection' />
-      <TopBar />
-      <hr />
+      {/* <Header title='Collection' /> */}
+      {/* <TopBar /> */}
       <div className='table-content'>
         <TableCollection />
       </div>

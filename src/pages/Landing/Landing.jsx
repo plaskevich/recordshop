@@ -18,9 +18,7 @@ export default function Landing() {
   return (
     <Main>
       <Nav>
-        {/* <Logo to='/'>record shop</Logo>
-         */}
-        <BrandLogoWrap>
+        <BrandLogoWrap to='/'>
           <BrandLogo src={logo} alt='' />
           <LogoText>RecordShop</LogoText>
         </BrandLogoWrap>
@@ -34,7 +32,7 @@ export default function Landing() {
       </Nav>
       <LandingContent>
         <FirstLine>
-          INVENTORY MANAGEMENT APP FOR YOUR LOCAL RECORD STORE
+          Inventory management app <br /> for your local record store
         </FirstLine>
         <TryText to='signup'>
           <h1>TRY NOW</h1>

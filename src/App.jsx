@@ -16,53 +16,30 @@ function App() {
   return (
     <Router>
       <Routes>
+        {isAuthenticated}
         <Route
           path='/'
-          element={
-            !isAuthenticated() ? (
-              <Landing />
-            ) : (
-              <Navigate replace to='/collection' />
-            )
-          }
+          element={!isAuthenticated() ? <Landing /> : <Collection />}
         />
         <Route
           path='/login'
-          element={
-            !isAuthenticated() ? (
-              <Login />
-            ) : (
-              <Navigate replace to='/collection' />
-            )
-          }
+          element={!isAuthenticated() ? <Login /> : <Collection />}
         />
         <Route
           path='/signup'
-          element={
-            !isAuthenticated() ? (
-              <SignUp />
-            ) : (
-              <Navigate replace to='/collection' />
-            )
-          }
+          element={!isAuthenticated() ? <SignUp /> : <Collection />}
         />
         <Route
           path='/collection'
-          element={
-            !isAuthenticated() ? <Collection /> : <Navigate replace to='/' />
-          }
+          element={!isAuthenticated() ? <Collection /> : <Landing />}
         />
         <Route
           path='/add'
-          element={
-            !isAuthenticated() ? <AddRecord /> : <Navigate replace to='/' />
-          }
+          element={!isAuthenticated() ? <AddRecord /> : <Landing />}
         />
         <Route
           path='/edit/:id'
-          element={
-            !isAuthenticated() ? <EditRecord /> : <Navigate replace to='/' />
-          }
+          element={!isAuthenticated() ? <EditRecord /> : <Landing />}
         />
       </Routes>
     </Router>

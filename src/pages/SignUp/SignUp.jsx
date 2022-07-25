@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { IoCaretBackCircleOutline } from 'react-icons/io5';
 import {
   Content,
+  Card,
   TitleWrap,
   Title,
   Form,
@@ -51,62 +52,64 @@ export default function SignUp() {
   };
   return (
     <Content>
-      <TitleWrap>
-        <Title>Create new account</Title>
-      </TitleWrap>
-      {/* <div className={showError ? 'error-msg' : 'error-msg invisible'}>
+      <Card>
+        <TitleWrap>
+          <Title>Create new account</Title>
+        </TitleWrap>
+        {/* <div className={showError ? 'error-msg' : 'error-msg invisible'}>
           <div className='error-txt'>
             <IoWarning size='20px' />
             {errorMessage}
           </div>
         </div> */}
-      <Form onSubmit={handleSubmit(submitForm)}>
-        <FormGroup>
-          <Label htmlFor='email'>Email</Label>
-          <Input
-            name='email'
-            type='email'
-            className='input'
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor='password'>Password</Label>
-          <Input
-            name='password'
-            type='password'
-            className='input'
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor='confirm-password'>Confirm password</Label>
-          <Input
-            name='confirm-password'
-            type='password'
-            className='input'
-            onChange={(e) => {
-              setConfirmPassword(e.target.value);
-            }}
-          />
-        </FormGroup>
-        <LoginWrap>
-          <span>Already have an acoount? </span>
-          <Link to='/login'>Login</Link>
-        </LoginWrap>
+        <Form onSubmit={handleSubmit(submitForm)}>
+          <FormGroup>
+            <Label htmlFor='email'>Email</Label>
+            <Input
+              name='email'
+              type='email'
+              className='input'
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor='password'>Password</Label>
+            <Input
+              name='password'
+              type='password'
+              className='input'
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor='confirm-password'>Confirm password</Label>
+            <Input
+              name='confirm-password'
+              type='password'
+              className='input'
+              onChange={(e) => {
+                setConfirmPassword(e.target.value);
+              }}
+            />
+          </FormGroup>
+          <LoginWrap>
+            <span>Already have an acoount? </span>
+            <Link to='/login'>Login</Link>
+          </LoginWrap>
 
-        <ButtonWrap>
-          <CreateButton type='submit'>Create</CreateButton>
-        </ButtonWrap>
-        <BackWrap to='/'>
-          <IoCaretBackCircleOutline size='29' />
-          back to homepage
-        </BackWrap>
-      </Form>
+          <ButtonWrap>
+            <CreateButton type='submit'>Create</CreateButton>
+          </ButtonWrap>
+          <BackWrap to='/'>
+            <IoCaretBackCircleOutline size='29' />
+            back to homepage
+          </BackWrap>
+        </Form>
+      </Card>
     </Content>
     // <>
     //   <div className='content'>
