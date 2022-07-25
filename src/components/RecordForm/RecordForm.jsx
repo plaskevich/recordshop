@@ -56,6 +56,7 @@ export default function RecordForm() {
     },
     onError(err) {
       setError(err);
+      console.log(error);
     },
   });
 

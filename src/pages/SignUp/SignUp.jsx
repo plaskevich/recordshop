@@ -17,15 +17,15 @@ import {
   ButtonWrap,
   CreateButton,
   BackWrap,
-  ErrorMessage,
-  ErrorText,
+  // ErrorMessage,
+  // ErrorText,
 } from './SignUpStyles';
 
 export default function SignUp() {
   const {
-    register,
+    // register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm();
 
   const [email, setEmail] = useState('');
@@ -48,6 +48,7 @@ export default function SignUp() {
       }
     } else {
       setPasswordError(true);
+      console.log(passwordError);
     }
   };
   return (
