@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import * as colors from '../../styles/colors';
 
 export const Content = styled.div`
   display: flex;
@@ -64,11 +65,11 @@ export const Input = styled.input`
   border-radius: 15px;
   transition: all 0.2s ease;
   padding: 14px 12px;
-  caret-color: #ffe607;
+  caret-color: ${colors.yellow};
   width: 100%;
   box-sizing: border-box;
   &:focus {
-    border-color: #ee67d8;
+    border-color: ${colors.pink};
     outline: none;
   }
 `;
@@ -92,7 +93,7 @@ export const LoginWrap = styled.div`
     color: #fff;
   }
   a {
-    color: #ffe607;
+    color: ${colors.yellow};
     font-weight: 700;
   }
 `;
@@ -107,10 +108,10 @@ export const CreateButton = styled.button`
   color: #fff;
   font-size: 16px;
   font-weight: 500;
-  background: #0282ff;
+  background: ${colors.blue};
   padding: 14px 12px;
   border-radius: 15px;
-  border: solid 3px #0282ff;
+  border: solid 3px ${colors.blue};
   width: 100%;
 `;
 
@@ -129,7 +130,7 @@ export const BackWrap = styled(Link)`
 
 export const ErrorMessage = styled.div`
   text-align: center;
-  color: #ffe607;
+  color: ${colors.yellow};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,7 +139,6 @@ export const ErrorMessage = styled.div`
 export const ErrorText = styled.div`
   width: 173px;
   padding: 10px;
-  background-color: #ffd23f20;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;

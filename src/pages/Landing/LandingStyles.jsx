@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import * as colors from '../../styles/colors';
 
 export const Main = styled.div`
   max-width: 1240px;
@@ -46,7 +47,7 @@ export const LoginButton = styled(Link)`
   transition: ease-out 0.3s;
   color: #fff;
   &:hover {
-    color: #0282ff;
+    color: ${colors.blue};
   }
 `;
 
@@ -60,7 +61,7 @@ export const SignUpButton = styled(Link)`
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0)
     ),
-    linear-gradient(-101deg, #ed63d9 0%, #0282ff 100%);
+    linear-gradient(-101deg, ${colors.pink} 0%, ${colors.blue} 100%);
   background-origin: border-box;
   background-clip: content-box, border-box;
   box-shadow: 2px 1000px 1px #000 inset;
