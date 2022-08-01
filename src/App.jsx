@@ -26,15 +26,15 @@ function App() {
         />
         <Route
           path='/collection'
-          element={!isAuthenticated() ? <Collection /> : <Landing />}
+          element={isAuthenticated() ? <Collection /> : <Landing />}
         />
         <Route
           path='/add'
-          element={!isAuthenticated() ? <AddRecord /> : <Landing />}
+          element={isAuthenticated() ? <AddRecord /> : <Landing />}
         />
         <Route
           path='/edit/:id'
-          element={!isAuthenticated() ? <EditRecord /> : <Landing />}
+          element={isAuthenticated() ? <EditRecord /> : <Landing />}
         />
       </Routes>
     </Router>

@@ -59,7 +59,7 @@ export default function Collection() {
           <input type='text' placeholder='Search...' />
         </SearchBar>
         <BarSide>
-          <AddButton to='/'>Add</AddButton>
+          <AddButton to='/add'>Add</AddButton>
           <IoCog size='32px' color='#E5E5E5' />
         </BarSide>
       </TopBar>

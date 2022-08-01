@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import * as colors from '../../styles/colors';
 
 export const TableWrap = styled.div`
@@ -30,6 +30,8 @@ export const TableWrap = styled.div`
 
     td {
       padding: 12px 10px;
+      font-size: 15px;
+      font-weight: 400;
       img {
         display: block;
         margin-left: auto;
@@ -57,14 +59,6 @@ export const TableItem = styled.tr`
 export const Artwork = styled.img`
   width: 36px;
   border-radius: 3px;
-`;
-
-export const Label = styled.div`
-  text-align: center;
-  padding: 5px;
-  border-radius: 50px;
-  font-size: 12px;
-  font-weight: bold;
 `;
 
 export const SoldLabel = styled.div`
