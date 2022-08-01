@@ -12,7 +12,7 @@ import {
   LandingContent,
 } from './LandingStyles';
 
-import logo from './vinyl-logo.png';
+import logo from './logo.png';
 
 export default function Landing() {
   return (

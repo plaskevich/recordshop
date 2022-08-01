@@ -21,5 +21,6 @@ export const RECORD_DATA_FRAGMENT = gql`
     year
     notes
     img_uri
+    date_added
   }
 `;

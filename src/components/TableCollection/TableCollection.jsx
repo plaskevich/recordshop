@@ -2,12 +2,19 @@ import { GET_COLLECTION } from '../../graphql/queries';
 import { useQuery } from '@apollo/client';
 import { IoEllipsisVertical, IoDisc } from 'react-icons/io5';
 // import { Link } from 'react-router-dom';
+import {
+  TableWrap,
+  TableItem,
+  Artwork,
+  SoldLabel,
+  StockLabel,
+} from './TableCollectionStyles';
 
 export default function TableCollection() {
   const { data } = useQuery(GET_COLLECTION);
   const allRecords = data?.getAllRecords;
   return (
-    <div className='table-wrap'>
+    <TableWrap>
       <table>
         <thead>
           <tr>
@@ -27,10 +34,10 @@ export default function TableCollection() {
         <tbody>
           {allRecords &&
             allRecords.map((item) => (
-              <tr key={item.id} className='table-item'>
+              <TableItem key={item.id}>
                 <td>
                   {item.img_uri ? (
-                    <img className='artwork' src={item.img_uri} alt='artwork' />
+                    <Artwork src={item.img_uri} alt='artwork' />
                   ) : (
                     <IoDisc size='2.5em' />
                   )}
@@ -45,12 +52,12 @@ export default function TableCollection() {
                 {item.price ? <td>${item.price}</td> : <td>-</td>}
                 {item.status === 'sold' && (
                   <td>
-                    <div className='sold label'> SOLD</div>
+                    <SoldLabel>SOLD</SoldLabel>
                   </td>
                 )}
                 {item.status === 'inStock' && (
                   <td>
-                    <div className='instock label'>IN STOCK</div>
+                    <StockLabel>IN STOCK</StockLabel>
                   </td>
                 )}
                 <td>
@@ -65,10 +72,10 @@ export default function TableCollection() {
                     <IoEllipsisVertical />
                   </div>
                 </td>
-              </tr>
+              </TableItem>
             ))}
         </tbody>
       </table>
-    </div>
+    </TableWrap>
   );
 }
