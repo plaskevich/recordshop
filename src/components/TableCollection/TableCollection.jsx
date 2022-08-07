@@ -1,5 +1,3 @@
-import { GET_COLLECTION } from '../../graphql/queries';
-import { useQuery } from '@apollo/client';
 import { IoEllipsisVertical, IoDisc } from 'react-icons/io5';
 // import { Link } from 'react-router-dom';
 import {
@@ -10,9 +8,9 @@ import {
   StockLabel,
 } from './TableCollectionStyles';
 
-export default function TableCollection() {
-  const { data } = useQuery(GET_COLLECTION);
-  const allRecords = data?.getAllRecords;
+export default function TableCollection(props) {
+  const { records } = props;
+
   return (
     <TableWrap>
       <table>
@@ -32,8 +30,8 @@ export default function TableCollection() {
           </tr>
         </thead>
         <tbody>
-          {allRecords &&
-            allRecords.map((item) => (
+          {records &&
+            records.map((item) => (
               <TableItem key={item.id}>
                 <td>
                   {item.img_uri ? (

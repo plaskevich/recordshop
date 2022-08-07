@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../redux/userSlice';
 import { IoCaretBackCircleOutline } from 'react-icons/io5';
+import { ThreeDots } from 'react-loader-spinner';
 import {
   Content,
   Card,
@@ -31,7 +32,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const [signIn] = useMutation(SIGN_IN, {
+  const [signIn, { loading }] = useMutation(SIGN_IN, {
     onCompleted(data) {
       localStorage.setItem('token', data.signIn.token);
       dispatch(setUser({ id: data.signIn.user.id }));
@@ -92,7 +93,13 @@ export default function Login() {
           )}
 
           <ButtonWrap>
-            <LoginButton type='submit'>Login</LoginButton>
+            <LoginButton type='submit'>
+              {loading ? (
+                <ThreeDots height='35' width='35' color='white' />
+              ) : (
+                'Login'
+              )}
+            </LoginButton>
           </ButtonWrap>
           <BackWrap to='/'>
             <IoCaretBackCircleOutline size='29' />

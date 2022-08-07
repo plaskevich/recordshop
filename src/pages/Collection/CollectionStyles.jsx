@@ -1,10 +1,30 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as colors from '../../styles/colors';
+import { font } from '../../styles/typography';
 
 export const Content = styled.div`
   color: #fff;
   padding: 20px 40px;
+`;
+
+export const Loading = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    width: 200px;
+    animation: spin 1s linear infinite;
+  }
 `;
 export const TopBar = styled.div`
   display: flex;
@@ -20,6 +40,7 @@ export const BarSide = styled.div`
 `;
 
 export const ShowFilter = styled.div`
+  min-width: 250px;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -56,12 +77,13 @@ export const SearchBar = styled.div`
   display: flex;
   align-items: center;
   gap: 3px;
-  width: 774px;
+  width: 50%;
+  min-width: 200px;
   background-color: ${colors.grey[300]};
   border-radius: 25px;
   padding: 6px 14px;
   & input {
-    font-family: Rubik;
+    font-family: ${font};
     background-color: ${colors.grey[300]};
     width: 750px;
     border: none;
@@ -76,7 +98,7 @@ export const SearchBar = styled.div`
 `;
 
 export const AddButton = styled(Link)`
-  font-family: Rubik;
+  font-family: ${font};
   font-weight: 500;
   color: #fff;
   background-color: ${colors.blue};
@@ -85,7 +107,7 @@ export const AddButton = styled(Link)`
   font-size: 14px;
 `;
 export const SelectButton = styled.button`
-  font-family: Rubik;
+  font-family: ${font};
   font-weight: 500;
   color: #fff;
   background-color: ${colors.grey[900]};

@@ -2,8 +2,8 @@ import { gql } from '@apollo/client';
 import { RECORD_DATA_FRAGMENT } from '../fragments';
 
 export const GET_COLLECTION = gql`
-  query getAllRecords {
-    getAllRecords {
+  query getCollection($filter: String!) {
+    getCollection(filter: $filter) {
       ...RecordDetails
     }
   }

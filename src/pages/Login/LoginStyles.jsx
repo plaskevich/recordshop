@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as colors from '../../styles/colors';
+import { font } from '../../styles/typography';
 
 export const Content = styled.div`
   display: flex;
@@ -11,14 +12,14 @@ export const Content = styled.div`
   input:-webkit-autofill,
   textarea:-webkit-autofill,
   select:-webkit-autofill {
-    box-shadow: 0 0 0 1000px #070707 inset !important;
-    -webkit-text-fill-color: #f5f5f5 !important;
+    box-shadow: 0 0 0 1000px ${colors.grey[900]} inset !important;
+    -webkit-text-fill-color: #fff !important;
   }
 `;
 
 export const Card = styled.div`
   padding: 40px 60px;
-  background-color: #070707;
+  background-color: ${colors.grey[900]};
   border-radius: 25px;
 `;
 
@@ -57,7 +58,7 @@ export const Label = styled.div`
 `;
 
 export const Input = styled.input`
-  font-family: Rubik;
+  font-family: ${font};
   font-size: 16px;
   font-weight: 500;
   color: #fff;
@@ -98,15 +99,18 @@ export const ButtonWrap = styled.div`
 `;
 
 export const LoginButton = styled.button`
-  font-family: Rubik;
+  font-family: ${font};
   color: #fff;
   font-size: 16px;
   font-weight: 500;
   background: ${colors.blue};
-  padding: 14px 12px;
   border-radius: 15px;
   border: solid 3px ${colors.blue};
   width: 100%;
+  height: 53px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const BackWrap = styled(Link)`

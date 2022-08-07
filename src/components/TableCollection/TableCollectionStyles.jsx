@@ -11,7 +11,6 @@ export const TableWrap = styled.div`
   overflow: scroll;
   table {
     width: 100%;
-    color: $light;
     text-align: left;
     border-collapse: collapse;
 
@@ -20,7 +19,7 @@ export const TableWrap = styled.div`
     }
     th {
       padding: 20px 15px;
-      color: ${colors.grey[600]};
+      color: ${colors.grey[500]};
       font-size: 14px;
       font-weight: 500;
       position: sticky;
