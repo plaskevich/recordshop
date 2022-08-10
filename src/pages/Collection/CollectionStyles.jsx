@@ -6,6 +6,7 @@ import { font } from '../../styles/typography';
 export const Content = styled.div`
   color: #fff;
   padding: 20px 40px;
+  height: 100%;
 `;
 
 export const Loading = styled.div`

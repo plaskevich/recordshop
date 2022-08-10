@@ -34,59 +34,57 @@ export default function Collection() {
 
   return (
     <>
-      {loading && !data ? (
-        <Loading>
-          <img src={spinner} alt='loader' />
-        </Loading>
-      ) : (
-        <Content>
-          <TopBar>
-            <BarSide>
-              <ShowFilter>
-                <span>Show</span>
-                <ToggleSwitch onChange={onFilterChange}>
-                  <input
-                    type='radio'
-                    id='all'
-                    name='showFilter'
-                    value='all'
-                    defaultChecked={filter === 'all'}
-                  />
-                  <label htmlFor='all'>All</label>
-                  <input
-                    type='radio'
-                    id='sold'
-                    name='showFilter'
-                    value='sold'
-                    defaultChecked={filter === 'sold'}
-                  />
-                  <label htmlFor='sold'>Sold</label>
-                  <input
-                    type='radio'
-                    id='inStock'
-                    name='showFilter'
-                    value='inStock'
-                    defaultChecked={filter === 'inStock'}
-                  />
-                  <label htmlFor='inStock'>In Stock</label>
-                </ToggleSwitch>
-              </ShowFilter>
-              <SelectButton>Select</SelectButton>
-            </BarSide>
-            <SearchBar>
-              <IoSearch color={colors.grey[500]} size='18px' />
-              <input type='text' placeholder='Search...' />
-            </SearchBar>
-            <BarSide>
-              <AddButton to='/add'>Add</AddButton>
-              <IoCog size='32px' color={colors.grey[300]} />
-            </BarSide>
-          </TopBar>
-          <div className='table-content'>
-            <TableCollection records={data?.getCollection} />
-          </div>
-        </Content>
-      )}
+      <Content>
+        <TopBar>
+          <BarSide>
+            <ShowFilter>
+              <span>Show</span>
+              <ToggleSwitch onChange={onFilterChange}>
+                <input
+                  type='radio'
+                  id='all'
+                  name='showFilter'
+                  value='all'
+                  defaultChecked={filter === 'all'}
+                />
+                <label htmlFor='all'>All</label>
+                <input
+                  type='radio'
+                  id='sold'
+                  name='showFilter'
+                  value='sold'
+                  defaultChecked={filter === 'sold'}
+                />
+                <label htmlFor='sold'>Sold</label>
+                <input
+                  type='radio'
+                  id='inStock'
+                  name='showFilter'
+                  value='inStock'
+                  defaultChecked={filter === 'inStock'}
+                />
+                <label htmlFor='inStock'>In Stock</label>
+              </ToggleSwitch>
+            </ShowFilter>
+            <SelectButton>Select</SelectButton>
+          </BarSide>
+          <SearchBar>
+            <IoSearch color={colors.grey[500]} size='18px' />
+            <input type='text' placeholder='Search...' />
+          </SearchBar>
+          <BarSide>
+            <AddButton to='/add'>Add</AddButton>
+            <IoCog size='32px' color={colors.grey[300]} />
+          </BarSide>
+        </TopBar>
+        {loading ? (
+          <Loading>
+            <img src={spinner} alt='loader' />
+          </Loading>
+        ) : (
+          <TableCollection records={data?.getCollection} />
+        )}
+      </Content>
     </>
   );
 }
