@@ -3,7 +3,7 @@ import Landing from 'pages/Landing/Landing';
 import Login from 'pages/Login/Login';
 import SignUp from 'pages/SignUp/SignUp';
 import Collection from 'pages/Collection/Collection';
-import { isAuthenticated } from './service';
+import { isAuthenticated } from 'utils';
 import AddRecord from 'pages/AddRecord';
 // import EditRecord from 'pages/EditRecord';
 import ViewRecord from 'pages/ViewRecord';

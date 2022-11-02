@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { colors, font } from 'styles/theme';
 
 export const Content = styled.div`
-  color: #fff;
+  color: ${colors.white};
   padding: 20px 40px;
   height: 100%;
 `;
@@ -51,7 +51,7 @@ export const ShowFilter = styled.div`
 `;
 export const ToggleSwitch = styled.div`
   display: flex;
-  border: 2px solid #424247;
+  border: 2px solid #${colors.grey[600]};
   border-radius: 25px;
   & input {
     position: absolute !important;
@@ -100,7 +100,7 @@ export const SearchBar = styled.div`
 export const AddButton = styled(Link)`
   font-family: ${font};
   font-weight: 500;
-  color: #fff;
+  color: ${colors.white};
   background-color: ${colors.blue};
   border-radius: 25px;
   padding: 8px 40px;
@@ -109,7 +109,7 @@ export const AddButton = styled(Link)`
 export const SelectButton = styled.button`
   font-family: ${font};
   font-weight: 500;
-  color: #fff;
+  color: ${colors.white};
   background-color: ${colors.grey[900]};
   border-radius: 25px;
   padding: 8px 40px;

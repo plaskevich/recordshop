@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { colors, font } from 'styles/theme';
 
 export const Form = styled.form`
@@ -36,6 +35,7 @@ export const LeftSection = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+
 export const RightSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@ export const FormGroupShort = styled.div`
 `;
 
 export const Label = styled.div`
-  color: #a1a1ac;
+  color: ${colors.grey[500]};
   font-size: 12px;
   font-weight: 500;
   float: right;
@@ -66,7 +66,7 @@ export const Label = styled.div`
 export const Input = styled.input`
   font-family: ${font};
   font-size: 14px;
-  color: #fff;
+  color: ${colors.white};
   background-color: transparent;
   border: solid 2px ${colors.grey[600]};
   border-radius: 5px;
@@ -85,7 +85,7 @@ export const Input = styled.input`
 export const Select = styled.select`
   font-family: ${font};
   font-size: 14px;
-  color: #fff;
+  color: ${colors.white};
   background-color: transparent;
   border: solid 2px ${colors.grey[600]};
   border-radius: 5px;
@@ -104,22 +104,4 @@ export const Footer = styled.div`
   display: flex;
   margin-top: 60px;
   float: right;
-`;
-
-export const SaveButton = styled.button`
-  background-color: ${colors.blue};
-  color: #fff;
-  font-size: 14px;
-  border-radius: 25px;
-  padding: 5px 20px;
-  font-weight: 500;
-  font-family: ${font};
-`;
-
-export const CancelButton = styled(Link)`
-  color: #fff;
-  font-size: 14px;
-  padding: 6px 20px;
-  font-weight: 500;
-  font-family: ${font};
 `;

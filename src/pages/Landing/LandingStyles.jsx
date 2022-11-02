@@ -24,7 +24,7 @@ export const BrandLogoWrap = styled(Link)`
 `;
 
 export const LogoText = styled.div`
-  color: #fff;
+  color: ${colors.white};
   font-size: 30px;
   font-weight: 600;
 `;
@@ -45,7 +45,7 @@ export const NavButtons = styled.div`
 
 export const LoginButton = styled(Link)`
   transition: ease-out 0.3s;
-  color: #fff;
+  color: ${colors.white};
   &:hover {
     color: ${colors.blue};
   }
@@ -53,7 +53,7 @@ export const LoginButton = styled(Link)`
 
 export const SignUpButton = styled(Link)`
   transition: ease-out 0.3s;
-  color: #fff;
+  color: ${colors.white};
   box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
   border: solid 3px transparent;
   padding: 12px 25px;
@@ -83,7 +83,7 @@ export const LandingContent = styled.div`
 `;
 
 export const FirstLine = styled.h1`
-  color: #fff;
+  color: ${colors.white};
   font-size: 45px;
   font-weight: 600;
   text-align: center;
@@ -91,7 +91,7 @@ export const FirstLine = styled.h1`
 `;
 export const TryText = styled(Link)`
   h1 {
-    color: #fff;
+    color: ${colors.white};
     font-size: 60px;
     font-weight: 800;
     /* padding: 40px 0; */

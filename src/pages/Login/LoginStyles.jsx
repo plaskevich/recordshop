@@ -30,7 +30,7 @@ export const TitleWrap = styled.div`
 export const Title = styled.h3`
   font-size: 24px;
   font-weight: bold;
-  color: #fff;
+  color: ${colors.white};
 `;
 
 export const Form = styled.form`
@@ -60,7 +60,7 @@ export const Input = styled.input`
   font-family: ${font};
   font-size: 16px;
   font-weight: 500;
-  color: #fff;
+  color: ${colors.white};
   background-color: transparent;
   border: solid 3px #424247;
   border-radius: 15px;
@@ -84,7 +84,7 @@ export const CreateAccountWrap = styled.div`
     padding: 0 2px;
   }
   span {
-    color: #fff;
+    color: ${colors.white};
   }
   a {
     color: ${colors.yellow};
@@ -99,7 +99,7 @@ export const ButtonWrap = styled.div`
 
 export const LoginButton = styled.button`
   font-family: ${font};
-  color: #fff;
+  color: ${colors.white};
   font-size: 16px;
   font-weight: 500;
   background: ${colors.blue};
@@ -114,7 +114,7 @@ export const LoginButton = styled.button`
 
 export const BackWrap = styled(Link)`
   margin-top: 50px;
-  color: #fff;
+  color: ${colors.white};
   font-weight: 500;
   font-size: 18px;
   display: flex;

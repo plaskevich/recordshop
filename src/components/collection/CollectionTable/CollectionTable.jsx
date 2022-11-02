@@ -4,29 +4,11 @@ import { TableWrap, TableItem, Artwork } from './CollectionTableStyles';
 import StatusLabel from '../StatusLabel';
 import DotsMenu from '../DotsMenu';
 import { useNavigate } from 'react-router-dom';
+import { getCondition, getDate, getPrice } from 'utils';
 
 export default function CollectionTable(props) {
   const { records } = props;
   const navigate = useNavigate();
-
-  const getCondition = (condition) => {
-    switch (condition) {
-      case 'm':
-        return 'Mint (M)';
-      case 'nm':
-        return 'Near Mint (NM)';
-      case 'vg+':
-        return 'Very Good+ (VG+)';
-      case 'vg':
-        return 'Very Good (VG)';
-      case 'g':
-        return 'Good (G)';
-      case 'p':
-        return 'Poor (P)';
-      default:
-        return '';
-    }
-  };
 
   const goToRecordDetails = (id) => {
     navigate(`view/${id}`);
@@ -72,8 +54,8 @@ export default function CollectionTable(props) {
                 <td>{item.year}</td>
                 <td>{item.genre}</td>
                 <td>{getCondition(item.condition)}</td>
-                <td>{new Date(item.date_added).toLocaleDateString()}</td>
-                {item.price ? <td>{item.price}€</td> : <td>-</td>}
+                <td>{getDate(item.date_added)}</td>
+                <td>{getPrice(item.price)}</td>
                 <td>
                   <StatusLabel status={item.status} />
                 </td>

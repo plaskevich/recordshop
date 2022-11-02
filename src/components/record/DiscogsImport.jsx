@@ -26,7 +26,7 @@ export const ReleaseInput = styled.input`
   background-color: transparent;
   padding: 6px 12px;
   margin-right: 10px;
-  color: #fff;
+  color: ${colors.white};
   caret-color: ${colors.yellow};
   &:focus {
     /* border-color: ${colors.pink}; */
@@ -39,7 +39,7 @@ export const ImportButton = styled.button`
   font-size: 14px;
   font-weight: 500;
   border-radius: 25px;
-  color: #fff;
+  color: ${colors.white};
   padding: 8px 20px;
   font-family: ${font};
 `;

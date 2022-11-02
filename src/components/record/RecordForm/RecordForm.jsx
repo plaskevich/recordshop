@@ -5,15 +5,18 @@ import {
   Label,
   Input,
   Select,
+} from './RecordFormStyles';
+import {
+  Card,
+  CardContainer,
+  Header,
   Artwork,
+  FillButton,
+  LinkButton,
   LeftSection,
   RightSection,
-  Container,
   Footer,
-  SaveButton,
-  CancelButton,
-} from './RecordFormStyles';
-import { Card, Header } from 'styles/styledComponents';
+} from 'styles/styledComponents';
 import { DiscogsImport } from '../DiscogsImport';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -42,7 +45,7 @@ export default function RecordForm(props) {
   return (
     <Card>
       <Header>New Record</Header>
-      <Container>
+      <CardContainer>
         <LeftSection>
           <Artwork imgUrl={imgUrl}>
             <ArtworkButtons
@@ -98,12 +101,12 @@ export default function RecordForm(props) {
             </FormGroupShort>
           </Form>
         </RightSection>
-      </Container>
+      </CardContainer>
       <Footer>
-        <CancelButton to='/'>Cancel</CancelButton>
-        <SaveButton form='record-form' type='submit'>
+        <LinkButton to='/'>Cancel</LinkButton>
+        <FillButton form='record-form' type='submit'>
           Save
-        </SaveButton>
+        </FillButton>
       </Footer>
     </Card>
   );

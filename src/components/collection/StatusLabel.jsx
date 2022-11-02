@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colors } from 'styles/theme';
+import { getStatus } from 'utils';
 
 export const Label = styled.div`
   background-color: ${(props) =>
@@ -7,13 +8,14 @@ export const Label = styled.div`
       ? colors.yellow
       : props.status === 'inStock'
       ? colors.green
-      : '#FFF'};
+      : colors.white};
   text-align: center;
+  text-transform: uppercase;
   padding: 5px;
   border-radius: 50px;
   font-size: 11px;
   font-weight: bold;
-  color: #000;
+  color: ${colors.black};
 `;
 
 export default function StatusLabel(props) {
@@ -21,10 +23,7 @@ export default function StatusLabel(props) {
 
   return (
     <>
-      <Label status={status}>
-        {status === 'sold' && 'SOLD'}
-        {status === 'inStock' && 'IN STOCK'}
-      </Label>
+      <Label status={status}>{getStatus(status)}</Label>
     </>
   );
 }

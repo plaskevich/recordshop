@@ -9,7 +9,7 @@ const DotsButton = styled.button`
   justify-content: center;
   padding: 8px; */
   background: transparent;
-  color: #fff;
+  color: ${colors.white};
   /* border-radius: 25px; */
   &:hover {
     color: ${colors.grey[300]};
@@ -20,7 +20,7 @@ const Menu = styled.div`
   position: absolute;
   right: 45px;
   top: 20px;
-  background-color: #fff;
+  background-color: ${colors.white};
 `;
 
 export default function DotsMenu() {
