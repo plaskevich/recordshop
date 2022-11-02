@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-// import { Link } from 'react-router-dom';
-import * as colors from '../../styles/colors';
+import * as colors from 'styles/colors';
 
 export const TableWrap = styled.div`
   margin-top: 30px;
@@ -55,29 +54,14 @@ export const TableItem = styled.tr`
   }
 `;
 
-export const Artwork = styled.img`
-  width: 36px;
-  border-radius: 3px;
-`;
-
-export const SoldLabel = styled.div`
-  background-color: ${colors.yellow};
-  text-align: center;
-  padding: 5px;
-  border-radius: 50px;
-  font-size: 11px;
-  font-weight: bold;
-  color: #000;
-`;
-
-export const StockLabel = styled.div`
-  background-color: ${colors.green};
-  text-align: center;
-  padding: 5px;
-  border-radius: 50px;
-  font-size: 11px;
-  font-weight: bold;
-  color: #000;
+export const Artwork = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 36px;
+    border-radius: 3px;
+  }
 `;
 
 // .dots {

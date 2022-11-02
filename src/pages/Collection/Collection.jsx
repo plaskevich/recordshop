@@ -1,9 +1,8 @@
-import TableCollection from '../../components/TableCollection/TableCollection';
-import { GET_COLLECTION } from '../../graphql/queries';
+import CollectionTable from 'components/collection/CollectionTable/CollectionTable';
+import { GET_COLLECTION } from 'graphql/queries';
 import { useLazyQuery } from '@apollo/client';
 import {
   Content,
-  Loading,
   BarSide,
   ShowFilter,
   SelectButton,
@@ -14,8 +13,8 @@ import {
 } from './CollectionStyles';
 import { useState, useEffect } from 'react';
 import { IoSearch, IoCog } from 'react-icons/io5';
-import spinner from './spinner.png';
-import * as colors from '../../styles/colors';
+import * as colors from 'styles/colors';
+import { LoadingSpinner } from 'components/common/LoadingSpinner/LoadingSpinner';
 
 export default function Collection() {
   const [filter, setFilter] = useState('all');
@@ -78,11 +77,9 @@ export default function Collection() {
           </BarSide>
         </TopBar>
         {loading ? (
-          <Loading>
-            <img src={spinner} alt='loader' />
-          </Loading>
+          <LoadingSpinner />
         ) : (
-          <TableCollection records={data?.getCollection} />
+          <CollectionTable records={data?.getCollection} />
         )}
       </Content>
     </>
