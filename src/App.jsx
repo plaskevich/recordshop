@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Landing from './pages/Landing/Landing';
-import Login from './pages/Login/Login';
-import SignUp from './pages/SignUp/SignUp';
-import Collection from './pages/Collection/Collection';
+import Landing from 'pages/Landing/Landing';
+import Login from 'pages/Login/Login';
+import SignUp from 'pages/SignUp/SignUp';
+import Collection from 'pages/Collection/Collection';
 import { isAuthenticated } from './service';
-import AddRecord from './pages/AddRecord/AddRecord';
-import EditRecord from './pages/EditRecord/EditRecord';
+import AddRecord from 'pages/AddRecord';
+// import EditRecord from 'pages/EditRecord';
+import ViewRecord from 'pages/ViewRecord';
 
 function App() {
   return (
@@ -33,9 +34,13 @@ function App() {
           element={isAuthenticated() ? <AddRecord /> : <Landing />}
         />
         <Route
+          path='/view/:id'
+          element={isAuthenticated() ? <ViewRecord /> : <Landing />}
+        />
+        {/* <Route
           path='/edit/:id'
           element={isAuthenticated() ? <EditRecord /> : <Landing />}
-        />
+        /> */}
       </Routes>
     </Router>
   );

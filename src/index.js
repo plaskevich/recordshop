@@ -1,5 +1,7 @@
 import ApolloProvider from './ApolloProvider';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.scss';
 
-ReactDOM.render(ApolloProvider, document.getElementById('root'));
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(ApolloProvider);
