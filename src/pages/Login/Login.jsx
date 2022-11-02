@@ -25,11 +25,8 @@ import {
 } from './LoginStyles';
 
 export default function Login() {
-  const { handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(null);
 
   const [signIn, { loading }] = useMutation(SIGN_IN, {
@@ -43,7 +40,8 @@ export default function Login() {
     },
   });
 
-  const submitForm = () => {
+  const submitForm = (data) => {
+    const { email, password } = data;
     signIn({
       variables: {
         email: email,
@@ -62,25 +60,11 @@ export default function Login() {
         <Form onSubmit={handleSubmit(submitForm)}>
           <FormGroup>
             <Label htmlFor='email'>Email</Label>
-            <Input
-              name='email'
-              type='email'
-              className='input'
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            />
+            <Input {...register('email')} type='email' />
           </FormGroup>
           <FormGroup>
             <Label htmlFor='password'>Password</Label>
-            <Input
-              name='password'
-              type='password'
-              className='input'
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-            />
+            <Input {...register('password')} type='password' />
           </FormGroup>
           <CreateAccountWrap>
             <span>Don't have an account yet? </span>
