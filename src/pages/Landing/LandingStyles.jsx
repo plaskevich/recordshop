@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import * as colors from '../../styles/colors';
+import { colors } from 'styles/theme';
 
 export const Main = styled.div`
   max-width: 1240px;

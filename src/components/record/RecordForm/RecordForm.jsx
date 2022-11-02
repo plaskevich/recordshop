@@ -1,6 +1,4 @@
 import {
-  Card,
-  Header,
   Form,
   FormGroup,
   FormGroupShort,
@@ -15,6 +13,7 @@ import {
   SaveButton,
   CancelButton,
 } from './RecordFormStyles';
+import { Card, Header } from 'styles/styledComponents';
 import { DiscogsImport } from '../DiscogsImport';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';

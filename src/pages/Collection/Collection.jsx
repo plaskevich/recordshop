@@ -13,7 +13,7 @@ import {
 } from './CollectionStyles';
 import { useState, useEffect } from 'react';
 import { IoSearch, IoCog } from 'react-icons/io5';
-import * as colors from 'styles/colors';
+import { colors } from 'styles/theme';
 import { LoadingSpinner } from 'components/common/LoadingSpinner/LoadingSpinner';
 
 export default function Collection() {

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import * as colors from 'styles/colors';
-import { font } from 'styles/typography';
+import { colors, font } from 'styles/theme';
 import { IoImage, IoLink, IoTrash } from 'react-icons/io5';
 
 const ButtonsWrap = styled.div`

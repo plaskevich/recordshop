@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import * as colors from '../../styles/colors';
-import { font } from '../../styles/typography';
+import { colors, font } from 'styles/theme';
 
 export const Content = styled.div`
   color: #fff;

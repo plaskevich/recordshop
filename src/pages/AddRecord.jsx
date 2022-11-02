@@ -3,15 +3,7 @@ import { useMutation } from '@apollo/client';
 import { LoadingSpinner } from 'components/common/LoadingSpinner/LoadingSpinner';
 import RecordForm from 'components/record/RecordForm/RecordForm';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-`;
+import { MainContainer } from 'styles/styledComponents';
 
 export default function AddRecord() {
   const navigate = useNavigate();
@@ -30,8 +22,8 @@ export default function AddRecord() {
   };
 
   return (
-    <Content>
+    <MainContainer>
       {loading ? <LoadingSpinner /> : <RecordForm onSubmit={submitForm} />}
-    </Content>
+    </MainContainer>
   );
 }

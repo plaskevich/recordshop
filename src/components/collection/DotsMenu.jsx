@@ -1,7 +1,7 @@
 import { IoEllipsisVertical } from 'react-icons/io5';
 import { useState } from 'react';
 import styled from 'styled-components';
-import * as colors from 'styles/colors';
+import { colors } from 'styles/theme';
 
 const DotsButton = styled.button`
   /* display: flex;

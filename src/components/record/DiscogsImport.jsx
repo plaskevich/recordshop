@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
-import * as colors from '../../styles/colors';
-import { font } from '../../styles/typography';
+import { colors, font } from 'styles/theme';
 
 export const ImportSection = styled.div`
   width: 250px;

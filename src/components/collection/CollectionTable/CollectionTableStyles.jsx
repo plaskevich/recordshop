@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import * as colors from 'styles/colors';
+import { colors } from 'styles/theme';
 
 export const TableWrap = styled.div`
   margin-top: 30px;
