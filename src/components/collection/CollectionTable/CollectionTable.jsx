@@ -1,9 +1,20 @@
-import { IoDisc } from 'react-icons/io5';
-import { TableWrap, TableItem, Artwork } from './CollectionTableStyles';
+import {
+  TableWrap,
+  TableItem,
+  Artwork,
+  MenuButton,
+} from './CollectionTableStyles';
 import StatusLabel from '../StatusLabel';
-import DotsMenu from '../DotsMenu';
 import { useNavigate } from 'react-router-dom';
 import { getCondition, getDate, getPrice } from 'utils';
+import {
+  IoEllipsisHorizontal,
+  IoCreate,
+  IoTrash,
+  IoDisc,
+} from 'react-icons/io5';
+import { Menu } from 'styles/styledComponents';
+import { MenuItem } from '@szhsin/react-menu';
 
 export default function CollectionTable(props) {
   const { records } = props;
@@ -59,7 +70,31 @@ export default function CollectionTable(props) {
                   <StatusLabel status={item.status} />
                 </td>
                 <td>
-                  <DotsMenu />
+                  <Menu
+                    direction='bottom'
+                    align='end'
+                    offsetY={6}
+                    menuButton={
+                      <MenuButton
+                        onClick={(e) => {
+                          e.stopPropagation();
+                        }}
+                      >
+                        <IoEllipsisHorizontal size='18px' />
+                      </MenuButton>
+                    }
+                    transition
+                  >
+                    <MenuItem>
+                      <IoCreate />
+                      Edit
+                    </MenuItem>
+                    <MenuItem>
+                      <IoTrash />
+                      Remove
+                    </MenuItem>
+                  </Menu>
+                  {/* <IoTrash size='16px' /> */}
                 </td>
               </TableItem>
             ))}

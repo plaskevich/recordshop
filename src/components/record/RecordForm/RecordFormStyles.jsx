@@ -66,7 +66,7 @@ export const Label = styled.div`
 export const Input = styled.input`
   font-family: ${font};
   font-size: 14px;
-  color: ${colors.white};
+  color: ${colors.grey[300]};
   background-color: transparent;
   border: solid 2px ${colors.grey[600]};
   border-radius: 5px;
@@ -85,7 +85,7 @@ export const Input = styled.input`
 export const Select = styled.select`
   font-family: ${font};
   font-size: 14px;
-  color: ${colors.white};
+  color: ${colors.grey[300]};
   background-color: transparent;
   border: solid 2px ${colors.grey[600]};
   border-radius: 5px;

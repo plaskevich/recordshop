@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { colors, font } from 'styles/theme';
+import { colors } from 'styles/theme';
 
 export const Title = styled.h2`
   margin: 0;
   font-size: 24px;
-  color: ${colors.white};
+  color: ${colors.grey[300]};
   font-weight: 800;
   margin-bottom: 8px;
   max-width: 400px;
@@ -13,7 +12,7 @@ export const Title = styled.h2`
 export const Artist = styled.h3`
   margin: 0;
   font-size: 20px;
-  color: ${colors.white};
+  color: ${colors.grey[300]};
   font-weight: 500;
   max-width: 400px;
 `;
@@ -37,5 +36,5 @@ export const Label = styled.span`
 export const Info = styled.span`
   font-size: 16px;
   font-weight: 400;
-  color: ${colors.white};
+  color: ${colors.grey[300]};
 `;

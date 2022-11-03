@@ -3,10 +3,10 @@ import { colors } from 'styles/theme';
 
 export const TableWrap = styled.div`
   margin-top: 30px;
-  padding: 0 20px;
+  padding: 16px;
   background-color: ${colors.grey[900]};
   border-radius: 25px;
-  height: 88vh;
+  border: solid 1px ${colors.grey[800]};
   overflow: scroll;
   table {
     width: 100%;
@@ -17,7 +17,7 @@ export const TableWrap = styled.div`
       padding-left: 20px;
     }
     th {
-      padding: 20px 15px;
+      padding: 1rem;
       color: ${colors.grey[500]};
       font-size: 14px;
       font-weight: 500;
@@ -65,30 +65,13 @@ export const Artwork = styled.div`
   }
 `;
 
-// .dots {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   padding: 10px 2px;
-//   border-radius: 5px;
-//   transition: all 0.1s ease;
-//   &:hover {
-//     background-color: $btn-hover;
-//   }
-// }
-
-// .dots-menu {
-//   position: absolute;
-//   background-color: $row;
-//   display: flex;
-//   flex-direction: column;
-//   right: 90px;
-//   padding: 10px;
-//   border-radius: 10px;
-// }
-
-// .dots-item {
-//   color: $light;
-//   font-size: 14px;
-//   padding: 1px;
-// }
+export const MenuButton = styled.button`
+  background-color: transparent;
+  display: flex;
+  color: ${colors.grey[300]};
+  padding: 4px;
+  transition: all 0.1s ease-in;
+  &:hover {
+    transform: scale(1.3);
+  }
+`;

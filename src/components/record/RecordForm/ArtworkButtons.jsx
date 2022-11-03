@@ -15,7 +15,7 @@ const Upload = styled.label`
   align-items: center;
   gap: 4px;
   background-color: ${colors.grey[800]};
-  color: ${colors.white};
+  color: ${colors.grey[300]};
   font-size: 14px;
   font-family: ${font};
   border-radius: 5px;
@@ -28,7 +28,7 @@ const Button = styled.button`
   align-items: center;
   gap: 4px;
   background-color: ${colors.grey[800]};
-  color: ${colors.white};
+  color: ${colors.grey[300]};
   font-size: 14px;
   font-family: ${font};
   border-radius: 5px;
@@ -39,7 +39,7 @@ const LinkButton = styled.button`
   display: flex;
   align-items: center;
   background-color: ${colors.grey[800]};
-  color: ${colors.white};
+  color: ${colors.grey[300]};
   font-size: 16px;
   font-family: ${font};
   border-radius: 5px;

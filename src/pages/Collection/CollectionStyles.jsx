@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { colors, font } from 'styles/theme';
 
 export const Content = styled.div`
-  color: ${colors.white};
+  color: ${colors.grey[300]};
   padding: 20px 40px;
   height: 100%;
 `;
@@ -37,6 +37,9 @@ export const BarSide = styled.div`
   align-items: center;
   justify-content: center;
   gap: 30px;
+  .szh-menu-container {
+    position: absolute !important;
+  }
 `;
 
 export const ShowFilter = styled.div`
@@ -89,7 +92,7 @@ export const SearchBar = styled.div`
     border: none;
     font-size: 16px;
     &::placeholder {
-      color: ${colors.grey[600]};
+      color: ${colors.grey[500]};
     }
     &:focus {
       outline: none;
@@ -100,18 +103,33 @@ export const SearchBar = styled.div`
 export const AddButton = styled(Link)`
   font-family: ${font};
   font-weight: 500;
-  color: ${colors.white};
+  color: ${colors.grey[300]};
   background-color: ${colors.blue};
   border-radius: 25px;
   padding: 8px 28px;
   font-size: 14px;
 `;
+
 export const SelectButton = styled.button`
   font-family: ${font};
   font-weight: 500;
-  color: ${colors.white};
+  color: ${colors.grey[300]};
   background-color: ${colors.grey[900]};
   border-radius: 25px;
   padding: 8px 40px;
   font-size: 14px;
+  transition: all 0.1s ease-in;
+  &:hover {
+    background-color: ${colors.grey[600]};
+  }
+`;
+
+export const CogButton = styled.button`
+  display: flex;
+  background-color: transparent;
+  color: ${colors.grey[300]};
+  transition: all 0.2s ease-out;
+  &:hover {
+    transform: scale(1.2) rotate(180deg);
+  }
 `;

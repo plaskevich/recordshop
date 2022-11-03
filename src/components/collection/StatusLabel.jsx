@@ -8,7 +8,7 @@ export const Label = styled.div`
       ? colors.yellow
       : props.status === 'inStock'
       ? colors.green
-      : colors.white};
+      : colors.grey[300]};
   text-align: center;
   text-transform: uppercase;
   padding: 5px;

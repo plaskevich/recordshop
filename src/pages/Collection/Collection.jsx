@@ -10,11 +10,14 @@ import {
   AddButton,
   TopBar,
   ToggleSwitch,
+  CogButton,
 } from './CollectionStyles';
+import { Menu } from 'styles/styledComponents';
 import { useState, useEffect } from 'react';
-import { IoSearch, IoCog } from 'react-icons/io5';
+import { IoSearch, IoCog, IoPersonCircle, IoLogOut } from 'react-icons/io5';
 import { colors } from 'styles/theme';
 import { LoadingSpinner } from 'components/common/LoadingSpinner/LoadingSpinner';
+import { MenuItem } from '@szhsin/react-menu';
 
 export default function Collection() {
   const [filter, setFilter] = useState('all');
@@ -73,7 +76,26 @@ export default function Collection() {
           </SearchBar>
           <BarSide>
             <AddButton to='/add'>Add</AddButton>
-            <IoCog size='32px' color={colors.grey[300]} />
+            <Menu
+              direction='bottom'
+              align='end'
+              offsetY={14}
+              menuButton={
+                <CogButton>
+                  <IoCog size='32px' />
+                </CogButton>
+              }
+              transition
+            >
+              <MenuItem>
+                <IoPersonCircle size='22px' />
+                Account
+              </MenuItem>
+              <MenuItem>
+                <IoLogOut size='22px' />
+                Logout
+              </MenuItem>
+            </Menu>
           </BarSide>
         </TopBar>
         {loading ? (
