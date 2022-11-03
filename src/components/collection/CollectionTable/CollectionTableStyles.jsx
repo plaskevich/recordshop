@@ -30,6 +30,7 @@ export const TableWrap = styled.div`
       padding: 12px 10px;
       font-size: 15px;
       font-weight: 400;
+      max-width: 250px;
       img {
         display: block;
         margin-left: auto;

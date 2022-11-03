@@ -51,7 +51,7 @@ export const ShowFilter = styled.div`
 `;
 export const ToggleSwitch = styled.div`
   display: flex;
-  border: 2px solid #${colors.grey[600]};
+  border: 2px solid ${colors.grey[600]};
   border-radius: 25px;
   & input {
     position: absolute !important;
@@ -103,7 +103,7 @@ export const AddButton = styled(Link)`
   color: ${colors.white};
   background-color: ${colors.blue};
   border-radius: 25px;
-  padding: 8px 40px;
+  padding: 8px 28px;
   font-size: 14px;
 `;
 export const SelectButton = styled.button`

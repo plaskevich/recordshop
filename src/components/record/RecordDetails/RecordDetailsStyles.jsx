@@ -6,24 +6,27 @@ export const Title = styled.h2`
   margin: 0;
   font-size: 24px;
   color: ${colors.white};
-  font-weight: 600;
+  font-weight: 800;
+  margin-bottom: 8px;
+  max-width: 400px;
 `;
 export const Artist = styled.h3`
   margin: 0;
-  font-size: 22px;
+  font-size: 20px;
   color: ${colors.white};
   font-weight: 500;
+  max-width: 400px;
 `;
 
 export const InfoSection = styled.div`
-  margin-top: 21px;
+  margin-top: 28px;
   display: flex;
-  gap: 18px;
+  gap: 24px;
 `;
 export const InfoSectionColumn = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 10px;
 `;
 
 export const Label = styled.span`

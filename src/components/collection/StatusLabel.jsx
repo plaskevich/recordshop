@@ -16,6 +16,7 @@ export const Label = styled.div`
   font-size: 11px;
   font-weight: bold;
   color: ${colors.black};
+  width: 55px;
 `;
 
 export default function StatusLabel(props) {

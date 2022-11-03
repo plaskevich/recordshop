@@ -1,5 +1,4 @@
 import { IoDisc } from 'react-icons/io5';
-// import { Link } from 'react-router-dom';
 import { TableWrap, TableItem, Artwork } from './CollectionTableStyles';
 import StatusLabel from '../StatusLabel';
 import DotsMenu from '../DotsMenu';
