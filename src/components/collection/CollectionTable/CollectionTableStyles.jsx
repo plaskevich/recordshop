@@ -17,7 +17,7 @@ export const TableWrap = styled.div`
       padding-left: 20px;
     }
     th {
-      padding: 1rem;
+      padding: 12px 10px;
       color: ${colors.grey[500]};
       font-size: 14px;
       font-weight: 500;
@@ -28,7 +28,7 @@ export const TableWrap = styled.div`
 
     td {
       padding: 12px 10px;
-      font-size: 15px;
+      font-size: 1rem;
       font-weight: 400;
       max-width: 250px;
       img {

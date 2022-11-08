@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 import { colors, font } from 'styles/theme';
+import { IoCaretDown } from 'react-icons/io5';
+import { createElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+
+const caretSVGLink = () =>
+  `data:image/svg+xml,${encodeURIComponent(
+    renderToStaticMarkup(
+      createElement(IoCaretDown, { color: colors.grey[300] })
+    )
+  )}`;
 
 export const Form = styled.form`
   display: flex;
@@ -92,6 +102,12 @@ export const Select = styled.select`
   transition: all 0.2s ease;
   padding: 6px 10px;
   width: 100%;
+
+  appearance: none;
+  background-image: url(${caretSVGLink()});
+  background-repeat: no-repeat;
+  background-position: right 0.5rem top 50%;
+  background-size: 1rem auto;
 
   box-sizing: border-box;
   &:focus {

@@ -7,3 +7,11 @@ export const ADD_RECORD = gql`
     }
   }
 `;
+
+export const REMOVE_RECORD = gql`
+  mutation removeRecord($id: String!) {
+    removeRecord(id: $id) {
+      id
+    }
+  }
+`;

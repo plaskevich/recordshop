@@ -1,6 +1,7 @@
 import CollectionTable from 'components/collection/CollectionTable/CollectionTable';
 import { GET_COLLECTION } from 'graphql/queries';
-import { useLazyQuery } from '@apollo/client';
+import { REMOVE_RECORD } from 'graphql/mutations/record';
+import { useLazyQuery, useMutation } from '@apollo/client';
 import {
   Content,
   BarSide,
@@ -23,7 +24,14 @@ export default function Collection() {
   const [filter, setFilter] = useState('all');
 
   const [getCollection, { loading, data }] = useLazyQuery(GET_COLLECTION, {
+    fetchPolicy: 'cache-and-network',
     variables: { filter },
+  });
+
+  const [removeRecord] = useMutation(REMOVE_RECORD, {
+    onCompleted() {
+      getCollection();
+    },
   });
 
   const onFilterChange = (event) => {
@@ -101,7 +109,10 @@ export default function Collection() {
         {loading ? (
           <LoadingSpinner />
         ) : (
-          <CollectionTable records={data?.getCollection} />
+          <CollectionTable
+            records={data?.getCollection}
+            removeRecord={removeRecord}
+          />
         )}
       </Content>
     </>

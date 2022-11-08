@@ -116,11 +116,12 @@ export const SelectButton = styled.button`
   color: ${colors.grey[300]};
   background-color: ${colors.grey[900]};
   border-radius: 25px;
+  border: solid 1px ${colors.grey[800]};
   padding: 8px 40px;
   font-size: 14px;
   transition: all 0.1s ease-in;
   &:hover {
-    background-color: ${colors.grey[600]};
+    background-color: ${colors.grey[800]};
   }
 `;
 

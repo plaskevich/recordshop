@@ -17,8 +17,14 @@ import { Menu } from 'styles/styledComponents';
 import { MenuItem } from '@szhsin/react-menu';
 
 export default function CollectionTable(props) {
-  const { records } = props;
+  const { records, removeRecord } = props;
   const navigate = useNavigate();
+
+  const handleRemoveRecord = (id) => {
+    removeRecord({
+      variables: { id },
+    });
+  };
 
   const goToRecordDetails = (id) => {
     navigate(`view/${id}`);
@@ -45,11 +51,8 @@ export default function CollectionTable(props) {
         <tbody>
           {records &&
             records.map((item) => (
-              <TableItem
-                key={item.id}
-                onClick={() => goToRecordDetails(item.id)}
-              >
-                <td>
+              <TableItem key={item.id}>
+                <td onClick={() => goToRecordDetails(item.id)}>
                   <Artwork>
                     {item.img_uri ? (
                       <img src={item.img_uri} alt='artwork' />
@@ -75,11 +78,7 @@ export default function CollectionTable(props) {
                     align='end'
                     offsetY={6}
                     menuButton={
-                      <MenuButton
-                        onClick={(e) => {
-                          e.stopPropagation();
-                        }}
-                      >
+                      <MenuButton>
                         <IoEllipsisHorizontal size='18px' />
                       </MenuButton>
                     }
@@ -89,12 +88,11 @@ export default function CollectionTable(props) {
                       <IoCreate />
                       Edit
                     </MenuItem>
-                    <MenuItem>
+                    <MenuItem onClick={() => handleRemoveRecord(item.id)}>
                       <IoTrash />
                       Remove
                     </MenuItem>
                   </Menu>
-                  {/* <IoTrash size='16px' /> */}
                 </td>
               </TableItem>
             ))}

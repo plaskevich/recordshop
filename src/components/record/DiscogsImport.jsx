@@ -24,23 +24,22 @@ export const ReleaseInput = styled.input`
   border: 2px solid ${colors.grey[600]};
   border-radius: 25px;
   background-color: transparent;
-  padding: 6px 12px;
+  padding: 4px 12px;
   margin-right: 10px;
   color: ${colors.grey[300]};
   caret-color: ${colors.yellow};
   &:focus {
-    /* border-color: ${colors.pink}; */
     outline: none;
   }
 `;
 
 export const ImportButton = styled.button`
   background-color: ${colors.pink};
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   border-radius: 25px;
   color: ${colors.grey[300]};
-  padding: 8px 20px;
+  padding: 6px 20px;
   font-family: ${font};
 `;
 
