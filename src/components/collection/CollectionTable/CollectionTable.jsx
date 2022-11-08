@@ -77,11 +77,11 @@ export default function CollectionTable(props) {
                     direction='bottom'
                     align='end'
                     offsetY={6}
-                    menuButton={
-                      <MenuButton>
+                    menuButton={({ open }) => (
+                      <MenuButton open={open}>
                         <IoEllipsisHorizontal size='18px' />
                       </MenuButton>
-                    }
+                    )}
                     transition
                   >
                     <MenuItem>

@@ -2,11 +2,7 @@ import styled from 'styled-components';
 import { colors, font } from 'styles/theme';
 import { Link } from 'react-router-dom';
 import { Menu as MenuInner } from '@szhsin/react-menu';
-import {
-  menuSelector,
-  menuItemSelector,
-  menuArrowSelector,
-} from '@szhsin/react-menu/style-utils';
+import { menuSelector, menuItemSelector } from '@szhsin/react-menu/style-utils';
 
 export const MainContainer = styled.div`
   display: flex;
@@ -106,8 +102,5 @@ export const Menu = styled(MenuInner)`
   ${menuItemSelector.hover} {
     color: ${colors.grey[300]};
     background-color: ${colors.grey[800]};
-  }
-  ${menuArrowSelector.name} {
-    background-color: ${colors.grey[300]};
   }
 `;

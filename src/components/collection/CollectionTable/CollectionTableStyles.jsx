@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { colors } from 'styles/theme';
 
 export const TableWrap = styled.div`
-  margin-top: 30px;
   padding: 16px;
   background-color: ${colors.grey[900]};
   border-radius: 25px;
@@ -71,6 +70,7 @@ export const MenuButton = styled.button`
   color: ${colors.grey[300]};
   padding: 4px;
   transition: all 0.1s ease-in;
+  transform: ${(props) => (props.open ? 'scale(1.3)' : 'scale(1)')};
   &:hover {
     transform: scale(1.3);
   }
