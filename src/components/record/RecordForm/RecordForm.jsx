@@ -18,24 +18,32 @@ import {
   Footer,
 } from 'styles/styledComponents';
 import { DiscogsImport } from '../DiscogsImport';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import ArtworkButtons from './ArtworkButtons';
 
 export default function RecordForm(props) {
-  const { onSubmit } = props;
+  const { onSubmit, recordData } = props;
   const { register, handleSubmit, setValue } = useForm();
   const [imgUrl, setImgUrl] = useState('');
 
-  const discogsImport = (data) => {
-    data.artist = data.artist.join(', ');
-    data.label = data.label.join(', ');
-    data.genre = data.genre.join(', ');
+  useEffect(() => {
+    if (recordData) {
+      onImport(recordData);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [recordData]);
 
-    for (const [key, value] of Object.entries(data)) {
+  const onImport = (data) => {
+    const recordData = { ...data };
+    recordData.artist = recordData.artist.join(', ');
+    recordData.label = recordData.label.join(', ');
+    recordData.genre = recordData.genre.join(', ');
+
+    for (const [key, value] of Object.entries(recordData)) {
       setValue(key, value);
     }
-    setImgUrl(data.img_uri);
+    setImgUrl(recordData.img_uri);
   };
 
   const removeImage = () => {
@@ -53,7 +61,7 @@ export default function RecordForm(props) {
               removeImage={removeImage}
             />
           </Artwork>
-          <DiscogsImport onImport={discogsImport} />
+          <DiscogsImport onImport={onImport} />
         </LeftSection>
         <RightSection>
           <Form id='record-form' onSubmit={handleSubmit(onSubmit)}>

@@ -9,7 +9,7 @@ import Login from 'pages/Login';
 import SignUp from 'pages/SignUp';
 import Collection from 'pages/Collection';
 import AddRecord from 'pages/AddRecord';
-// import EditRecord from 'pages/EditRecord';
+import EditRecord from 'pages/EditRecord';
 import ViewRecord from 'pages/ViewRecord';
 import { useSelector } from 'react-redux';
 
@@ -46,10 +46,10 @@ function App() {
           path='/view/:id'
           element={isAuthenticated ? <ViewRecord /> : <Navigate to='/' />}
         />
-        {/* <Route
+        <Route
           path='/edit/:id'
-          element={isAuthenticated() ? <EditRecord /> : <Landing />}
-        /> */}
+          element={isAuthenticated ? <EditRecord /> : <Navigate to='/' />}
+        />
       </Routes>
     </Router>
   );

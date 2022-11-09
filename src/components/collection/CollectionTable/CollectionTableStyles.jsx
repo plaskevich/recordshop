@@ -7,14 +7,13 @@ export const TableWrap = styled.div`
   border-radius: 25px;
   border: solid 1px ${colors.grey[700]};
   overflow: scroll;
+  tr {
+    /* border-bottom: 1px solid ${colors.grey[700]}; */
+  }
   table {
     width: 100%;
     text-align: left;
     border-collapse: collapse;
-
-    tbody {
-      padding-left: 20px;
-    }
     th {
       padding: 12px 10px;
       color: ${colors.grey[300]};
@@ -47,6 +46,7 @@ export const TableWrap = styled.div`
 `;
 
 export const TableItem = styled.tr`
+  border: none !important;
   cursor: pointer;
   transition: all 0.1s ease;
   &:hover {

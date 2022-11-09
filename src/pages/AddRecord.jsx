@@ -15,6 +15,7 @@ export default function AddRecord() {
   });
 
   const submitForm = (data) => {
+    console.log(data);
     data.year = parseInt(data.year);
     addRecord({
       variables: { data },

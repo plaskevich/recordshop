@@ -84,7 +84,7 @@ export default function CollectionTable(props) {
                     )}
                     transition
                   >
-                    <MenuItem>
+                    <MenuItem onClick={() => navigate(`/edit/${item.id}`)}>
                       <IoCreate />
                       Edit
                     </MenuItem>
