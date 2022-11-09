@@ -27,7 +27,7 @@ export default function CollectionTable(props) {
   };
 
   const goToRecordDetails = (id) => {
-    navigate(`view/${id}`);
+    navigate(`/view/${id}`);
   };
 
   return (

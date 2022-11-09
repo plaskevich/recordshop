@@ -11,14 +11,15 @@ export const Content = styled.div`
   input:-webkit-autofill,
   textarea:-webkit-autofill,
   select:-webkit-autofill {
-    box-shadow: 0 0 0 1000px #070707 inset !important;
-    -webkit-text-fill-color: #f5f5f5 !important;
+    box-shadow: 0 0 0 1000px ${colors.grey[900]} inset !important;
+    -webkit-text-fill-color: #fff !important;
   }
 `;
 
 export const Card = styled.div`
   padding: 40px 60px;
   background-color: ${colors.grey[900]};
+  border: solid 1px ${colors.grey[800]};
   border-radius: 25px;
 `;
 
@@ -38,6 +39,7 @@ export const Form = styled.form`
   flex-direction: column;
   width: 360px;
 `;
+
 export const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
@@ -46,7 +48,7 @@ export const FormGroup = styled.div`
   width: 100%;
 `;
 
-export const Label = styled.label`
+export const Label = styled.div`
   color: #a1a1ac;
   font-size: 14px;
   font-weight: 500;
@@ -61,10 +63,10 @@ export const Input = styled.input`
   font-weight: 500;
   color: ${colors.grey[300]};
   background-color: transparent;
-  border: solid 3px #424247;
+  border: solid 2px #424247;
   border-radius: 15px;
   transition: all 0.2s ease;
-  padding: 14px 12px;
+  padding: 12px;
   caret-color: ${colors.yellow};
   width: 100%;
   box-sizing: border-box;
@@ -74,14 +76,7 @@ export const Input = styled.input`
   }
 `;
 
-//   input:-webkit-autofill,
-//   textarea:-webkit-autofill,
-//   select:-webkit-autofill {
-//     box-shadow: 0 0 0 1000px #141415 inset !important;
-//     -webkit-text-fill-color: #F5F5F5 !important;
-//   }
-
-export const LoginWrap = styled.div`
+export const SwitchWrap = styled.div`
   padding: 20px 0;
   display: flex;
   justify-content: center;
@@ -103,16 +98,20 @@ export const ButtonWrap = styled.div`
   justify-content: center;
 `;
 
-export const CreateButton = styled.button`
+export const SubmitButton = styled.button`
   font-family: ${font};
   color: ${colors.grey[300]};
   font-size: 16px;
   font-weight: 500;
   background: ${colors.blue};
-  padding: 14px 12px;
   border-radius: 15px;
-  border: solid 3px ${colors.blue};
+  border: solid 2px ${colors.blue};
   width: 100%;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 43px;
 `;
 
 export const BackWrap = styled(Link)`
@@ -129,18 +128,21 @@ export const BackWrap = styled(Link)`
 `;
 
 export const ErrorMessage = styled.div`
+  padding: 5px 0;
   text-align: center;
-  color: ${colors.yellow};
+  color: ${colors.red};
+  font-size: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 export const ErrorText = styled.div`
-  width: 173px;
-  padding: 10px;
-  border-radius: 10px;
+  width: fit-content;
+  padding: 7px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
 `;

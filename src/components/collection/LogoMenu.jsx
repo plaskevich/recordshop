@@ -5,7 +5,7 @@ import { Menu, MenuItem } from '@szhsin/react-menu';
 import { menuSelector, menuItemSelector } from '@szhsin/react-menu/style-utils';
 
 const Wrap = styled.div`
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 `;
 
 const LogoButton = styled.button`
@@ -46,6 +46,12 @@ const SettingsMenu = styled(Menu)`
 `;
 
 export default function LogoMenu() {
+  // const navigate = useNavigate();
+
+  const handleLogout = () => {
+    window.localStorage.removeItem('token');
+  };
+
   return (
     <Wrap>
       <SettingsMenu
@@ -64,7 +70,7 @@ export default function LogoMenu() {
           <IoCog size='22px' />
           Settings
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={handleLogout}>
           <IoLogOut size='22px' />
           Logout
         </MenuItem>

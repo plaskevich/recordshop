@@ -30,6 +30,9 @@ export const FilterMenu = styled(Menu)`
     color: ${colors.grey[300]};
     font-size: 1rem;
     gap: 0.5rem;
+    &:active {
+      background-color: ${colors.blue};
+    }
   }
   .selected {
     background-color: ${colors.blue};
@@ -98,7 +101,6 @@ export const AddButton = styled(Link)`
   border-radius: 25px;
   padding: 8px 20px;
   font-size: 14px;
-  /* transition: all 0.2s ease-in-out; */
   &:hover {
     background-color: #0a5eb0;
   }
