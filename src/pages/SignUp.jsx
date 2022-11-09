@@ -1,18 +1,20 @@
 import { SIGN_UP } from 'graphql/mutations/auth';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setUser } from 'redux/userSlice';
+import { setUser } from 'redux/user/userSlice';
 import { useMutation } from '@apollo/client';
 import SignUpForm from 'components/auth/SignUpForm';
+import { useNavigate } from 'react-router-dom';
 
 export default function SignUp() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [signUp, { loading }] = useMutation(SIGN_UP, {
     onCompleted(data) {
       localStorage.setItem('token', data.signIn.token);
-      dispatch(setUser({ id: data.signUp.user.id }));
-      window.location.reload();
+      dispatch(setUser({ token: data.signUp.token }));
+      navigate('/collection');
     },
     onError(error) {
       setErrorMessage(error.message);

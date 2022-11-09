@@ -14,8 +14,8 @@ const Upload = styled.label`
   display: flex;
   align-items: center;
   gap: 4px;
-  background-color: ${colors.grey[800]};
-  color: ${colors.grey[300]};
+  background-color: ${colors.grey[700]};
+  color: ${colors.grey[100]};
   font-size: 14px;
   font-family: ${font};
   border-radius: 5px;
@@ -27,8 +27,8 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   gap: 4px;
-  background-color: ${colors.grey[800]};
-  color: ${colors.grey[300]};
+  background-color: ${colors.grey[700]};
+  color: ${colors.grey[100]};
   font-size: 14px;
   font-family: ${font};
   border-radius: 5px;
@@ -38,8 +38,8 @@ const Button = styled.button`
 const LinkButton = styled.button`
   display: flex;
   align-items: center;
-  background-color: ${colors.grey[800]};
-  color: ${colors.grey[300]};
+  background-color: ${colors.grey[700]};
+  color: ${colors.grey[100]};
   font-size: 16px;
   font-family: ${font};
   border-radius: 5px;

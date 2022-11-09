@@ -5,7 +5,7 @@ import { colors, font } from 'styles/theme';
 
 export const ImportSection = styled.div`
   width: 250px;
-  border: 2px dashed ${colors.grey[600]};
+  border: 2px dashed ${colors.grey[500]};
   border-radius: 10px;
   text-align: center;
   padding: 15px 0;
@@ -13,7 +13,7 @@ export const ImportSection = styled.div`
 
 export const Title = styled.p`
   font-size: 14px;
-  color: ${colors.grey[300]};
+  color: ${colors.grey[100]};
   font-weight: 500;
   margin-bottom: 14px;
 `;
@@ -21,12 +21,12 @@ export const Title = styled.p`
 export const ReleaseInput = styled.input`
   width: 100px;
   font-size: 14px;
-  border: 2px solid ${colors.grey[600]};
+  border: 2px solid ${colors.grey[500]};
   border-radius: 25px;
   background-color: transparent;
   padding: 4px 12px;
   margin-right: 10px;
-  color: ${colors.grey[300]};
+  color: ${colors.grey[100]};
   caret-color: ${colors.yellow};
   &:focus {
     outline: none;
@@ -38,7 +38,7 @@ export const ImportButton = styled.button`
   font-size: 12px;
   font-weight: 500;
   border-radius: 25px;
-  color: ${colors.grey[300]};
+  color: ${colors.grey[100]};
   padding: 6px 20px;
   font-family: ${font};
 `;

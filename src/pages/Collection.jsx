@@ -10,7 +10,7 @@ import { LoadingSpinner } from 'components/common/LoadingSpinner/LoadingSpinner'
 import styled from 'styled-components';
 
 const Content = styled.div`
-  color: ${colors.grey[300]};
+  color: ${colors.grey[100]};
   padding: 20px 40px;
   height: 100%;
 `;

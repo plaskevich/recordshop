@@ -74,7 +74,7 @@ export default function Toolbar(props) {
       </SideWrap>
       <SideWrap>
         <SearchBar>
-          <IoSearch size={18} color={colors.grey[600]} />
+          <IoSearch size={18} color={colors.grey[500]} />
           <input placeholder='Search...' />
         </SearchBar>
         <AddButton to='/add'>

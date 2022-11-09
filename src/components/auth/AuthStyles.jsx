@@ -19,7 +19,7 @@ export const Content = styled.div`
 export const Card = styled.div`
   padding: 40px 60px;
   background-color: ${colors.grey[900]};
-  border: solid 1px ${colors.grey[800]};
+  border: solid 1px ${colors.grey[700]};
   border-radius: 25px;
 `;
 
@@ -31,7 +31,7 @@ export const TitleWrap = styled.div`
 export const Title = styled.h3`
   font-size: 24px;
   font-weight: bold;
-  color: ${colors.grey[300]};
+  color: ${colors.grey[100]};
 `;
 
 export const Form = styled.form`
@@ -61,7 +61,7 @@ export const Input = styled.input`
   font-family: ${font};
   font-size: 16px;
   font-weight: 500;
-  color: ${colors.grey[300]};
+  color: ${colors.grey[100]};
   background-color: transparent;
   border: solid 2px #424247;
   border-radius: 15px;
@@ -85,7 +85,7 @@ export const SwitchWrap = styled.div`
     padding: 0 2px;
   }
   span {
-    color: ${colors.grey[300]};
+    color: ${colors.grey[100]};
   }
   a {
     color: ${colors.yellow};
@@ -100,7 +100,7 @@ export const ButtonWrap = styled.div`
 
 export const SubmitButton = styled.button`
   font-family: ${font};
-  color: ${colors.grey[300]};
+  color: ${colors.grey[100]};
   font-size: 16px;
   font-weight: 500;
   background: ${colors.blue};
@@ -116,7 +116,7 @@ export const SubmitButton = styled.button`
 
 export const BackWrap = styled(Link)`
   margin-top: 50px;
-  color: ${colors.grey[300]};
+  color: ${colors.grey[100]};
   font-weight: 500;
   font-size: 18px;
   display: flex;

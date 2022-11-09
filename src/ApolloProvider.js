@@ -7,7 +7,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import store from './redux/store';
+import store from 'redux/store';
 import { Provider } from 'react-redux';
 
 const httpLink = createHttpLink({

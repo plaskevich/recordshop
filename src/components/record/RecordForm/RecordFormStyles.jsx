@@ -7,7 +7,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 const caretSVGLink = () =>
   `data:image/svg+xml,${encodeURIComponent(
     renderToStaticMarkup(
-      createElement(IoCaretDown, { color: colors.grey[300] })
+      createElement(IoCaretDown, { color: colors.grey[100] })
     )
   )}`;
 
@@ -65,7 +65,7 @@ export const FormGroupShort = styled.div`
 `;
 
 export const Label = styled.div`
-  color: ${colors.grey[500]};
+  color: ${colors.grey[300]};
   font-size: 12px;
   font-weight: 500;
   float: right;
@@ -76,9 +76,9 @@ export const Label = styled.div`
 export const Input = styled.input`
   font-family: ${font};
   font-size: 14px;
-  color: ${colors.grey[300]};
+  color: ${colors.grey[100]};
   background-color: transparent;
-  border: solid 2px ${colors.grey[600]};
+  border: solid 2px ${colors.grey[500]};
   border-radius: 5px;
   transition: all 0.2s ease;
   padding: 6px 10px;
@@ -95,9 +95,9 @@ export const Input = styled.input`
 export const Select = styled.select`
   font-family: ${font};
   font-size: 14px;
-  color: ${colors.grey[300]};
+  color: ${colors.grey[100]};
   background-color: transparent;
-  border: solid 2px ${colors.grey[600]};
+  border: solid 2px ${colors.grey[500]};
   border-radius: 5px;
   transition: all 0.2s ease;
   padding: 6px 10px;

@@ -3,6 +3,9 @@ import { colors, font } from 'styles/theme';
 import { IoCaretDown, IoCog, IoLogOut } from 'react-icons/io5';
 import { Menu, MenuItem } from '@szhsin/react-menu';
 import { menuSelector, menuItemSelector } from '@szhsin/react-menu/style-utils';
+import { useDispatch } from 'react-redux';
+import { setUser } from 'redux/user/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Wrap = styled.div`
   padding: 0.5rem 0;
@@ -10,7 +13,7 @@ const Wrap = styled.div`
 
 const LogoButton = styled.button`
   background-color: transparent;
-  color: ${(props) => (props.open ? colors.grey[300] : colors.grey[500])};
+  color: ${(props) => (props.open ? colors.grey[100] : colors.grey[300])};
   font-family: ${font};
   font-size: 1.75rem;
   font-weight: 700;
@@ -19,15 +22,15 @@ const LogoButton = styled.button`
   gap: 0.4rem;
   transition: all 0.2s ease-in;
   &:hover {
-    color: ${colors.grey[300]};
+    color: ${colors.grey[100]};
   }
 `;
 
 const SettingsMenu = styled(Menu)`
   ${menuSelector.name} {
-    background-color: ${colors.grey[300]};
+    background-color: ${colors.grey[100]};
     border-radius: 15px;
-    border: 1px solid ${colors.grey[600]};
+    border: 1px solid ${colors.grey[500]};
     padding: 6px;
     min-width: 9rem;
   }
@@ -40,16 +43,19 @@ const SettingsMenu = styled(Menu)`
     gap: 0.5rem;
   }
   ${menuItemSelector.hover} {
-    color: ${colors.grey[300]};
+    color: ${colors.grey[100]};
     background-color: ${colors.grey[900]};
   }
 `;
 
 export default function LogoMenu() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleLogout = () => {
     window.localStorage.removeItem('token');
+    dispatch(setUser({ token: null }));
+    navigate('/');
   };
 
   return (

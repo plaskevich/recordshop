@@ -19,7 +19,7 @@ export const FilterMenu = styled(Menu)`
   ${menuSelector.name} {
     background-color: ${colors.grey[900]};
     border-radius: 15px;
-    border: 1px solid ${colors.grey[600]};
+    border: 1px solid ${colors.grey[500]};
     padding: 6px;
     min-width: 8rem;
   }
@@ -27,7 +27,7 @@ export const FilterMenu = styled(Menu)`
     border-radius: 10px;
     padding: 0.375rem 0.625rem;
     margin: 2px 0;
-    color: ${colors.grey[300]};
+    color: ${colors.grey[100]};
     font-size: 1rem;
     gap: 0.5rem;
     &:active {
@@ -41,7 +41,7 @@ export const FilterMenu = styled(Menu)`
 
   ${menuItemSelector.hover} {
     color: ${colors.grey[900]};
-    background-color: ${colors.grey[300]};
+    background-color: ${colors.grey[100]};
   }
 `;
 
@@ -51,16 +51,16 @@ export const ToolbarButton = styled.button`
   gap: 0.5rem;
   font-family: ${font};
   font-weight: 500;
-  color: ${colors.grey[300]};
+  color: ${colors.grey[100]};
   background-color: ${(props) =>
-    props.open ? colors.grey[800] : colors.grey[900]};
+    props.open ? colors.grey[700] : colors.grey[900]};
   border-radius: 25px;
-  border: solid 1px ${colors.grey[800]};
+  border: solid 1px ${colors.grey[700]};
   padding: 8px 20px;
   font-size: 14px;
   /* transition: all 0.1s ease-in; */
   &:hover {
-    background-color: ${colors.grey[800]};
+    background-color: ${colors.grey[700]};
   }
 `;
 
@@ -73,16 +73,16 @@ export const SearchBar = styled.div`
   background-color: ${colors.grey[900]};
   border-radius: 25px;
   padding: 6px 14px;
-  border: solid 1px ${colors.grey[800]};
+  border: solid 1px ${colors.grey[700]};
   & input {
     font-family: ${font};
     background-color: ${colors.grey[900]};
-    color: ${colors.grey[300]};
+    color: ${colors.grey[100]};
     width: 240px;
     border: none;
     font-size: 16px;
     &::placeholder {
-      color: ${colors.grey[600]};
+      color: ${colors.grey[500]};
     }
     &:focus {
       outline: none;
@@ -102,6 +102,6 @@ export const AddButton = styled(Link)`
   padding: 8px 20px;
   font-size: 14px;
   &:hover {
-    background-color: #0a5eb0;
+    background-color: ${colors.blue_hover};
   }
 `;
