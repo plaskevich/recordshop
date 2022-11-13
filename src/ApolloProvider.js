@@ -10,8 +10,13 @@ import { setContext } from '@apollo/client/link/context';
 import store from 'redux/store';
 import { Provider } from 'react-redux';
 
+let serverLink;
+
+if (config.nodeEnv === 'production') serverLink = config.prodServer;
+if (config.nodeEnv === 'development') serverLink = config.devServer;
+
 const httpLink = createHttpLink({
-  uri: config.graphqlURL,
+  uri: serverLink,
 });
 
 const authLink = setContext((_, { headers }) => {

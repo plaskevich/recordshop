@@ -7,9 +7,6 @@ export const TableWrap = styled.div`
   border-radius: 25px;
   border: solid 1px ${colors.grey[700]};
   overflow: scroll;
-  tr {
-    /* border-bottom: 1px solid ${colors.grey[700]}; */
-  }
   table {
     width: 100%;
     text-align: left;
