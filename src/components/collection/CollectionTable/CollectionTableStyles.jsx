@@ -75,3 +75,20 @@ export const MenuButton = styled.button`
     transform: scale(1.3);
   }
 `;
+
+export const NoDataWrap = styled.div`
+  display: flex;
+  padding: 140px 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: ${colors.white};
+  gap: 20px;
+  p {
+    font-size: 40px;
+    font-weight: 600;
+  }
+  img {
+    width: 240px;
+  }
+`;

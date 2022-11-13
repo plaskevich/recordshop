@@ -74,6 +74,12 @@ export const SearchBar = styled.div`
   border-radius: 25px;
   padding: 6px 14px;
   border: solid 1px ${colors.grey[700]};
+  &:focus-within {
+    border: solid 1px ${colors.grey[300]};
+    svg {
+      fill: ${colors.grey[300]};
+    }
+  }
   & input {
     font-family: ${font};
     background-color: ${colors.grey[900]};

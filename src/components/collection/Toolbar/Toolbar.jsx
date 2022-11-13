@@ -15,9 +15,7 @@ import {
   AddButton,
 } from './ToolbarStyles';
 
-export default function Toolbar(props) {
-  const { filter, onFilterChange } = props;
-
+export default function Toolbar({ filter, onFilterChange, onSearchChange }) {
   const filterName = () => {
     switch (filter) {
       case 'all':
@@ -75,7 +73,7 @@ export default function Toolbar(props) {
       <SideWrap>
         <SearchBar>
           <IoSearch size={18} color={colors.grey[500]} />
-          <input placeholder='Search...' />
+          <input placeholder='Search...' onChange={onSearchChange} />
         </SearchBar>
         <AddButton to='/add'>
           <IoAddCircle size={18} />
