@@ -52,8 +52,6 @@ export default function Collection() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [getCollection]);
 
-  console.log(collectionData);
-
   return (
     <Content>
       <LogoMenu />

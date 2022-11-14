@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { colors, font } from 'styles/theme';
-import { IoImage, IoLink, IoTrash } from 'react-icons/io5';
+import { IoImage, IoTrash } from 'react-icons/io5';
 
 const ButtonsWrap = styled.div`
   position: relative;
@@ -35,17 +35,6 @@ const Button = styled.button`
   padding: 6px 10px;
 `;
 
-const LinkButton = styled.button`
-  display: flex;
-  align-items: center;
-  background-color: ${colors.grey[700]};
-  color: ${colors.grey[100]};
-  font-size: 16px;
-  font-family: ${font};
-  border-radius: 5px;
-  padding: 6px;
-`;
-
 export default function ArtworkButtons(props) {
   const { imageUploaded, removeImage } = props;
   return (
@@ -55,16 +44,10 @@ export default function ArtworkButtons(props) {
           <IoTrash size={16} /> Remove
         </Button>
       ) : (
-        <>
-          <input id='upload' type='file' multiple accept='image/*' hidden />
-          <Upload htmlFor='upload'>
-            <IoImage size={16} />
-            Upload artwork
-          </Upload>
-          <LinkButton>
-            <IoLink />
-          </LinkButton>
-        </>
+        <Upload htmlFor='upload'>
+          <IoImage size={16} />
+          Add artwork
+        </Upload>
       )}
     </ButtonsWrap>
   );

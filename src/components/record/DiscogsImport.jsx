@@ -1,31 +1,39 @@
 import axios from 'axios';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import { colors, font } from 'styles/theme';
+import { ThreeDots } from 'react-loader-spinner';
 
-export const ImportSection = styled.div`
+const ImportSection = styled.div`
   width: 250px;
   border: 2px dashed ${colors.grey[500]};
   border-radius: 10px;
   text-align: center;
-  padding: 15px 0;
+  padding: 18px 0;
 `;
 
-export const Title = styled.p`
+const Title = styled.p`
   font-size: 14px;
   color: ${colors.grey[100]};
   font-weight: 500;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 `;
 
-export const ReleaseInput = styled.input`
-  width: 100px;
+const FormGroup = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+`;
+
+const ReleaseInput = styled.input`
+  width: 120px;
   font-size: 14px;
   border: 2px solid ${colors.grey[500]};
-  border-radius: 25px;
+  border-radius: 5px;
   background-color: transparent;
   padding: 4px 12px;
-  margin-right: 10px;
   color: ${colors.grey[100]};
   caret-color: ${colors.yellow};
   &:focus {
@@ -33,21 +41,38 @@ export const ReleaseInput = styled.input`
   }
 `;
 
-export const ImportButton = styled.button`
+const ImportButton = styled.button`
   background-color: ${colors.pink};
   font-size: 12px;
   font-weight: 500;
-  border-radius: 25px;
+  border-radius: 5px;
   color: ${colors.grey[100]};
-  padding: 6px 20px;
+  padding: 6px 10px;
   font-family: ${font};
+  width: 60px;
+  height: 28px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+`;
+
+const Error = styled.div`
+  color: ${colors.red};
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+  font-size: 14px;
 `;
 
 export function DiscogsImport(props) {
   const { onImport } = props;
   const { register, handleSubmit, setValue } = useForm();
+  const [loading, setLoading] = useState(false);
+  const [importError, setImportError] = useState();
 
   const handleImport = (data) => {
+    setImportError(null);
+    setLoading(true);
     const myKey = 'RQjHhwSaMHxwGbPxJxXz';
     const mySecret = 'BIdsSStHDrPRlaWqpKiEeKTEkaHmSrwY';
     axios
@@ -55,6 +80,7 @@ export function DiscogsImport(props) {
         `https://api.discogs.com/releases/${data.releaseId}?key=${myKey}&secret=${mySecret}`
       )
       .then((response) => {
+        setLoading(false);
         const data = response.data;
         const recordData = {
           title: data.title,
@@ -66,22 +92,34 @@ export function DiscogsImport(props) {
         };
         onImport(recordData);
         setValue('releaseId', '');
+      })
+      .catch(() => {
+        setLoading(false);
+        setImportError('Release not found');
       });
-    // .catch(() => setDiscogsError("This release couldn't be found"));
   };
 
   return (
     <ImportSection>
       <Title>Import data from Discogs</Title>
       <form onSubmit={handleSubmit(handleImport)}>
-        <ReleaseInput
-          placeholder='Realease ID'
-          {...register('releaseId')}
-          type='text'
-          inputmode='numeric'
-        />
-        <ImportButton type='submit'>Import</ImportButton>
+        <FormGroup>
+          <ReleaseInput
+            placeholder='Realease ID'
+            {...register('releaseId')}
+            type='text'
+            inputmode='numeric'
+          />
+          <ImportButton type='submit'>
+            {loading ? (
+              <ThreeDots width='16' height='16' color='white' />
+            ) : (
+              'Import'
+            )}
+          </ImportButton>
+        </FormGroup>
       </form>
+      {importError && <Error>{importError}</Error>}
     </ImportSection>
   );
 }

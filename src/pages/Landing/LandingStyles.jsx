@@ -24,7 +24,7 @@ export const BrandLogoWrap = styled(Link)`
 `;
 
 export const LogoText = styled.div`
-  color: ${colors.grey[100]};
+  color: ${colors.blue};
   font-size: 30px;
   font-weight: 600;
 `;
@@ -85,16 +85,16 @@ export const LandingContent = styled.div`
 export const FirstLine = styled.h1`
   color: ${colors.grey[100]};
   font-size: 45px;
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
   line-height: 60px;
+  margin-bottom: 100px;
 `;
 export const TryText = styled(Link)`
   h1 {
     color: ${colors.grey[100]};
     font-size: 60px;
     font-weight: 800;
-    /* padding: 40px 0; */
     margin: 0;
   }
 

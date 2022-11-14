@@ -112,6 +112,9 @@ export const SubmitButton = styled.button`
   justify-content: center;
   align-items: center;
   height: 43px;
+  &:hover {
+    background-color: ${colors.blue_hover};
+  }
 `;
 
 export const BackWrap = styled(Link)`

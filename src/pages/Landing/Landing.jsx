@@ -12,7 +12,7 @@ import {
   LandingContent,
 } from './LandingStyles';
 
-import logo from './logo.png';
+import logo from 'assets/logo.png';
 
 export default function Landing() {
   return (

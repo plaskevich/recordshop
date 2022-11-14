@@ -37,7 +37,7 @@ export const LeftSection = styled.div`
   width: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 40px;
 `;
 
 export const RightSection = styled.div`
@@ -62,7 +62,7 @@ export const Artwork = styled.div`
 
 export const Footer = styled.div`
   display: flex;
-  margin-top: 4.5rem;
+  margin-top: 72px;
   float: right;
 `;
 
@@ -74,6 +74,9 @@ export const FillButton = styled.button`
   padding: 5px 20px;
   font-weight: 500;
   font-family: ${font};
+  &:hover {
+    background-color: ${colors.blue_hover};
+  }
 `;
 
 export const LinkButton = styled(Link)`

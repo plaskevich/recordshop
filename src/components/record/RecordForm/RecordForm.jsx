@@ -5,27 +5,28 @@ import {
   Label,
   Input,
   Select,
+  Footer,
 } from './RecordFormStyles';
 import {
   Card,
   CardContainer,
   Header,
+  LeftSection,
+  RightSection,
   Artwork,
   FillButton,
   LinkButton,
-  LeftSection,
-  RightSection,
-  Footer,
 } from 'styles/styledComponents';
 import { DiscogsImport } from '../DiscogsImport';
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import ArtworkButtons from './ArtworkButtons';
 
 export default function RecordForm(props) {
   const { onSubmit, recordData } = props;
-  const { register, handleSubmit, setValue } = useForm();
+  const { register, handleSubmit, setValue, watch } = useForm();
   const [imgUrl, setImgUrl] = useState('');
+
+  const watchImgUrl = watch('img_uri');
 
   useEffect(() => {
     if (recordData) {
@@ -33,6 +34,10 @@ export default function RecordForm(props) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [recordData]);
+
+  useEffect(() => {
+    setImgUrl(watchImgUrl);
+  }, [watchImgUrl]);
 
   const onImport = (data) => {
     const recordData = { ...data };
@@ -46,40 +51,31 @@ export default function RecordForm(props) {
     setImgUrl(recordData.img_uri);
   };
 
-  const removeImage = () => {
-    setImgUrl('');
-  };
-
   return (
     <Card>
       <Header>New Record</Header>
       <CardContainer>
         <LeftSection>
-          <Artwork imgUrl={imgUrl}>
-            <ArtworkButtons
-              imageUploaded={imgUrl.length > 0}
-              removeImage={removeImage}
-            />
-          </Artwork>
+          <Artwork imgUrl={imgUrl}></Artwork>
           <DiscogsImport onImport={onImport} />
         </LeftSection>
         <RightSection>
           <Form id='record-form' onSubmit={handleSubmit(onSubmit)}>
             <FormGroup>
               <Label htmlFor='title'>Title</Label>
-              <Input {...register('title')} type='text' />
+              <Input {...register('title')} type='text' required />
             </FormGroup>
             <FormGroup>
               <Label htmlFor='artist'>Artist</Label>
-              <Input {...register('artist')} type='text' />
+              <Input {...register('artist')} type='text' required />
             </FormGroup>
             <FormGroup>
               <Label htmlFor='label'>Label</Label>
-              <Input {...register('label')} type='text' />
+              <Input {...register('label')} type='text' required />
             </FormGroup>
             <FormGroup>
               <Label htmlFor='genre'>Genre</Label>
-              <Input {...register('genre')} type='text' />
+              <Input {...register('genre')} type='text' required />
             </FormGroup>
             <FormGroupShort>
               <Label htmlFor='released'>Released</Label>
@@ -107,6 +103,10 @@ export default function RecordForm(props) {
                 <option value='sold'>Sold</option>
               </Select>
             </FormGroupShort>
+            <FormGroup>
+              <Label htmlFor='img_uri'>Artwork URL</Label>
+              <Input {...register('img_uri')} type='text' />
+            </FormGroup>
           </Form>
         </RightSection>
       </CardContainer>

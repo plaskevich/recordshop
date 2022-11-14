@@ -39,18 +39,6 @@ export const Container = styled.div`
   width: 100%;
 `;
 
-export const LeftSection = styled.div`
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-export const RightSection = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
@@ -118,6 +106,6 @@ export const Select = styled.select`
 
 export const Footer = styled.div`
   display: flex;
-  margin-top: 60px;
+  margin-top: 50px;
   float: right;
 `;

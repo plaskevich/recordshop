@@ -12,7 +12,7 @@ export default function SignUp() {
 
   const [signUp, { loading }] = useMutation(SIGN_UP, {
     onCompleted(data) {
-      localStorage.setItem('token', data.signIn.token);
+      localStorage.setItem('token', data.signUp.token);
       dispatch(setUser({ token: data.signUp.token }));
       navigate('/collection');
     },
