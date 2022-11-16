@@ -22,7 +22,6 @@ export default function Landing() {
           <BrandLogo src={logo} alt='' />
           <LogoText>RecordShop</LogoText>
         </BrandLogoWrap>
-        RECORD SHOP
         <NavButtons>
           <LoginButton to='/login'>Login</LoginButton>
           <SignUpButton to='/signup'>
@@ -32,7 +31,7 @@ export default function Landing() {
       </Nav>
       <LandingContent>
         <FirstLine>
-          Inventory management app <br /> for your local record store
+          Inventory management app <br /> for your record store
         </FirstLine>
         <TryText to='signup'>
           <h1>TRY NOW</h1>

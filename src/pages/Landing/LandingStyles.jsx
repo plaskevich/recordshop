@@ -14,7 +14,7 @@ export const Nav = styled.div`
   padding: 30px 50px;
   position: sticky;
   top: 0;
-  background-color: #000;
+  background-color: ${colors.black};
 `;
 
 export const BrandLogoWrap = styled(Link)`
@@ -78,22 +78,23 @@ export const LandingContent = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 200px 0;
+  padding: 140px 0;
   gap: 20px;
 `;
 
 export const FirstLine = styled.h1`
   color: ${colors.grey[100]};
-  font-size: 45px;
-  font-weight: 700;
+  font-size: 52px;
+  font-weight: 800;
   text-align: center;
   line-height: 60px;
   margin-bottom: 100px;
+  line-height: 80px;
 `;
 export const TryText = styled(Link)`
   h1 {
     color: ${colors.grey[100]};
-    font-size: 60px;
+    font-size: 66px;
     font-weight: 800;
     margin: 0;
   }
