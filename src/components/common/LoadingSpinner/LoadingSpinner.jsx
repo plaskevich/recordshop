@@ -1,6 +1,5 @@
 import spinner from './spinner.png';
 import styled from 'styled-components';
-import { colors } from 'styles/theme';
 
 const Spinner = styled.div`
   position: absolute;
