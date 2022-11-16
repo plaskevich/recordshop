@@ -4,7 +4,7 @@ import { IoCaretDown, IoCog, IoLogOut } from 'react-icons/io5';
 import { Menu, MenuItem } from '@szhsin/react-menu';
 import { menuSelector, menuItemSelector } from '@szhsin/react-menu/style-utils';
 import { useDispatch } from 'react-redux';
-import { setUser } from 'redux/user/userSlice';
+import { setUser } from 'redux/userSlice';
 import { useNavigate } from 'react-router-dom';
 
 const Wrap = styled.div`

@@ -37,7 +37,7 @@ export default function RecordDetails(props) {
   const navigate = useNavigate();
 
   const handleEditButton = () => {
-    navigate(`edit/${id}`);
+    navigate(`/edit/${id}`);
   };
 
   return (

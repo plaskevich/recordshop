@@ -1,7 +1,7 @@
 import { SIGN_UP } from 'graphql/mutations/auth';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setUser } from 'redux/user/userSlice';
+import { setUser } from 'redux/userSlice';
 import { useMutation } from '@apollo/client';
 import SignUpForm from 'components/auth/SignUpForm';
 import { useNavigate } from 'react-router-dom';

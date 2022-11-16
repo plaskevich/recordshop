@@ -1,8 +1,14 @@
 import spinner from './spinner.png';
 import styled from 'styled-components';
+import { colors } from 'styles/theme';
 
 const Spinner = styled.div`
+  position: absolute;
+  top: 1px;
+  right: 1px;
   height: 100%;
+  width: 100%;
+  backdrop-filter: blur(30px);
   display: flex;
   align-items: center;
   justify-content: center;

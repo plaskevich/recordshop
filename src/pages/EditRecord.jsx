@@ -1,10 +1,11 @@
 import { EDIT_RECORD } from 'graphql/mutations/record';
 import { GET_RECORD } from 'graphql/queries';
 import { useMutation, useQuery } from '@apollo/client';
-import { LoadingSpinner } from 'components/common/LoadingSpinner/LoadingSpinner';
 import RecordForm from 'components/record/RecordForm/RecordForm';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { startLoading, stopLoading } from 'redux/propsSlice';
+import { useDispatch } from 'react-redux';
 
 import { MainContainer } from 'styles/styledComponents';
 
@@ -12,6 +13,7 @@ export default function EditRecord() {
   const navigate = useNavigate();
   const { id } = useParams();
   const [recordData, setRecordData] = useState();
+  const dispatch = useDispatch();
 
   const [editRecord, { loading }] = useMutation(EDIT_RECORD, {
     onCompleted() {
@@ -30,6 +32,12 @@ export default function EditRecord() {
     }
   }, [data]);
 
+  useEffect(() => {
+    if (loading) dispatch(startLoading());
+    if (!loading) dispatch(stopLoading());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading]);
+
   const submitForm = (formData) => {
     editRecord({
       variables: { id, data: formData },
@@ -38,7 +46,6 @@ export default function EditRecord() {
 
   return (
     <MainContainer>
-      {loading && <LoadingSpinner />}
       {recordData && (
         <RecordForm recordData={recordData} onSubmit={submitForm} />
       )}

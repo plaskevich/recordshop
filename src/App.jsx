@@ -12,9 +12,11 @@ import AddRecord from 'pages/AddRecord';
 import EditRecord from 'pages/EditRecord';
 import ViewRecord from 'pages/ViewRecord';
 import { useSelector } from 'react-redux';
+import { LoadingSpinner } from 'components/common/LoadingSpinner/LoadingSpinner';
 
 function App() {
   const { token } = useSelector((state) => state.user);
+  const { isLoading } = useSelector((state) => state.props);
   const isAuthenticated = !!token;
 
   return (
@@ -51,6 +53,7 @@ function App() {
           element={isAuthenticated ? <EditRecord /> : <Navigate to='/' />}
         />
       </Routes>
+      {isLoading && <LoadingSpinner />}
     </Router>
   );
 }

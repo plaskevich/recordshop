@@ -6,9 +6,10 @@ import { REMOVE_RECORD } from 'graphql/mutations/record';
 import { useLazyQuery, useMutation } from '@apollo/client';
 import { useState, useEffect } from 'react';
 import { colors } from 'styles/theme';
-import { LoadingSpinner } from 'components/common/LoadingSpinner/LoadingSpinner';
 import styled from 'styled-components';
 import { filter as searchFilter } from 'smart-array-filter';
+import { startLoading, stopLoading } from 'redux/propsSlice';
+import { useDispatch } from 'react-redux';
 
 const Content = styled.div`
   color: ${colors.grey[100]};
@@ -19,6 +20,8 @@ const Content = styled.div`
 export default function Collection() {
   const [collectionData, setCollectionData] = useState();
   const [filter, setFilter] = useState('all');
+
+  const dispatch = useDispatch();
 
   const [getCollection, { loading, data }] = useLazyQuery(GET_COLLECTION, {
     fetchPolicy: 'cache-and-network',
@@ -52,6 +55,12 @@ export default function Collection() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [getCollection, filter]);
 
+  useEffect(() => {
+    if (loading) dispatch(startLoading());
+    if (!loading) dispatch(stopLoading());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading]);
+
   return (
     <Content>
       <LogoMenu />
@@ -60,7 +69,6 @@ export default function Collection() {
         onFilterChange={onFilterChange}
         onSearchChange={(event) => onSearchChange(event.target.value)}
       />
-      {loading && <LoadingSpinner />}
       {collectionData && (
         <CollectionTable records={collectionData} removeRecord={removeRecord} />
       )}

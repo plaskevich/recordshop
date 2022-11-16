@@ -16,7 +16,6 @@ export const TableWrap = styled.div`
       color: ${colors.grey[300]};
       font-size: 14px;
       font-weight: 500;
-      position: sticky;
       top: 0;
       background-color: ${colors.grey[900]};
     }
@@ -67,7 +66,7 @@ export const MenuButton = styled.button`
   color: ${colors.grey[100]};
   padding: 4px;
   transition: all 0.1s ease-in;
-  transform: ${(props) => (props.open ? 'scale(1.3)' : 'scale(1)')};
+  transform: ${(props) => (props.open ? 'scale(1.3)' : '')};
   &:hover {
     transform: scale(1.3);
   }
