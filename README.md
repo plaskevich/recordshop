@@ -5,6 +5,8 @@
 
 Visit **[record-shop.netlify.app](https://record-shop.netlify.app)** to see the deployed version
 
+⚠️ **It make take a while on a first load (e.g. when logging in) becasue server hosting is free and turns off after 30 min of inactivity** ⚠️
+
 ## Steps to run locally:
 
 ### 1. Install dependencies
@@ -24,7 +26,7 @@ REACT_APP_DEV_SERVER=http://localhost:4000/graphql
 ## Using the app
 For testing purposes you may login with following credentials:
 
-**Email**: `test@user.com`
+**Email**: `test@example.com`
 
 **Password**: `simplepass`
 
