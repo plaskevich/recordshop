@@ -50,7 +50,7 @@ export default function Collection() {
   useEffect(() => {
     fetchRecords();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [getCollection]);
+  }, [getCollection, filter]);
 
   return (
     <Content>

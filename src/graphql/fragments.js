@@ -5,6 +5,7 @@ export const AUTH_DATA_FRAGMENT = gql`
     token
     user {
       id
+      shopName
     }
   }
 `;
