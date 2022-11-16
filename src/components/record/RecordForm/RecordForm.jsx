@@ -63,7 +63,12 @@ export default function RecordForm(props) {
           <Form id='record-form' onSubmit={handleSubmit(onSubmit)}>
             <FormGroup>
               <Label htmlFor='title'>Title</Label>
-              <Input {...register('title')} type='text' required />
+              <Input
+                {...register('title')}
+                type='text'
+                required
+                data-test-id='record-form-title'
+              />
             </FormGroup>
             <FormGroup>
               <Label htmlFor='artist'>Artist</Label>
@@ -112,7 +117,7 @@ export default function RecordForm(props) {
       </CardContainer>
       <Footer>
         <LinkButton to='/'>Cancel</LinkButton>
-        <FillButton form='record-form' type='submit'>
+        <FillButton form='record-form' type='submit' data-test-id='save-button'>
           Save
         </FillButton>
       </Footer>

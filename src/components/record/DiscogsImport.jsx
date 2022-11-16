@@ -109,8 +109,9 @@ export function DiscogsImport(props) {
             {...register('releaseId')}
             type='text'
             inputmode='numeric'
+            data-test-id='release-input'
           />
-          <ImportButton type='submit'>
+          <ImportButton type='submit' data-test-id='import-button'>
             {loading ? (
               <ThreeDots width='16' height='16' color='white' />
             ) : (

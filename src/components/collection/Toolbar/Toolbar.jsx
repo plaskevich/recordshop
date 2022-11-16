@@ -75,7 +75,7 @@ export default function Toolbar({ filter, onFilterChange, onSearchChange }) {
           <IoSearch size={18} color={colors.grey[500]} />
           <input placeholder='Search...' onChange={onSearchChange} />
         </SearchBar>
-        <AddButton to='/add'>
+        <AddButton to='/add' data-test-id='add-button'>
           <IoAddCircle size={18} />
           Add
         </AddButton>

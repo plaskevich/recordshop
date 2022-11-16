@@ -80,7 +80,7 @@ export default function CollectionTable(props) {
                       align='end'
                       offsetY={6}
                       menuButton={({ open }) => (
-                        <MenuButton open={open}>
+                        <MenuButton open={open} data-test-id='menu-button'>
                           <IoEllipsisHorizontal size='18px' />
                         </MenuButton>
                       )}
@@ -90,7 +90,10 @@ export default function CollectionTable(props) {
                         <IoCreate />
                         Edit
                       </MenuItem>
-                      <MenuItem onClick={() => handleRemoveRecord(item.id)}>
+                      <MenuItem
+                        onClick={() => handleRemoveRecord(item.id)}
+                        data-test-id='remove-button'
+                      >
                         <IoTrash />
                         Remove
                       </MenuItem>

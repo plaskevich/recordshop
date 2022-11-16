@@ -2,8 +2,8 @@ import { gql } from '@apollo/client';
 import { AUTH_DATA_FRAGMENT } from '../fragments';
 
 export const SIGN_UP = gql`
-  mutation signUp($email: String!, $password: String!, $name: String) {
-    signUp(email: $email, password: $password, name: $name) {
+  mutation signUp($email: String!, $password: String!) {
+    signUp(email: $email, password: $password) {
       ...AuthDetails
     }
   }

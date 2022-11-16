@@ -33,24 +33,32 @@ export default function LoginForm(props) {
         <Form onSubmit={handleSubmit(submitForm)}>
           <FormGroup>
             <Label htmlFor='email'>Email</Label>
-            <Input {...register('email')} type='email' />
+            <Input
+              {...register('email')}
+              type='email'
+              data-test-id='login-input'
+            />
           </FormGroup>
           <FormGroup>
             <Label htmlFor='password'>Password</Label>
-            <Input {...register('password')} type='password' />
+            <Input
+              {...register('password')}
+              type='password'
+              data-test-id='password-input'
+            />
           </FormGroup>
           <SwitchWrap>
             <span>Don't have an account yet? </span>
             <Link to='/signup'>Create account</Link>
           </SwitchWrap>
           {errorMessage && (
-            <ErrorMessage>
+            <ErrorMessage data-test-id='error-message'>
               <ErrorText>{errorMessage}</ErrorText>
             </ErrorMessage>
           )}
 
           <ButtonWrap>
-            <SubmitButton type='submit'>
+            <SubmitButton type='submit' data-test-id='submit-button'>
               {loading ? <ThreeDots height='10' color='white' /> : 'Login'}
             </SubmitButton>
           </ButtonWrap>
