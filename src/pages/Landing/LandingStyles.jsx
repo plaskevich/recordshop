@@ -64,7 +64,7 @@ export const SignUpButton = styled(Link)`
     linear-gradient(-101deg, ${colors.pink} 0%, ${colors.blue} 100%);
   background-origin: border-box;
   background-clip: content-box, border-box;
-  box-shadow: 2px 1000px 1px #000 inset;
+  box-shadow: 2px 1000px 1px ${colors.black} inset;
   border-radius: 25px;
 
   &:hover {
