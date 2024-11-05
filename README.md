@@ -1,42 +1,50 @@
-# RecordShop
-[![Netlify Status](https://api.netlify.com/api/v1/badges/80ddb556-4829-4d99-b375-81b69d341b23/deploy-status)](https://app.netlify.com/sites/record-shop/deploys)
+# React + TypeScript + Vite
 
-**RecordShop** is a web application made for managing inventory of a record store.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Visit **[record-shop.netlify.app](https://record-shop.netlify.app)** to see the deployed version
+Currently, two official plugins are available:
 
-⚠️ **It make take a while on a first load (e.g. when logging in) becasue server hosting is free and is spun down after 15 min of inactivity**
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Steps to run locally:
+## Expanding the ESLint configuration
 
-### 1. Install dependencies
-### `yarn`
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-### 2. Setup environment variables
-In the root folder create `.env` file which should contain:
+- Configure the top-level `parserOptions` property like this:
+
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
 ```
-REACT_APP_NODE_ENV=development
-REACT_APP_PROD_SERVER=https://recordshop-lymf.onrender.com/graphql
-REACT_APP_DEV_SERVER=http://localhost:4000/graphql
+
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
+
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
 ```
-
-### 3. Run the application
-### `yarn start`
-
-## Using the app
-For testing purposes you may login with following credentials:
-
-**Email**: `test@example.com`
-
-**Password**: `simplepass`
-
-## E2E Tests
-In order to run the tests, the server should be running locally on `localhost:4000`
-
-### 1. Run the app in dev mode
-
-`yarn dev`
-
-### 2. Run tests in headless
-
-`yarn test:e2e`
