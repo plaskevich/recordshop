@@ -12,8 +12,8 @@ import './index.css';
 
 let serverLink;
 
-if (config.nodeEnv === 'production') serverLink = config.prodServer;
-if (config.nodeEnv === 'development') serverLink = config.devServer;
+if (config.nodeEnv === 'prod') serverLink = config.prodServer;
+if (config.nodeEnv === 'dev') serverLink = config.devServer;
 
 const httpLink = createHttpLink({
   uri: serverLink,
