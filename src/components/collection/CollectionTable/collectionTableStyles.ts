@@ -61,18 +61,6 @@ export const Artwork = styled.div`
   }
 `;
 
-export const MenuButton = styled.button`
-  background-color: transparent;
-  display: flex;
-  color: ${colors.grey[100]};
-  padding: 4px;
-  transition: all 0.1s ease-in;
-  transform: ${(props) => (props.open ? 'scale(1.3)' : '')};
-  &:hover {
-    transform: scale(1.3);
-  }
-`;
-
 export const NoDataWrap = styled.div`
   display: flex;
   padding: 140px 0;

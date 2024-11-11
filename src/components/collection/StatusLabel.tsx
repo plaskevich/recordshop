@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 import { colors } from '@/styles/theme';
+import { Status } from '@/types';
 import { getStatus } from '@/utils';
 
-export const Label = styled.div`
+export const Label = styled.div<{ status: string }>`
   background-color: ${(props) =>
     props.status === 'sold' ? colors.yellow : props.status === 'inStock' ? colors.green : colors.grey[100]};
   text-align: center;
@@ -16,9 +17,11 @@ export const Label = styled.div`
   width: 55px;
 `;
 
-export default function StatusLabel(props) {
-  const { status } = props;
+type StatusLabelProps = {
+  status: Status;
+};
 
+export default function StatusLabel({ status }: StatusLabelProps) {
   return (
     <>
       <Label status={status}>{getStatus(status)}</Label>

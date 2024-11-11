@@ -1,12 +1,20 @@
-import { IoAddCircle, IoCheckmarkDone, IoFilter, IoSearch } from 'react-icons/io5';
-
-import { MenuItem } from '@szhsin/react-menu';
+import { ChangeEvent, useState } from 'react';
+import { IoAddCircle, IoFilter, IoSearch } from 'react-icons/io5';
 
 import { colors } from '@/styles/theme';
+import { FilterOptions } from '@/types';
 
-import { AddButton, FilterMenu, SearchBar, SideWrap, ToolbarButton, Wrap } from './ToolbarStyles';
+import { AddButton, FilterMenu, MenuItem, SearchBar, SideWrap, ToolbarButton, Wrap } from './toolbarStyles';
 
-export default function Toolbar({ filter, onFilterChange, onSearchChange }) {
+type ToolbarProps = {
+  filter: string;
+  onFilterChange: (filter: FilterOptions) => void;
+  onSearchChange: (e: ChangeEvent<HTMLInputElement>) => void;
+};
+
+export default function Toolbar({ filter, onFilterChange, onSearchChange }: ToolbarProps) {
+  const [open, setOpen] = useState(false);
+
   const filterName = () => {
     switch (filter) {
       case 'all':
@@ -20,37 +28,35 @@ export default function Toolbar({ filter, onFilterChange, onSearchChange }) {
     }
   };
 
+  const handleFilterChange = (filter: FilterOptions) => {
+    onFilterChange(filter);
+    setOpen(false);
+  };
+
   return (
     <Wrap>
       <SideWrap>
         <span>
-          <FilterMenu
-            direction="bottom"
-            align="start"
-            offsetY={10}
-            menuButton={({ open }) => (
-              <ToolbarButton open={open}>
-                <IoFilter size={18} /> {filterName()}
-              </ToolbarButton>
-            )}
-            transition
-          >
-            <MenuItem onClick={() => onFilterChange('all')} className={filter === 'all' ? 'selected' : ''}>
+          <ToolbarButton open={open} onClick={() => setOpen(!open)}>
+            <IoFilter size={18} /> {filterName()}
+          </ToolbarButton>
+          <FilterMenu open={open}>
+            <MenuItem selected={filter === 'all'} onClick={() => handleFilterChange('all')}>
               All
             </MenuItem>
-            <MenuItem onClick={() => onFilterChange('sold')} className={filter === 'sold' ? 'selected' : ''}>
+            <MenuItem selected={filter === 'sold'} onClick={() => handleFilterChange('sold')}>
               Sold
             </MenuItem>
-            <MenuItem onClick={() => onFilterChange('inStock')} className={filter === 'inStock' ? 'selected' : ''}>
+            <MenuItem selected={filter === 'inStock'} onClick={() => handleFilterChange('inStock')}>
               In Stock
             </MenuItem>
           </FilterMenu>
         </span>
 
-        <ToolbarButton>
+        {/* <ToolbarButton>
           <IoCheckmarkDone size={18} />
           Select
-        </ToolbarButton>
+        </ToolbarButton> */}
       </SideWrap>
       <SideWrap>
         <SearchBar>

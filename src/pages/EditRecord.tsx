@@ -9,6 +9,7 @@ import { EDIT_RECORD } from '@/graphql/mutations/record';
 import { GET_RECORD } from '@/graphql/queries';
 import { startLoading, stopLoading } from '@/redux/propsSlice';
 import { MainContainer } from '@/styles/styledComponents';
+import { Record } from '@/types';
 
 export default function EditRecord() {
   const navigate = useNavigate();
@@ -28,10 +29,10 @@ export default function EditRecord() {
 
   useEffect(() => {
     if (data?.getRecord) {
-      const { __typename, id, date_added, ...recordData } = data.getRecord;
+      // const { __typename, id, date_added, ...recordData } = data.getRecord;
       setRecordData(recordData);
     }
-  }, [data]);
+  }, [data?.getRecord, recordData]);
 
   useEffect(() => {
     if (loading) dispatch(startLoading());
@@ -39,7 +40,7 @@ export default function EditRecord() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
-  const submitForm = (formData) => {
+  const submitForm = (formData: Record) => {
     editRecord({
       variables: { id, data: formData },
     });

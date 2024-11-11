@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FieldValues } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -12,7 +13,7 @@ export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const [signIn, { loading }] = useMutation(SIGN_IN, {
     onCompleted(data) {
@@ -25,8 +26,7 @@ export default function Login() {
     },
   });
 
-  const submitForm = (data) => {
-    const { email, password } = data;
+  const submitForm = ({ email, password }: FieldValues) => {
     signIn({
       variables: {
         email: email,
@@ -35,5 +35,5 @@ export default function Login() {
     });
   };
 
-  return <LoginForm submitForm={submitForm} loading={loading} errorMessage={errorMessage} />;
+  return <LoginForm submitForm={submitForm} loading={loading} errorMessage={errorMessage ?? ''} />;
 }

@@ -1,5 +1,6 @@
-import spinner from './spinner.png';
 import styled from 'styled-components';
+
+import spinner from './spinner.png';
 
 const Spinner = styled.div`
   position: absolute;
@@ -7,28 +8,30 @@ const Spinner = styled.div`
   right: 1px;
   height: 100%;
   width: 100%;
-  backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
-  img {
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
+`;
+
+const Image = styled.img`
+  width: 200px;
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
     }
-    width: 200px;
-    animation: spin 1s linear infinite;
+    100% {
+      transform: rotate(360deg);
+    }
   }
+  animation: spin 1s linear infinite;
 `;
 
 export function LoadingSpinner() {
   return (
     <Spinner>
-      <img src={spinner} alt='loader' />
+      <Image src={spinner} alt="loader" />
     </Spinner>
   );
 }

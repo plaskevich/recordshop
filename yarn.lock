@@ -1937,19 +1937,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@szhsin/react-menu@npm:^4.2.2":
-  version: 4.2.2
-  resolution: "@szhsin/react-menu@npm:4.2.2"
-  dependencies:
-    prop-types: "npm:^15.7.2"
-    react-transition-state: "npm:^2.1.0"
-  peerDependencies:
-    react: ">=16.14.0"
-    react-dom: ">=16.14.0"
-  checksum: 10c0/e51dd970818a541cad4b5fd04436ec759de0e7542acc29cb693aae1d65843acc5c3132c8e8d5a3c0c1ecbb0ec285871c3e5112be40a515664a6a0118bf6c3bd8
-  languageName: node
-  linkType: hard
-
 "@trivago/prettier-plugin-sort-imports@npm:^4.3.0":
   version: 4.3.0
   resolution: "@trivago/prettier-plugin-sort-imports@npm:4.3.0"
@@ -5142,16 +5129,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-transition-state@npm:^2.1.0":
-  version: 2.1.3
-  resolution: "react-transition-state@npm:2.1.3"
-  peerDependencies:
-    react: ">=16.8.0"
-    react-dom: ">=16.8.0"
-  checksum: 10c0/923226b4d2b852b567da62cdca54186befcbde1d3ed37108c816be285db92aef4bbf0942eaba6f48f544275fed2400af3ddbeff173994fb3d3279dc147ca889b
-  languageName: node
-  linkType: hard
-
 "react@npm:^18.3.1":
   version: 18.3.1
   resolution: "react@npm:18.3.1"
@@ -6066,7 +6043,6 @@ __metadata:
     "@graphql-codegen/client-preset": "npm:^4.5.0"
     "@graphql-typed-document-node/core": "npm:^3.2.0"
     "@reduxjs/toolkit": "npm:^2.3.0"
-    "@szhsin/react-menu": "npm:^4.2.2"
     "@trivago/prettier-plugin-sort-imports": "npm:^4.3.0"
     "@types/node": "npm:^22.9.0"
     "@types/react": "npm:^18.3.12"

@@ -35,5 +35,5 @@ export default function ViewRecord() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
-  return <Content>{data?.getRecord && <RecordDetails recordData={data.getRecord} />}</Content>;
+  return <Content>{data?.getRecord && <RecordDetails {...data.getRecord} />}</Content>;
 }

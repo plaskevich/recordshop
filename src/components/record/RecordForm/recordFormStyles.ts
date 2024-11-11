@@ -18,7 +18,7 @@ export const Form = styled.form`
   width: 350px;
 `;
 
-export const Artwork = styled.div`
+export const Artwork = styled.div<{ imgUrl: string }>`
   width: 250px;
   height: 250px;
   background: ${(props) =>
@@ -49,7 +49,7 @@ export const FormGroupShort = styled.div`
   width: 47%;
 `;
 
-export const Label = styled.div`
+export const Label = styled.label`
   color: ${colors.grey[300]};
   font-size: 12px;
   font-weight: 500;

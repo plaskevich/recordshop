@@ -25,8 +25,15 @@ export default function AddRecord() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
-  const submitForm = (data) => {
-    data.year = parseInt(data.year);
+  interface RecordData {
+    title: string;
+    artist: string;
+    year: string | number;
+    genre: string;
+  }
+
+  const submitForm = (data: RecordData) => {
+    data.year = parseInt(data.year as string);
     addRecord({
       variables: { data },
     });

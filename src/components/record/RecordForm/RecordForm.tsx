@@ -11,13 +11,18 @@ import {
   LinkButton,
   RightSection,
 } from '@/styles/styledComponents';
+import { DiscogsRecord, Record } from '@/types';
 
 import { DiscogsImport } from '../DiscogsImport';
-import { Footer, Form, FormGroup, FormGroupShort, Input, Label, Select } from './RecordFormStyles';
+import { Footer, Form, FormGroup, FormGroupShort, Input, Label, Select } from './recordFormStyles';
 
-export default function RecordForm(props) {
-  const { onSubmit, recordData } = props;
-  const { register, handleSubmit, setValue, watch } = useForm();
+type RecordFormProps = {
+  onSubmit: (data: Record) => void;
+  recordData?: Record;
+};
+
+export default function RecordForm({ onSubmit, recordData }: RecordFormProps) {
+  const { register, handleSubmit, setValue, watch } = useForm<Record>();
   const [imgUrl, setImgUrl] = useState('');
 
   const watchImgUrl = watch('img_uri');
@@ -33,14 +38,16 @@ export default function RecordForm(props) {
     setImgUrl(watchImgUrl);
   }, [watchImgUrl]);
 
-  const onImport = (data) => {
-    const recordData = { ...data };
-    recordData.artist = recordData.artist.join(', ');
-    recordData.label = recordData.label.join(', ');
-    recordData.genre = recordData.genre.join(', ');
+  const onImport = (data: DiscogsRecord | Record) => {
+    const recordData = {
+      ...data,
+      artist: Array.isArray(data.artist) ? data.artist.join(', ') : data.artist,
+      label: Array.isArray(data.label) ? data.label.join(', ') : data.label,
+      genre: Array.isArray(data.genre) ? data.genre.join(', ') : data.genre,
+    };
 
     for (const [key, value] of Object.entries(recordData)) {
-      setValue(key, value);
+      setValue(key as keyof Record, value);
     }
     setImgUrl(recordData.img_uri);
   };
@@ -73,7 +80,7 @@ export default function RecordForm(props) {
             </FormGroup>
             <FormGroupShort>
               <Label htmlFor="released">Released</Label>
-              <Input {...register('year')} type="text" inputmode="numeric" />
+              <Input {...register('year')} type="text" inputMode="numeric" />
             </FormGroupShort>
             <FormGroupShort>
               <Label htmlFor="condition">Condition</Label>
@@ -88,7 +95,7 @@ export default function RecordForm(props) {
             </FormGroupShort>
             <FormGroupShort>
               <Label htmlFor="price">Price</Label>
-              <Input {...register('price')} type="text" inputmode="numeric" />
+              <Input {...register('price')} type="text" inputMode="numeric" />
             </FormGroupShort>
             <FormGroupShort>
               <Label htmlFor="status">Status</Label>

@@ -1,27 +1,35 @@
-import {
-  Content,
-  Card,
-  TitleWrap,
-  Title,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  SwitchWrap,
-  ErrorMessage,
-  ErrorText,
-  ButtonWrap,
-  SubmitButton,
-  BackWrap,
-} from './AuthStyles';
-import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { IoCaretBackCircleOutline } from 'react-icons/io5';
 import { ThreeDots } from 'react-loader-spinner';
+import { Link } from 'react-router-dom';
 
-export default function SignUpForm(props) {
-  const { submitForm, loading, errorMessage } = props;
+import {
+  BackWrap,
+  ButtonWrap,
+  Card,
+  Content,
+  ErrorMessage,
+  ErrorText,
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  SubmitButton,
+  SwitchWrap,
+  Title,
+  TitleWrap,
+} from './authStyles';
+
+type SignUpFormProps = {
+  submitForm: (data: FieldValues) => void;
+  loading: boolean;
+  errorMessage: string;
+};
+
+export default function SignUpForm({ submitForm, loading, errorMessage }: SignUpFormProps) {
   const { register, handleSubmit } = useForm();
+
+  const onSubmit: SubmitHandler<FieldValues> = (data) => submitForm(data);
 
   return (
     <Content>
@@ -30,22 +38,22 @@ export default function SignUpForm(props) {
           <Title>Create new account</Title>
         </TitleWrap>
 
-        <Form onSubmit={handleSubmit(submitForm)}>
+        <Form onSubmit={handleSubmit(onSubmit)}>
           <FormGroup>
-            <Label htmlFor='email'>Email</Label>
-            <Input {...register('email')} type='email' />
+            <Label htmlFor="email">Email</Label>
+            <Input {...register('email')} type="email" />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor='password'>Password</Label>
-            <Input {...register('password')} type='password' />
+            <Label htmlFor="password">Password</Label>
+            <Input {...register('password')} type="password" />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor='confirmPassword'>Confirm Password</Label>
-            <Input {...register('confirmPassword')} type='password' />
+            <Label htmlFor="confirmPassword">Confirm Password</Label>
+            <Input {...register('confirmPassword')} type="password" />
           </FormGroup>
           <SwitchWrap>
             <span>Already have an acoount? </span>
-            <Link to='/login'>Login</Link>
+            <Link to="/login">Login</Link>
           </SwitchWrap>
           {errorMessage && (
             <ErrorMessage>
@@ -54,12 +62,10 @@ export default function SignUpForm(props) {
           )}
 
           <ButtonWrap>
-            <SubmitButton type='submit'>
-              {loading ? <ThreeDots color='white' height='10' /> : 'Sign Up'}
-            </SubmitButton>
+            <SubmitButton type="submit">{loading ? <ThreeDots color="white" height="10" /> : 'Sign Up'}</SubmitButton>
           </ButtonWrap>
-          <BackWrap to='/'>
-            <IoCaretBackCircleOutline size='29' />
+          <BackWrap to="/">
+            <IoCaretBackCircleOutline size="29" />
             back to homepage
           </BackWrap>
         </Form>

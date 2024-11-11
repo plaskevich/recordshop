@@ -12,6 +12,8 @@ import { REMOVE_RECORD } from '@/graphql/mutations/record';
 import { GET_COLLECTION } from '@/graphql/queries';
 import { startLoading, stopLoading } from '@/redux/propsSlice';
 import { colors } from '@/styles/theme';
+import { FilterOptions } from '@/types';
+import { Record } from '@/types';
 
 const Content = styled.div`
   color: ${colors.grey[100]};
@@ -20,7 +22,7 @@ const Content = styled.div`
 `;
 
 export default function Collection() {
-  const [collectionData, setCollectionData] = useState();
+  const [collectionData, setCollectionData] = useState<Record[]>([]);
   const [filter, setFilter] = useState('all');
 
   const dispatch = useDispatch();
@@ -34,22 +36,26 @@ export default function Collection() {
     getCollection().then((data) => setCollectionData(data.data.getCollection));
   };
 
-  const [removeRecord] = useMutation(REMOVE_RECORD, {
+  const [removeRecordMutation] = useMutation(REMOVE_RECORD, {
     onCompleted() {
       fetchRecords();
     },
   });
 
-  const onFilterChange = (status) => {
+  const removeRecord = (id: string) => {
+    removeRecordMutation({ variables: { id } });
+  };
+
+  const onFilterChange = (status: FilterOptions) => {
     setFilter(status);
   };
 
-  const onSearchChange = (keyword) => {
+  const onSearchChange = (keyword: string) => {
     const filteredCollection = searchFilter(data.getCollection, {
       keywords: keyword,
       ignorePaths: ['img_uri', 'date_added', 'condition', 'status'],
     });
-    setCollectionData(filteredCollection);
+    setCollectionData(filteredCollection as Record[]);
   };
 
   useEffect(() => {
@@ -69,7 +75,7 @@ export default function Collection() {
       <Toolbar
         filter={filter}
         onFilterChange={onFilterChange}
-        onSearchChange={(event) => onSearchChange(event.target.value)}
+        onSearchChange={(event: React.ChangeEvent<HTMLInputElement>) => onSearchChange(event.target.value)}
       />
       {collectionData && <CollectionTable records={collectionData} removeRecord={removeRecord} />}
     </Content>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FieldValues } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,9 +23,9 @@ export default function SignUp() {
       setErrorMessage(error.message);
     },
   });
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const submitForm = (data) => {
+  const submitForm = (data: FieldValues) => {
     const { email, password, confirmPassword } = data;
     if (password === confirmPassword) {
       signUp({

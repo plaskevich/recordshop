@@ -1,3 +1,5 @@
+import { Condition, Status } from '@/types';
+
 export const isAuthenticated = () => {
   if (localStorage.getItem('token')) {
     return true;
@@ -6,11 +8,11 @@ export const isAuthenticated = () => {
   }
 };
 
-export const getDate = (date) => {
+export const getDate = (date: number | string | Date) => {
   return new Date(date).toLocaleDateString();
 };
 
-export const getStatus = (status) => {
+export const getStatus = (status: Status) => {
   switch (status) {
     case 'sold':
       return 'Sold';
@@ -21,11 +23,11 @@ export const getStatus = (status) => {
   }
 };
 
-export const getPrice = (price) => {
+export const getPrice = (price: number) => {
   return price ? `${price}€` : '-';
 };
 
-export const getCondition = (condition) => {
+export const getCondition = (condition: Condition) => {
   switch (condition) {
     case 'm':
       return 'Mint (M)';

@@ -47,7 +47,7 @@ export const RightSection = styled.div`
   flex-direction: column;
 `;
 
-export const Artwork = styled.div`
+export const Artwork = styled.div<{ imgUrl: string }>`
   width: 250px;
   height: 250px;
   background: ${(props) =>
@@ -87,22 +87,26 @@ export const LinkButton = styled(Link)`
   font-family: ${font};
 `;
 
-export const Menu = styled(MenuInner)`
-  ${menuSelector.name} {
-    background-color: ${colors.grey[100]};
-    border-radius: 15px;
-    padding: 6px;
-    min-width: 8rem;
-  }
-  ${menuItemSelector.name} {
-    border-radius: 10px;
-    padding: 0.375rem 0.625rem;
-    color: ${colors.grey[700]};
-    font-family: ${font};
-    font-size: 1rem;
-    gap: 0.5rem;
-  }
-  ${menuItemSelector.hover} {
+export const Menu = styled.div`
+  position: absolute;
+  left: 60px;
+  background-color: ${colors.grey[100]};
+  border-radius: 15px;
+  padding: 6px;
+  min-width: 8rem;
+`;
+
+export const MenuItem = styled.button`
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0.375rem 0.625rem;
+  color: ${colors.grey[700]};
+  font-family: ${font};
+  font-size: 1rem;
+  gap: 0.5rem;
+  &:hover {
     color: ${colors.grey[100]};
     background-color: ${colors.grey[700]};
   }

@@ -10,13 +10,24 @@ import {
   LinkButton,
   RightSection,
 } from '@/styles/styledComponents';
+import { Record } from '@/types';
 import { getCondition, getDate, getStatus } from '@/utils';
 
-import { Artist, Info, InfoSection, InfoSectionColumn, Label, Title } from './RecordDetailsStyles';
+import { Artist, Info, InfoSection, InfoSectionColumn, Label, Title } from './recordDetailsStyles';
 
-export default function RecordDetails(props) {
-  const { id, title, artist, year, genre, label, condition, status, price, date_added, img_uri } = props.recordData;
-
+export default function RecordDetails({
+  id,
+  title,
+  artist,
+  year,
+  genre,
+  label,
+  condition,
+  status,
+  price,
+  date_added,
+  img_uri,
+}: Record) {
   const navigate = useNavigate();
 
   const handleEditButton = () => {

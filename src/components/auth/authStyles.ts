@@ -49,7 +49,7 @@ export const FormGroup = styled.div`
   width: 100%;
 `;
 
-export const Label = styled.div`
+export const Label = styled.label`
   color: #a1a1ac;
   font-size: 14px;
   font-weight: 500;

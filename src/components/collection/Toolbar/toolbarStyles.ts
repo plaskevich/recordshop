@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { Menu } from '@szhsin/react-menu';
-import { menuItemSelector, menuSelector } from '@szhsin/react-menu/style-utils';
-
 import { colors, font } from '@/styles/theme';
 
 export const Wrap = styled.div`
@@ -17,37 +14,43 @@ export const SideWrap = styled.div`
   gap: 22px;
 `;
 
-export const FilterMenu = styled(Menu)`
-  ${menuSelector.name} {
-    background-color: ${colors.grey[900]};
-    border-radius: 15px;
-    border: 1px solid ${colors.grey[500]};
-    padding: 6px;
-    min-width: 8rem;
-  }
-  ${menuItemSelector.name} {
-    border-radius: 10px;
-    padding: 0.375rem 0.625rem;
-    margin: 2px 0;
-    color: ${colors.grey[100]};
-    font-size: 1rem;
-    gap: 0.5rem;
-    &:active {
-      background-color: ${colors.blue};
-    }
-  }
+export const FilterMenu = styled.div<{ open: boolean }>`
+  position: absolute;
+  top: 136px;
+  display: ${(props) => (props.open ? 'flex' : 'none')};
+  flex-direction: column;
+  background-color: ${colors.grey[900]};
+  border-radius: 15px;
+  border: 1px solid ${colors.grey[500]};
+  padding: 6px;
+  width: 7rem;
+  align-items: flex-start;
   .selected {
     background-color: ${colors.blue};
     color: ${colors.white};
   }
+`;
 
-  ${menuItemSelector.hover} {
+export const MenuItem = styled.button<{ selected: boolean }>`
+  border-radius: 10px;
+  text-align: left;
+  width: 100%;
+  padding: 0.375rem 0.625rem;
+  margin: 2px 0;
+  color: ${colors.grey[100]};
+  font-size: 1rem;
+  gap: 0.5rem;
+  background-color: ${(props) => (props.selected ? colors.blue : 'transparent')};
+  &:active {
+    background-color: ${colors.blue};
+  }
+  &:hover {
     color: ${colors.grey[900]};
     background-color: ${colors.grey[100]};
   }
 `;
 
-export const ToolbarButton = styled.button`
+export const ToolbarButton = styled.button<{ open: boolean }>`
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -59,7 +62,7 @@ export const ToolbarButton = styled.button`
   border: solid 1px ${colors.grey[700]};
   padding: 8px 20px;
   font-size: 14px;
-  /* transition: all 0.1s ease-in; */
+  transition: all 0.1s ease-in;
   &:hover {
     background-color: ${colors.grey[700]};
   }

@@ -1,25 +1,22 @@
-import { IoCreate, IoDisc, IoEllipsisHorizontal, IoTrash } from 'react-icons/io5';
+import { IoDisc } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 
-import { MenuItem } from '@szhsin/react-menu';
-
-import { Menu } from '@/styles/styledComponents';
+import ItemMenu from '@/components/collection/CollectionTable/ItemMenu';
+import { Record } from '@/types';
 import { getCondition, getDate, getPrice } from '@/utils';
 
 import StatusLabel from '../StatusLabel';
-import { Artwork, MenuButton, NoDataWrap, TableItem, TableWrap } from './CollectionTableStyles';
+import { Artwork, NoDataWrap, TableItem, TableWrap } from './collectionTableStyles';
 
-export default function CollectionTable(props) {
-  const { records, removeRecord } = props;
+type CollectionTableProps = {
+  records: Record[];
+  removeRecord: (id: string) => void;
+};
+
+export default function CollectionTable({ records, removeRecord }: CollectionTableProps) {
   const navigate = useNavigate();
 
-  const handleRemoveRecord = (id) => {
-    removeRecord({
-      variables: { id },
-    });
-  };
-
-  const goToRecordDetails = (id) => {
+  const goToRecordDetails = (id: string) => {
     navigate(`/view/${id}`);
   };
 
@@ -45,8 +42,8 @@ export default function CollectionTable(props) {
           <tbody>
             {records &&
               records.map((item) => (
-                <TableItem key={item.id}>
-                  <td onClick={() => goToRecordDetails(item.id)}>
+                <TableItem key={item.id} onClick={() => goToRecordDetails(item.id)}>
+                  <td>
                     <Artwork>{item.img_uri ? <img src={item.img_uri} alt="artwork" /> : <IoDisc size="36" />}</Artwork>
                   </td>
                   <td>{item.title}</td>
@@ -61,26 +58,7 @@ export default function CollectionTable(props) {
                     <StatusLabel status={item.status} />
                   </td>
                   <td>
-                    <Menu
-                      direction="bottom"
-                      align="end"
-                      offsetY={6}
-                      menuButton={({ open }) => (
-                        <MenuButton open={open} data-test-id="menu-button">
-                          <IoEllipsisHorizontal size="18px" />
-                        </MenuButton>
-                      )}
-                      transition
-                    >
-                      <MenuItem onClick={() => navigate(`/edit/${item.id}`)}>
-                        <IoCreate />
-                        Edit
-                      </MenuItem>
-                      <MenuItem onClick={() => handleRemoveRecord(item.id)} data-test-id="remove-button">
-                        <IoTrash />
-                        Remove
-                      </MenuItem>
-                    </Menu>
+                    <ItemMenu id={item.id} removeRecord={removeRecord} />
                   </td>
                 </TableItem>
               ))}

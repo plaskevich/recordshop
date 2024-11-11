@@ -1,10 +1,11 @@
 import axios from 'axios';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 import { ThreeDots } from 'react-loader-spinner';
 import styled from 'styled-components';
 
 import { colors, font } from '@/styles/theme';
+import { DiscogsRecord } from '@/types';
 
 const ImportSection = styled.div`
   width: 250px;
@@ -65,13 +66,16 @@ const Error = styled.div`
   font-size: 14px;
 `;
 
-export function DiscogsImport(props) {
-  const { onImport } = props;
+type DiscogsImportProps = {
+  onImport: (data: DiscogsRecord) => void;
+};
+
+export function DiscogsImport({ onImport }: DiscogsImportProps) {
   const { register, handleSubmit, setValue } = useForm();
   const [loading, setLoading] = useState(false);
-  const [importError, setImportError] = useState();
+  const [importError, setImportError] = useState<string | null>(null);
 
-  const handleImport = (data) => {
+  const handleImport = (data: FieldValues) => {
     setImportError(null);
     setLoading(true);
     const myKey = 'RQjHhwSaMHxwGbPxJxXz';
@@ -83,8 +87,8 @@ export function DiscogsImport(props) {
         const data = response.data;
         const recordData = {
           title: data.title,
-          artist: data.artists.map((artist) => artist.name),
-          label: [...new Set(data.labels.map((label) => label.name))],
+          artist: data.artists.map((artist: { name: string }) => artist.name),
+          label: [...new Set(data.labels.map((label: { name: string }) => label.name))] as string[],
           genre: data.genres,
           year: data.year,
           img_uri: data.images[0].uri,
@@ -107,7 +111,7 @@ export function DiscogsImport(props) {
             placeholder="Realease ID"
             {...register('releaseId')}
             type="text"
-            inputmode="numeric"
+            inputMode="numeric"
             data-test-id="release-input"
           />
           <ImportButton type="submit" data-test-id="import-button">
