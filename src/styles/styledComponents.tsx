@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { Menu as MenuInner } from '@szhsin/react-menu';
-import { menuItemSelector, menuSelector } from '@szhsin/react-menu/style-utils';
-
 import { colors, font } from '@/styles/theme';
 
 export const MainContainer = styled.div`

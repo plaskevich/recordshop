@@ -54,7 +54,8 @@ export default function ItemMenu({ id, removeRecord }: ItemMenuProps) {
 
   const [open, setOpen] = useState(false);
 
-  const handleRemoveRecord = () => {
+  const handleRemoveRecord = (event: React.MouseEvent) => {
+    event.stopPropagation();
     removeRecord(id);
   };
 
@@ -62,13 +63,18 @@ export default function ItemMenu({ id, removeRecord }: ItemMenuProps) {
     event.stopPropagation();
     setOpen(!open);
   };
+
+  const handleEdit = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    navigate(`/edit/${id}`);
+  };
   return (
     <>
       <MenuButton open={open} onClick={handleOpenMenu} data-test-id="menu-button">
         <IoEllipsisHorizontal size="18px" />
       </MenuButton>
       <Menu open={open}>
-        <MenuItem onClick={() => navigate(`/edit/${id}`)}>
+        <MenuItem onClick={handleEdit}>
           <IoCreate />
           Edit
         </MenuItem>

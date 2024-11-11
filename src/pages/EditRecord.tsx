@@ -29,10 +29,11 @@ export default function EditRecord() {
 
   useEffect(() => {
     if (data?.getRecord) {
-      // const { __typename, id, date_added, ...recordData } = data.getRecord;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { __typename, id, date_added, ...recordData } = data.getRecord;
       setRecordData(recordData);
     }
-  }, [data?.getRecord, recordData]);
+  }, [data]);
 
   useEffect(() => {
     if (loading) dispatch(startLoading());
