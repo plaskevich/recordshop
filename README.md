@@ -31,13 +31,3 @@ For testing purposes you may login with following credentials:
 
 **Password**: `simplepass`
 
-## E2E Tests
-In order to run the tests, the server should be running locally on `localhost:4000`
-
-### 1. Run the app in dev mode
-
-`yarn dev`
-
-### 2. Run tests in headless
-
-`yarn test:e2e`
