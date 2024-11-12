@@ -8,8 +8,8 @@ const Spinner = styled.div`
   right: 1px;
   height: 100%;
   width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
   display: flex;
   align-items: center;
   justify-content: center;

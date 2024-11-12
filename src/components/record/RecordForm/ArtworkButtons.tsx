@@ -36,8 +36,12 @@ const Button = styled.button`
   padding: 6px 10px;
 `;
 
-export default function ArtworkButtons(props) {
-  const { imageUploaded, removeImage } = props;
+type ArtworkButtonsProps = {
+  imageUploaded: boolean;
+  removeImage: () => void;
+};
+
+export default function ArtworkButtons({ imageUploaded, removeImage }: ArtworkButtonsProps) {
   return (
     <ButtonsWrap>
       {imageUploaded ? (
