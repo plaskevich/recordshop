@@ -10,7 +10,9 @@ Visit **[record-shop.netlify.app](https://record-shop.netlify.app)** to see the 
 ## Steps to run locally:
 
 ### 1. Install dependencies
-### `yarn`
+```
+yarn
+```
 
 ### 2. Setup environment variables
 In the root folder create `.env` file which should contain:
@@ -22,7 +24,9 @@ VITE_DEV_SERVER=http://localhost:<PORT>/graphql
 ```
 
 ### 3. Run the application
-### `yarn dev`
+```
+yarn dev
+```
 
 ## Using the app
 For testing purposes you may login with following credentials:
